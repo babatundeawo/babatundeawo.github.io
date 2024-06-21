@@ -18,9 +18,9 @@
 - Tech-based solutions for schools and institutions
 
 ## 📫 How to reach me
-- Email: babatundeawoyemi@hotmail.com
+- Email: babatundeawoyemi91@gmail.com
 - Phone: +2347032129074 / +2348126909498
-- LinkedIn: https://ng.linkedin.com/in/babatunde-awoyemi-sam
+- LinkedIn: [Babatunde Awoyemi](https://ng.linkedin.com/in/babatunde-awoyemi-sam)
 
 ## 😀 Pronouns
 - He/Him
