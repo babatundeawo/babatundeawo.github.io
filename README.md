@@ -1,4 +1,4 @@
-# 👋 Hi, I'm @babatundeawo
+# 👋 Hi, I'm Babatunde Awoyemi
 
 ## 👀 I'm interested in
 - Web Development
