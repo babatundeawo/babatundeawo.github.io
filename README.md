@@ -2,7 +2,7 @@
 
 _Multidisciplinary STEM Educator | Atmospheric Physicist | Researcher | Web Developer_
 
-<a href="https://ng.linkedin.com/in/babatunde-awoyemi-sam"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+<a href="https://www.linkedin.com/in/ba-awoyemi/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
 
 ---
 
