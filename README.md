@@ -3,12 +3,16 @@
 _Multidisciplinary STEM Educator | Atmospheric Physicist | Researcher | Web Developer_
 
 <a href="https://www.linkedin.com/in/ba-awoyemi/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+<a href="https://x.com/ba_awoyemi"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"/></a>
+<a href="https://web.facebook.com/ba.awoyemi"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook"/></a>
+<a href="https://www.instagram.com/ba_awoyemi/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"/></a>
+<a href="https://www.threads.com/@ba_awoyemi"><img src="https://img.shields.io/badge/Threads-000000?style=for-the-badge&logo=threads&logoColor=white" alt="Threads"/></a>
 
 ---
 
 ### 👋 Hello there!
 
-Welcome to my GitHub profile! I am a multidisciplinary STEM educator, researcher, and consultant with over a decade of experience in educational leadership, climate science, and technological integration. My career is driven by a passion for merging science expertise with technology to create impactful solutions. I offer proven expertise in atmospheric and ecological research, data analysis, remote sensing, and programming, with a strong commitment to advancing STEM education in Africa.
+Welcome to my GitHub profile! I am a multidisciplinary STEM educator, researcher, and consultant with over a decade of experience in educational leadership, climate science, and technological integration. My career is driven by a passion for merging my science expertise with technology to create impactful solutions. I offer proven expertise in atmospheric and ecological research, data analysis, remote sensing, and programming, with a strong commitment to advancing STEM education in Africa.
 
 Recognized for an enthusiastic personality, strong work ethic, and exceptional adaptability, I am known for pioneering visual-based teaching methods and for my self-taught expertise in ICT and education technology.
 
@@ -26,7 +30,7 @@ My primary research interest lies in **developing advanced solar radiation model
 -   Atmospheric Radiative Transfer and Energy Balance
 -   Aerosol–Cloud–Radiation Interactions
 -   Atmospheric Remote Sensing and Data Assimilation
--   Climate Forcing of Greenhouse Gases
+-   Climate Forcing of Greenhouse Gases and Short-Lived Species
 -   Renewable Energy–Climate Nexus & Geo-spatial Climate Solutions
 
 ---
@@ -51,6 +55,7 @@ My Master's thesis, published in the *Bulletin of the Science Association of Nig
 | **Education & Training**         | Curriculum Development, STEM Education, Coding & Robotics (Python, Scratch), Teacher Training |
 | **Professional Skills**          | Public Speaking, Stakeholder Engagement, Project Management, Design Thinking           |
 
+*(Skills sourced from)*
 ---
 
 ### 🌱 I’m Currently Learning
@@ -69,5 +74,4 @@ I am actively seeking opportunities to collaborate on innovative projects. If yo
 -   Educational programs and training workshops
 -   Tech-based solutions for schools and institutions
 -   Climate modeling, renewable energy, or ecological research
-
 ```
