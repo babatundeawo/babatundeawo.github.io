@@ -14,7 +14,7 @@ Recognized for an enthusiastic personality, strong work ethic, and exceptional a
 
 **Contact**:
 -   **Email**: `babatundeawoyemi91@gmail.com`
--   **Phone**: `+2347032129074` / `+2348126909498`
+-   **Phone**: `+2348126909498`
 
 ---
 
