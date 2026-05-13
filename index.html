@@ -3,352 +3,358 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Babatunde Ayoola Awoyemi | Atmospheric Physicist & STEM Educator
-    </title>
+    <title>Babatunde Ayoola Awoyemi | Climate Science, STEM & EdTech</title>
     <meta
       name="description"
-      content="Portfolio of Babatunde Ayoola Awoyemi – Atmospheric Physicist, STEM Educator, Researcher, and Software Developer."
+      content="Modern portfolio for Babatunde Ayoola Awoyemi, an atmospheric physicist, STEM educator, researcher, EdTech consultant, and software developer."
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <meta name="theme-color" content="#082f49" />
+    <meta property="og:title" content="Babatunde Ayoola Awoyemi" />
+    <meta
+      property="og:description"
+      content="Climate science, STEM education, renewable energy modeling, and technology-driven learning solutions."
+    />
+    <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/script.js"></script>
   </head>
   <body>
-    <!-- ===== NAVBAR ===== -->
-    <header class="navbar">
-      <div class="container nav-container">
-        <div class="logo">Babatunde Awoyemi</div>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="#home" aria-label="Babatunde Awoyemi home">
+          <span class="brand-mark">BA</span>
+          <span>
+            <strong>Babatunde Awoyemi</strong>
+            <small>Atmospheric Physicist</small>
+          </span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav aria-label="Primary navigation">
+          <ul class="nav-links" id="primary-navigation" data-nav>
             <li><a href="#about">About</a></li>
             <li><a href="#research">Research</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
-          <div class="hamburger">&#9776;</div>
         </nav>
       </div>
     </header>
 
-    <!-- ===== HERO ===== -->
-    <section id="home" class="hero">
-      <div class="container hero-container">
-        <div class="hero-text">
-          <h1>Babatunde Ayoola Awoyemi</h1>
-          <h2>
-            Atmospheric Physicist • STEM Educator • Researcher • Software
-            Developer
-          </h2>
-          <p>
-            I bridge climate science, education, and technology to build
-            impactful solutions in renewable energy, remote sensing, and STEM
-            education across Africa.
-          </p>
-          <div class="hero-buttons">
-            <a href="#contact" class="btn primary">Get in Touch</a>
-            <a href="#projects" class="btn secondary">View My Work</a>
+    <main id="main">
+      <section id="home" class="hero section-pad">
+        <div class="hero-gradient" aria-hidden="true"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Climate Science • STEM Education • EdTech</p>
+            <h1>Building climate-aware learning and technology solutions.</h1>
+            <p class="hero-lede">
+              I help schools, research teams, and mission-driven organizations
+              translate atmospheric science, renewable energy data, and coding
+              education into practical tools for African communities.
+            </p>
+
+            <div class="hero-actions" aria-label="Primary calls to action">
+              <a class="btn btn-primary" href="#contact">Start a collaboration</a>
+              <a class="btn btn-secondary" href="#projects">Explore my work</a>
+            </div>
+
+            <dl class="hero-metrics" aria-label="Career highlights">
+              <div>
+                <dt>10+</dt>
+                <dd>Years in STEM</dd>
+              </div>
+              <div>
+                <dt>90+</dt>
+                <dd>Student projects</dd>
+              </div>
+              <div>
+                <dt>5+</dt>
+                <dd>Partner schools</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero-visual reveal" data-delay="120">
+            <div class="profile-card">
+              <div class="profile-orbit orbit-one"></div>
+              <div class="profile-orbit orbit-two"></div>
+              <img
+                src="assets/images/profile-placeholder.png"
+                alt="Portrait placeholder for Babatunde Awoyemi"
+              />
+              <div class="floating-card top-card">
+                <span>Solar irradiance</span>
+                <strong>19.7% RMSD</strong>
+              </div>
+              <div class="floating-card bottom-card">
+                <span>Learning labs</span>
+                <strong>Coding + Robotics</strong>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="hero-image">
-          <img
-            src="assets/images/profile-placeholder.png"
-            alt="Babatunde Awoyemi"
-          />
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="section about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
+      <section id="about" class="section-pad about-section">
+        <div class="container split-section">
+          <div class="section-intro reveal">
+            <p class="eyebrow">About</p>
+            <h2>Scientist, educator, consultant, and builder.</h2>
+          </div>
+          <div class="about-copy reveal" data-delay="80">
+            <p>
+              I am a multidisciplinary STEM educator, atmospheric physicist, and
+              consultant with over a decade of experience connecting scientific
+              research with educational technology. My expertise includes
+              computational climate models, atmospheric radiative transfer,
+              remote sensing, renewable energy assessment, and visual STEM
+              pedagogy.
+            </p>
+            <p>
+              With an M.Sc. in Atmospheric Physics and a B.Sc. in Physics from
+              the University of Ibadan, I design hands-on learning experiences
+              for coding, robotics, mathematics, and physics while supporting
+              research workflows with Python, MATLAB, Ferret NOAA, and SPSS.
+            </p>
+            <div class="capability-grid">
+              <span>Remote sensing</span>
+              <span>Climate data analysis</span>
+              <span>STEM curriculum</span>
+              <span>Robotics labs</span>
+              <span>Web platforms</span>
+              <span>Teacher training</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="research" class="section-pad muted-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Research & publications</p>
+            <h2>Evidence-led work for energy, climate, and education.</h2>
+            <p>
+              My research combines satellite datasets, numerical modeling, and
+              statistical validation to support planning in data-scarce regions.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card large-card reveal">
+              <span class="card-kicker">M.Sc. Thesis • Published 2020</span>
+              <h3>Parametric Estimation of Direct Irradiance under All-Sky Conditions</h3>
+              <p>
+                Developed an all-sky solar radiation estimation method using
+                MODIS satellite datasets, the Yang Model, and cloud
+                transmittance algorithms implemented with Python, MATLAB, and
+                Ferret NOAA.
+              </p>
+              <ul class="check-list">
+                <li>Outperformed NASA SSE products in the study context.</li>
+                <li>Achieved 19.7% annual RMSD compared with ~31.5% for NASA SSE.</li>
+                <li>Validated for renewable energy planning in data-scarce regions.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card reveal" data-delay="80">
+              <span class="card-kicker">Solar physics</span>
+              <h3>Solar Structure and Variability</h3>
+              <p>
+                Modeled magnetohydrodynamic and solar hydrodynamic processes
+                with Fortran to explore solar variability and Earth’s
+                magnetospheric interactions.
+              </p>
+            </article>
+
+            <article class="feature-card reveal" data-delay="120">
+              <span class="card-kicker">Renewable energy</span>
+              <h3>Wind Potential Assessment</h3>
+              <p>
+                Applied Weibull and Maximum Entropy distribution functions to
+                evaluate wind characteristics, achieving strong statistical fits
+                with R² values near 0.90–0.99.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section-pad">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Projects & work</p>
+            <h2>Modern learning systems and applied science tools.</h2>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card reveal">
+              <div class="project-icon">🧪</div>
+              <h3>STEM Curriculum Development</h3>
+              <p>
+                Designed coding, robotics, and STEM programs for partner schools
+                including Baptist Model High Schools and Knowledge Base
+                International Schools.
+              </p>
+              <p class="tech-stack">Python • Scratch • Micro:bit • Arduino</p>
+            </article>
+
+            <article class="project-card reveal" data-delay="80">
+              <div class="project-icon">🎮</div>
+              <h3>Scratch Learning Library</h3>
+              <p>
+                Created and curated more than 90 educational and game-based
+                projects that teach logic, computational thinking, and creative
+                problem solving.
+              </p>
+              <p class="tech-stack">Scratch • Visual learning • Games</p>
+            </article>
+
+            <article class="project-card reveal" data-delay="120">
+              <div class="project-icon">🌦️</div>
+              <h3>Climate Data Workflows</h3>
+              <p>
+                Built atmospheric and climate data analysis workflows for
+                research, visualization, and policy-oriented renewable energy
+                studies.
+              </p>
+              <p class="tech-stack">Python • MATLAB • Ferret NOAA • SPSS</p>
+            </article>
+
+            <article class="project-card reveal" data-delay="160">
+              <div class="project-icon">💻</div>
+              <h3>Educational Web Platforms</h3>
+              <p>
+                Built and managed school websites, learning hubs, and program
+                pages with WordPress and custom front-end implementations.
+              </p>
+              <p class="tech-stack">HTML • CSS • JavaScript • WordPress</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section-pad muted-section">
+        <div class="container split-section">
+          <div class="section-intro reveal">
+            <p class="eyebrow">Experience</p>
+            <h2>Leading classrooms, labs, and data projects.</h2>
+          </div>
+
+          <div class="timeline reveal" data-delay="100">
+            <article class="timeline-item">
+              <span>April 2022 – Present</span>
+              <h3>Lead Consultant & STEM Educator — Techbase Consultant Services</h3>
+              <p>
+                Lead an EdTech consultancy focused on coding, robotics, physics,
+                mathematics, teacher training, and STEM program implementation.
+              </p>
+            </article>
+
+            <article class="timeline-item">
+              <span>January 2022 – Present</span>
+              <h3>Lead Consultant & STEM Educator — Knowledge Base International Schools</h3>
+              <p>
+                Pioneered visual-based teaching methods, digital literacy
+                initiatives, coding bootcamps, and science competitions.
+              </p>
+            </article>
+
+            <article class="timeline-item">
+              <span>August 2015 – November 2016</span>
+              <h3>Data Analyst — International Institute of Tropical Agriculture</h3>
+              <p>
+                Analyzed agricultural and climate datasets with SPSS and
+                supported West African climate resilience research.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="certifications" class="section-pad credentials-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Credentials</p>
+            <h2>Certifications, education, and awards.</h2>
+          </div>
+
+          <div class="credentials-grid">
+            <article class="credential-card reveal">
+              <span>Leadership</span>
+              <strong>YALI RLC West Africa Leadership Certification</strong>
+              <small>2025</small>
+            </article>
+            <article class="credential-card reveal" data-delay="60">
+              <span>Graduate degree</span>
+              <strong>M.Sc. Atmospheric Physics — University of Ibadan</strong>
+              <small>2019</small>
+            </article>
+            <article class="credential-card reveal" data-delay="100">
+              <span>Undergraduate degree</span>
+              <strong>B.Sc. Physics — University of Ibadan</strong>
+              <small>2014</small>
+            </article>
+            <article class="credential-card reveal" data-delay="140">
+              <span>Professional learning</span>
+              <strong>Design Thinking, Web Development, and Coding Foundations</strong>
+              <small>Cartedo • Coursera • SoloLearn</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-pad contact-section">
+        <div class="container contact-panel reveal">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>Let’s build the next STEM or climate solution.</h2>
+            <p>
+              I am open to collaborations in web development, STEM education,
+              climate modeling, renewable energy, remote sensing, and educational
+              technology.
+            </p>
+          </div>
+
+          <div class="contact-links" aria-label="Contact and social links">
+            <a href="mailto:babatundeawoyemi91@gmail.com">Email</a>
+            <a href="https://wa.me/8126909498">WhatsApp</a>
+            <a href="https://www.linkedin.com/in/ba-awoyemi/">LinkedIn</a>
+            <a href="https://x.com/ba_awoyemi">X / Twitter</a>
+            <a href="https://www.instagram.com/ba_awoyemi/">Instagram</a>
+            <a href="https://www.threads.com/@ba_awoyemi">Threads</a>
+            <a href="https://web.facebook.com/ba.awoyemi">Facebook</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>© <span id="year"></span> Babatunde Ayoola Awoyemi. All rights reserved.</p>
         <p>
-          I am a multidisciplinary STEM educator, atmospheric physicist, and
-          consultant with over a decade of experience bridging scientific
-          research with educational technology. My expertise lies in developing
-          computational models for climate science and implementing robust STEM
-          curricula (Coding & Robotics) across educational institutions in
-          Nigeria.
-        </p>
-        <p>
-          I hold an M.Sc. in Atmospheric Physics and a B.Sc. in Physics from the
-          University of Ibadan. My work spans atmospheric radiative transfer,
-          remote sensing, renewable energy modeling, data analysis, and STEM
-          education.
-        </p>
-        <p>
-          My mission is to empower the next generation of Africans with critical
-          STEM skills using visual learning, interactive experiments, and
-          technology-driven pedagogy.
-        </p>
-
-        <div class="about-stats">
-          <div class="stat">
-            <h3>10+</h3>
-            <p>Years of Experience</p>
-          </div>
-          <div class="stat">
-            <h3>5+</h3>
-            <p>Partner Schools</p>
-          </div>
-          <div class="stat">
-            <h3>90+</h3>
-            <p>Student Projects (Scratch)</p>
-          </div>
-          <div class="stat">
-            <h3>3+</h3>
-            <p>Major Research Works</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== RESEARCH ===== -->
-    <section id="research" class="section research">
-      <div class="container">
-        <h2 class="section-title">Research & Publications</h2>
-
-        <div class="research-card">
-          <h3>
-            Parametric Estimation of Direct Irradiance under All-Sky Conditions
-          </h3>
-          <p class="research-meta">
-            M.Sc. Thesis • University of Ibadan • Published, 2020
-          </p>
-          <p>
-            Developed a robust method for estimating all-sky solar radiation
-            using publicly available MODIS satellite datasets. Integrated the
-            Yang Model with cloud transmittance algorithms using Python, MATLAB,
-            and Ferret NOAA.
-          </p>
-          <ul>
-            <li>Outperformed NASA SSE products.</li>
-            <li>Achieved 19.7% RMSD annually (vs ~31.5% for NASA SSE).</li>
-            <li>
-              Validated for renewable energy planning and climate modeling in
-              data-scarce regions.
-            </li>
-          </ul>
-        </div>
-
-        <div class="research-card">
-          <h3>
-            Investigating Solar Dynamics: Unveiling the Intricacies of Solar
-            Structure and Variability
-          </h3>
-          <p class="research-meta">
-            Undergraduate Project • University of Ibadan
-          </p>
-          <p>
-            Conducted computational modeling of magnetohydrodynamics (MHD) and
-            solar hydrodynamic processes using Fortran, contributing to
-            understanding solar variability and Earth’s magnetospheric
-            interactions.
-          </p>
-        </div>
-
-        <div class="research-card">
-          <h3>
-            Wind Characteristics and Potentials Using Weibull & Maximum Entropy
-            Models
-          </h3>
-          <p class="research-meta">
-            Research Project • Renewable Energy Assessment
-          </p>
-          <p>
-            Applied Weibull and Maximum Entropy-based distribution functions to
-            assess wind energy potential, achieving strong statistical fits (R²
-            ≈ 0.90–0.99).
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects" class="section projects">
-      <div class="container">
-        <h2 class="section-title">Projects & Work</h2>
-
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3>STEM Curriculum Development</h3>
-            <p>
-              Designed and deployed coding, robotics, and STEM curricula for
-              partner schools including Baptist Model High Schools and Knowledge
-              Base International Schools.
-            </p>
-            <p>
-              <strong>Technologies:</strong> Python, Scratch, HTML, CSS,
-              JavaScript, Micro:bit, Arduino
-            </p>
-          </div>
-
-          <div class="project-card">
-            <h3>Scratch Educational Projects</h3>
-            <p>
-              Created and curated over 90 educational and game-based learning
-              projects on Scratch to teach logic, programming, and computational
-              thinking to students.
-            </p>
-            <p><strong>Platform:</strong> Scratch (DeCreed)</p>
-          </div>
-
-          <div class="project-card">
-            <h3>Climate Data Analysis & Visualization</h3>
-            <p>
-              Developed climate and atmospheric data analysis workflows using
-              Python, MATLAB, Ferret NOAA, and SPSS to support research and
-              policy-oriented studies.
-            </p>
-            <p><strong>Tools:</strong> Python, MATLAB, Ferret NOAA, SPSS</p>
-          </div>
-
-          <div class="project-card">
-            <h3>Educational Web Platforms</h3>
-            <p>
-              Built and managed educational websites and learning platforms
-              using WordPress and custom HTML/CSS/JS solutions for schools and
-              training programs.
-            </p>
-            <p>
-              <strong>Technologies:</strong> WordPress, HTML, CSS, JavaScript
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== EXPERIENCE ===== -->
-    <section id="experience" class="section experience">
-      <div class="container">
-        <h2 class="section-title">Professional Experience</h2>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>
-              Lead Consultant & STEM Educator — Techbase Consultant Services
-            </h3>
-            <span>April 2022 – Present</span>
-            <p>
-              Lead a registered EdTech consultancy specializing in coding,
-              robotics, physics, and mathematics education. Designed curricula,
-              trained teachers, and implemented STEM programs across partner
-              schools.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <h3>
-              Lead Consultant & STEM Educator — Knowledge Base International
-              Schools
-            </h3>
-            <span>Jan 2022 – Present</span>
-            <p>
-              Pioneered visual-based teaching methods for Physics and ICT, led
-              digital literacy initiatives, and organized coding bootcamps and
-              science competitions.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <h3>
-              Data Analyst — International Institute of Tropical Agriculture
-              (IITA)
-            </h3>
-            <span>Aug 2015 – Nov 2016</span>
-            <p>
-              Analyzed agricultural and climate datasets using SPSS and
-              contributed to climate resilience research for West Africa.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CERTIFICATIONS ===== -->
-    <section id="certifications" class="section certifications">
-      <div class="container">
-        <h2 class="section-title">Certifications & Awards</h2>
-
-        <div class="cert-grid">
-          <div class="cert-card">
-            YALI RLC West Africa Leadership Certification (2025)
-          </div>
-          <div class="cert-card">
-            M.Sc. Atmospheric Physics — University of Ibadan (2019)
-          </div>
-          <div class="cert-card">
-            B.Sc. Physics — University of Ibadan (2014)
-          </div>
-          <div class="cert-card">
-            Design Thinking — Australian Computing Academy, Unilever, Cartedo
-          </div>
-          <div class="cert-card">
-            Web Development — University of Michigan (Coursera)
-          </div>
-          <div class="cert-card">Coding Foundations — SoloLearn</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section contact">
-      <div class="container">
-        <h2 class="section-title">Contact Me</h2>
-        <p>
-          I am open to collaborations in web development, STEM education,
-          climate modeling, renewable energy, remote sensing, and educational
-          technology.
-        </p>
-
-        <div class="contact-grid">
-          <a href="mailto:babatundeawoyemi91@gmail.com" class="contact-card"
-            >📧 Email</a
-          >
-          <a href="https://wa.me/8126909498" class="contact-card"
-            >💬 WhatsApp</a
-          >
-          <a href="https://www.linkedin.com/in/ba-awoyemi/" class="contact-card"
-            >💼 LinkedIn</a
-          >
-          <a href="https://x.com/ba_awoyemi" class="contact-card"
-            >🐦 Twitter (X)</a
-          >
-          <a href="https://www.instagram.com/ba_awoyemi/" class="contact-card"
-            >📸 Instagram</a
-          >
-          <a href="https://www.threads.com/@ba_awoyemi" class="contact-card"
-            >🧵 Threads</a
-          >
-          <a href="https://web.facebook.com/ba.awoyemi" class="contact-card"
-            >📘 Facebook</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-      <div class="container">
-        <p>
-          © <span id="year"></span> Babatunde Ayoola Awoyemi. All rights
-          reserved.
-        </p>
-        <p>
-          <i
-            >"What ultimately matters is not where you end up relative to
-            others, but where you end up relative to yourself when you
-            began."</i
-          >
+          “What ultimately matters is not where you end up relative to others,
+          but where you end up relative to yourself when you began.”
         </p>
       </div>
     </footer>
