@@ -3,353 +3,231 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Babatunde Ayoola Awoyemi | Atmospheric Physicist & STEM Educator
-    </title>
+    <title>Techbase Consultant Services | STEM, IT & Business Solutions</title>
     <meta
       name="description"
-      content="Portfolio of Babatunde Ayoola Awoyemi – Atmospheric Physicist, STEM Educator, Researcher, and Software Developer."
+      content="Techbase Consultant Services empowers schools, youth, startups, and local businesses in Nigeria through STEM education, coding, robotics, web development, IT consulting, training, and CAC business registration support."
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <script defer src="js/script.js"></script>
   </head>
   <body>
-    <!-- ===== NAVBAR ===== -->
-    <header class="navbar">
+    <header class="site-header">
       <div class="container nav-container">
-        <div class="logo">Babatunde Awoyemi</div>
-        <nav>
+        <a class="logo" href="#home" aria-label="Techbase Consultant Services home">
+          <span class="logo-mark">T</span>
+          <span>Techbase</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#hours">Hours</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
-          <div class="hamburger">&#9776;</div>
         </nav>
       </div>
     </header>
 
-    <!-- ===== HERO ===== -->
-    <section id="home" class="hero">
-      <div class="container hero-container">
-        <div class="hero-text">
-          <h1>Babatunde Ayoola Awoyemi</h1>
-          <h2>
-            Atmospheric Physicist • STEM Educator • Researcher • Software
-            Developer
-          </h2>
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow">STEM • Technology • Business Support</p>
+            <h1>Empowering youth and businesses for the digital future.</h1>
+            <p class="hero-copy">
+              Techbase Consultant Services helps schools, private learners, startups,
+              and local businesses shine through STEM education, coding, robotics,
+              website development, IT consultation, professional training, and CAC
+              business registration support in Nigeria.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#services">Explore Services</a>
+              <a class="btn secondary" href="#contact">Start a Project</a>
+            </div>
+          </div>
+          <div class="hero-card" aria-label="Techbase service highlights">
+            <div class="orbit one"></div>
+            <div class="orbit two"></div>
+            <div class="feature-pill">Coding Classes</div>
+            <div class="feature-pill">Robotics Labs</div>
+            <div class="feature-pill">Business Registration</div>
+            <div class="feature-pill">Web Solutions</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section about-section">
+        <div class="container split-grid">
+          <div>
+            <p class="eyebrow">About Techbase</p>
+            <h2>Practical consulting for modern learning and growth.</h2>
+          </div>
+          <div class="section-copy">
+            <p>
+              At Techbase Consultant Services, the mission is simple: make every
+              client shine like a star. We provide hands-on STEM programs,
+              curriculum and teaching-aid support, coding and robotics training,
+              websites, tutor training, IT consultation, and practical business
+              support for clients who need dependable technology guidance.
+            </p>
+            <p>
+              Our programs are tailored for schools, private individuals,
+              startups, and established local businesses that want relevant,
+              scalable, and impactful solutions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section services-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">What We Provide</p>
+            <h2>All-in-one STEM, IT, and business services.</h2>
+            <p>
+              Choose focused individual sessions, school partnerships, team training,
+              or business support designed around your goals.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <span class="service-icon">⌨️</span>
+              <h3>STEM Coding</h3>
+              <p>
+                Interactive coding projects and challenges that engage learners in
+                science, technology, engineering, and mathematics.
+              </p>
+            </article>
+            <article class="service-card">
+              <span class="service-icon">🤖</span>
+              <h3>Robotics</h3>
+              <p>
+                Hands-on robot building and programming sessions that encourage
+                innovation and real-world problem solving.
+              </p>
+            </article>
+            <article class="service-card">
+              <span class="service-icon">🌐</span>
+              <h3>Web Development</h3>
+              <p>
+                Responsive, user-friendly websites shaped around your brand,
+                audience, and business goals.
+              </p>
+            </article>
+            <article class="service-card">
+              <span class="service-icon">🎓</span>
+              <h3>Training Services</h3>
+              <p>
+                Practical, skill-based training for individuals, tutors, schools,
+                and teams that need confidence with technology.
+              </p>
+            </article>
+            <article class="service-card">
+              <span class="service-icon">💡</span>
+              <h3>IT Consultation</h3>
+              <p>
+                Expert guidance to help organizations use technology for growth,
+                efficiency, security, and better decision-making.
+              </p>
+            </article>
+            <article class="service-card">
+              <span class="service-icon">📋</span>
+              <h3>CAC Business Registration</h3>
+              <p>
+                Fast, reliable Corporate Affairs Commission registration support
+                for startups and existing businesses in Nigeria.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="why-us" class="section why-section">
+        <div class="container split-grid">
+          <div>
+            <p class="eyebrow">Why Choose Us</p>
+            <h2>Built for learners, institutions, and businesses that need results.</h2>
+            <a class="btn primary" href="#contact">Talk to Techbase</a>
+          </div>
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <h3>Experienced Professionals</h3>
+              <p>Certified experts and passionate educators with years of STEM, IT, and business development experience.</p>
+            </div>
+            <div class="benefit-item">
+              <h3>Practical, Hands-On Learning</h3>
+              <p>Participants build real skills through interactive coding, robotics, web, and technology exercises.</p>
+            </div>
+            <div class="benefit-item">
+              <h3>Tailored Learning & Support</h3>
+              <p>Each service is customized for your school project, startup idea, team need, or growth objective.</p>
+            </div>
+            <div class="benefit-item">
+              <h3>Innovation-Driven Approach</h3>
+              <p>Solutions are designed to be relevant, scalable, and forward-thinking for the digital economy.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="hours" class="section hours-section">
+        <div class="container hours-card">
+          <div>
+            <p class="eyebrow">Working Hours</p>
+            <h2>Book consultations, training, and support during our service hours.</h2>
+          </div>
+          <dl class="hours-list">
+            <div>
+              <dt>Monday - Thursday</dt>
+              <dd>08:00 AM - 05:00 PM</dd>
+            </div>
+            <div>
+              <dt>Friday</dt>
+              <dd>09:00 AM - 03:00 PM</dd>
+            </div>
+            <div>
+              <dt>Saturday - Sunday</dt>
+              <dd>11:00 AM - 02:00 PM</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div class="container contact-card">
+          <p class="eyebrow">Take Action</p>
+          <h2>Ready to build digital confidence?</h2>
           <p>
-            I bridge climate science, education, and technology to build
-            impactful solutions in renewable energy, remote sensing, and STEM
-            education across Africa.
+            Partner with Techbase Consultant Services for STEM excellence,
+            technology guidance, web solutions, training, or CAC registration support.
           </p>
-          <div class="hero-buttons">
-            <a href="#contact" class="btn primary">Get in Touch</a>
-            <a href="#projects" class="btn secondary">View My Work</a>
+          <div class="contact-actions">
+            <a class="btn primary" href="https://techbasengr.com.ng/contact/">Open Contact Page</a>
+            <a class="btn secondary light" href="https://techbasengr.com.ng/">Visit Original Site</a>
           </div>
         </div>
-        <div class="hero-image">
-          <img
-            src="assets/images/profile-placeholder.png"
-            alt="Babatunde Awoyemi"
-          />
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="section about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p>
-          I am a multidisciplinary STEM educator, atmospheric physicist, and
-          consultant with over a decade of experience bridging scientific
-          research with educational technology. My expertise lies in developing
-          computational models for climate science and implementing robust STEM
-          curricula (Coding & Robotics) across educational institutions in
-          Nigeria.
-        </p>
-        <p>
-          I hold an M.Sc. in Atmospheric Physics and a B.Sc. in Physics from the
-          University of Ibadan. My work spans atmospheric radiative transfer,
-          remote sensing, renewable energy modeling, data analysis, and STEM
-          education.
-        </p>
-        <p>
-          My mission is to empower the next generation of Africans with critical
-          STEM skills using visual learning, interactive experiments, and
-          technology-driven pedagogy.
-        </p>
-
-        <div class="about-stats">
-          <div class="stat">
-            <h3>10+</h3>
-            <p>Years of Experience</p>
-          </div>
-          <div class="stat">
-            <h3>5+</h3>
-            <p>Partner Schools</p>
-          </div>
-          <div class="stat">
-            <h3>90+</h3>
-            <p>Student Projects (Scratch)</p>
-          </div>
-          <div class="stat">
-            <h3>3+</h3>
-            <p>Major Research Works</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== RESEARCH ===== -->
-    <section id="research" class="section research">
-      <div class="container">
-        <h2 class="section-title">Research & Publications</h2>
-
-        <div class="research-card">
-          <h3>
-            Parametric Estimation of Direct Irradiance under All-Sky Conditions
-          </h3>
-          <p class="research-meta">
-            M.Sc. Thesis • University of Ibadan • Published, 2020
-          </p>
-          <p>
-            Developed a robust method for estimating all-sky solar radiation
-            using publicly available MODIS satellite datasets. Integrated the
-            Yang Model with cloud transmittance algorithms using Python, MATLAB,
-            and Ferret NOAA.
-          </p>
-          <ul>
-            <li>Outperformed NASA SSE products.</li>
-            <li>Achieved 19.7% RMSD annually (vs ~31.5% for NASA SSE).</li>
-            <li>
-              Validated for renewable energy planning and climate modeling in
-              data-scarce regions.
-            </li>
-          </ul>
-        </div>
-
-        <div class="research-card">
-          <h3>
-            Investigating Solar Dynamics: Unveiling the Intricacies of Solar
-            Structure and Variability
-          </h3>
-          <p class="research-meta">
-            Undergraduate Project • University of Ibadan
-          </p>
-          <p>
-            Conducted computational modeling of magnetohydrodynamics (MHD) and
-            solar hydrodynamic processes using Fortran, contributing to
-            understanding solar variability and Earth’s magnetospheric
-            interactions.
-          </p>
-        </div>
-
-        <div class="research-card">
-          <h3>
-            Wind Characteristics and Potentials Using Weibull & Maximum Entropy
-            Models
-          </h3>
-          <p class="research-meta">
-            Research Project • Renewable Energy Assessment
-          </p>
-          <p>
-            Applied Weibull and Maximum Entropy-based distribution functions to
-            assess wind energy potential, achieving strong statistical fits (R²
-            ≈ 0.90–0.99).
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects" class="section projects">
-      <div class="container">
-        <h2 class="section-title">Projects & Work</h2>
-
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3>STEM Curriculum Development</h3>
-            <p>
-              Designed and deployed coding, robotics, and STEM curricula for
-              partner schools including Baptist Model High Schools and Knowledge
-              Base International Schools.
-            </p>
-            <p>
-              <strong>Technologies:</strong> Python, Scratch, HTML, CSS,
-              JavaScript, Micro:bit, Arduino
-            </p>
-          </div>
-
-          <div class="project-card">
-            <h3>Scratch Educational Projects</h3>
-            <p>
-              Created and curated over 90 educational and game-based learning
-              projects on Scratch to teach logic, programming, and computational
-              thinking to students.
-            </p>
-            <p><strong>Platform:</strong> Scratch (DeCreed)</p>
-          </div>
-
-          <div class="project-card">
-            <h3>Climate Data Analysis & Visualization</h3>
-            <p>
-              Developed climate and atmospheric data analysis workflows using
-              Python, MATLAB, Ferret NOAA, and SPSS to support research and
-              policy-oriented studies.
-            </p>
-            <p><strong>Tools:</strong> Python, MATLAB, Ferret NOAA, SPSS</p>
-          </div>
-
-          <div class="project-card">
-            <h3>Educational Web Platforms</h3>
-            <p>
-              Built and managed educational websites and learning platforms
-              using WordPress and custom HTML/CSS/JS solutions for schools and
-              training programs.
-            </p>
-            <p>
-              <strong>Technologies:</strong> WordPress, HTML, CSS, JavaScript
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== EXPERIENCE ===== -->
-    <section id="experience" class="section experience">
-      <div class="container">
-        <h2 class="section-title">Professional Experience</h2>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>
-              Lead Consultant & STEM Educator — Techbase Consultant Services
-            </h3>
-            <span>April 2022 – Present</span>
-            <p>
-              Lead a registered EdTech consultancy specializing in coding,
-              robotics, physics, and mathematics education. Designed curricula,
-              trained teachers, and implemented STEM programs across partner
-              schools.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <h3>
-              Lead Consultant & STEM Educator — Knowledge Base International
-              Schools
-            </h3>
-            <span>Jan 2022 – Present</span>
-            <p>
-              Pioneered visual-based teaching methods for Physics and ICT, led
-              digital literacy initiatives, and organized coding bootcamps and
-              science competitions.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <h3>
-              Data Analyst — International Institute of Tropical Agriculture
-              (IITA)
-            </h3>
-            <span>Aug 2015 – Nov 2016</span>
-            <p>
-              Analyzed agricultural and climate datasets using SPSS and
-              contributed to climate resilience research for West Africa.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CERTIFICATIONS ===== -->
-    <section id="certifications" class="section certifications">
-      <div class="container">
-        <h2 class="section-title">Certifications & Awards</h2>
-
-        <div class="cert-grid">
-          <div class="cert-card">
-            YALI RLC West Africa Leadership Certification (2025)
-          </div>
-          <div class="cert-card">
-            M.Sc. Atmospheric Physics — University of Ibadan (2019)
-          </div>
-          <div class="cert-card">
-            B.Sc. Physics — University of Ibadan (2014)
-          </div>
-          <div class="cert-card">
-            Design Thinking — Australian Computing Academy, Unilever, Cartedo
-          </div>
-          <div class="cert-card">
-            Web Development — University of Michigan (Coursera)
-          </div>
-          <div class="cert-card">Coding Foundations — SoloLearn</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section contact">
-      <div class="container">
-        <h2 class="section-title">Contact Me</h2>
-        <p>
-          I am open to collaborations in web development, STEM education,
-          climate modeling, renewable energy, remote sensing, and educational
-          technology.
-        </p>
-
-        <div class="contact-grid">
-          <a href="mailto:babatundeawoyemi91@gmail.com" class="contact-card"
-            >📧 Email</a
-          >
-          <a href="https://wa.me/8126909498" class="contact-card"
-            >💬 WhatsApp</a
-          >
-          <a href="https://www.linkedin.com/in/ba-awoyemi/" class="contact-card"
-            >💼 LinkedIn</a
-          >
-          <a href="https://x.com/ba_awoyemi" class="contact-card"
-            >🐦 Twitter (X)</a
-          >
-          <a href="https://www.instagram.com/ba_awoyemi/" class="contact-card"
-            >📸 Instagram</a
-          >
-          <a href="https://www.threads.com/@ba_awoyemi" class="contact-card"
-            >🧵 Threads</a
-          >
-          <a href="https://web.facebook.com/ba.awoyemi" class="contact-card"
-            >📘 Facebook</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-      <div class="container">
-        <p>
-          © <span id="year"></span> Babatunde Ayoola Awoyemi. All rights
-          reserved.
-        </p>
-        <p>
-          <i
-            >"What ultimately matters is not where you end up relative to
-            others, but where you end up relative to yourself when you
-            began."</i
-          >
-        </p>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>&copy; <span id="year"></span> Techbase Consultant Services. All rights reserved.</p>
+        <a href="#home">Back to top</a>
       </div>
     </footer>
   </body>
