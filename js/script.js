@@ -1,29 +1,27 @@
+// Mobile menu toggle
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 
-if (hamburger && navLinks) {
-  hamburger.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("active");
-    hamburger.setAttribute("aria-expanded", String(isOpen));
-  });
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", event => {
-      const target = document.querySelector(anchor.getAttribute("href"));
-
-      if (!target) {
-        return;
-      }
-
-      event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth" });
-      navLinks.classList.remove("active");
-      hamburger.setAttribute("aria-expanded", "false");
-    });
-  });
-}
-
+// Auto-update year in footer
 const yearSpan = document.getElementById("year");
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
+
+// Smooth scrolling for internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
+      navLinks.classList.remove("active");
+    }
+  });
+});
