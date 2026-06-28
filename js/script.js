@@ -10,6 +10,14 @@ if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
 
+// Respect reduced-motion: strip the SMIL sun animation so it stays parked
+// at its resting position on the arc instead of sweeping across it.
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (prefersReducedMotion) {
+  document.querySelectorAll(".sun-motion").forEach(node => node.remove());
+}
+
 const setHeaderState = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 12);
 };
@@ -80,3 +88,73 @@ window.addEventListener("keydown", event => {
     closeMenu();
   }
 });
+
+// ---------- Header weather widget ----------
+// Uses the visitor's browser geolocation (with permission) plus the
+// free, keyless Open-Meteo and BigDataCloud APIs. Fails silently and
+// removes the pill entirely if location isn't available or granted.
+
+const weatherWidget = document.getElementById("weather-widget");
+
+const weatherIcons = {
+  0: "☀️", 1: "🌤️", 2: "⛅", 3: "☁️",
+  45: "🌫️", 48: "🌫️",
+  51: "🌦️", 53: "🌦️", 55: "🌦️",
+  56: "🌧️", 57: "🌧️",
+  61: "🌧️", 63: "🌧️", 65: "🌧️",
+  66: "🌧️", 67: "🌧️",
+  71: "🌨️", 73: "🌨️", 75: "❄️", 77: "❄️",
+  80: "🌦️", 81: "🌧️", 82: "⛈️",
+  85: "🌨️", 86: "❄️",
+  95: "⛈️", 96: "⛈️", 99: "⛈️"
+};
+
+async function loadWeather(lat, lon) {
+  const icon = weatherWidget?.querySelector(".weather-icon");
+  const temp = weatherWidget?.querySelector(".weather-temp");
+  const place = weatherWidget?.querySelector(".weather-place");
+
+  try {
+    const res = await fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code`
+    );
+
+    if (!res.ok) throw new Error("weather request failed");
+
+    const data = await res.json();
+    const reading = Math.round(data?.current?.temperature_2m);
+    const code = data?.current?.weather_code;
+
+    if (Number.isNaN(reading)) throw new Error("no reading");
+
+    if (temp) temp.textContent = `${reading}°C`;
+    if (icon) icon.textContent = weatherIcons[code] ?? "🌡️";
+    weatherWidget?.classList.add("is-ready");
+
+    // Place name is a nice-to-have; skip quietly if it fails.
+    try {
+      const geoRes = await fetch(
+        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`
+      );
+      const geoData = await geoRes.json();
+      const name = geoData?.city || geoData?.locality || geoData?.principalSubdivision;
+      if (name && place) place.textContent = name;
+    } catch (_) {
+      /* optional, ignore */
+    }
+  } catch (_) {
+    weatherWidget?.remove();
+  }
+}
+
+if (weatherWidget) {
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(
+      position => loadWeather(position.coords.latitude, position.coords.longitude),
+      () => weatherWidget.remove(),
+      { timeout: 8000, maximumAge: 600000 }
+    );
+  } else {
+    weatherWidget.remove();
+  }
+}
