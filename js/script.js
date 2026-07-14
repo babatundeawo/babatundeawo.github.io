@@ -89,6 +89,32 @@ window.addEventListener("keydown", event => {
   }
 });
 
+// ---------- Project filter tabs ----------
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll("[data-project-category]");
+const projectGroupHeadings = document.querySelectorAll(".project-group-heading");
+
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+
+    filterButtons.forEach(btn => btn.classList.remove("is-active"));
+    button.classList.add("is-active");
+
+    projectCards.forEach(card => {
+      const show = filter === "all" || card.dataset.projectCategory === filter;
+      card.classList.toggle("is-hidden", !show);
+    });
+
+    projectGroupHeadings.forEach(heading => {
+      const matchesPersonal = filter === "personal" && heading.textContent.includes("babatundeawo");
+      const matchesTechbase = filter === "techbase" && heading.textContent.includes("techbaseng");
+      heading.classList.toggle("is-hidden", filter !== "all" && !matchesPersonal && !matchesTechbase);
+    });
+  });
+});
+
 // ---------- Header weather widget ----------
 // Uses the visitor's browser geolocation (with permission) plus the
 // free, keyless Open-Meteo and BigDataCloud APIs. Fails silently and
