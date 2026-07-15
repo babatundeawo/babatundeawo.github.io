@@ -3,7 +3,6 @@ const navToggle = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector("[data-nav]");
 const navLinks = document.querySelectorAll(".nav-links a");
 const revealItems = document.querySelectorAll(".reveal");
-const sections = document.querySelectorAll("main section[id]");
 const yearSpan = document.getElementById("year");
 
 if (yearSpan) {
@@ -63,22 +62,6 @@ if ("IntersectionObserver" in window) {
   );
 
   revealItems.forEach(item => revealObserver.observe(item));
-
-  const activeNavObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        const link = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
-
-        if (entry.isIntersecting && link) {
-          navLinks.forEach(navLink => navLink.classList.remove("is-active"));
-          link.classList.add("is-active");
-        }
-      });
-    },
-    { rootMargin: "-35% 0px -55% 0px", threshold: 0 }
-  );
-
-  sections.forEach(section => activeNavObserver.observe(section));
 } else {
   revealItems.forEach(item => item.classList.add("is-visible"));
 }

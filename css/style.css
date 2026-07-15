@@ -1196,6 +1196,38 @@ blockquote {
   }
 }
 
+/* ---------- Home page explore / nav tiles ---------- */
+
+.nav-tile {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-tile h3 {
+  color: var(--paper);
+}
+
+.nav-tile p {
+  margin-bottom: 0;
+}
+
+.nav-tile::after {
+  content: "→";
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-family: var(--font-mono);
+  color: var(--haze-dim);
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.nav-tile:hover::after {
+  transform: translateX(4px);
+  color: var(--solar);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
