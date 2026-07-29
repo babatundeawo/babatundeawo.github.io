@@ -91,9 +91,8 @@ filterButtons.forEach(button => {
     });
 
     projectGroupHeadings.forEach(heading => {
-      const matchesPersonal = filter === "personal" && heading.textContent.includes("babatundeawo");
-      const matchesTechbase = filter === "techbase" && heading.textContent.includes("techbaseng");
-      heading.classList.toggle("is-hidden", filter !== "all" && !matchesPersonal && !matchesTechbase);
+      const matches = filter === heading.dataset.group;
+      heading.classList.toggle("is-hidden", filter !== "all" && !matches);
     });
   });
 });
