@@ -264,47 +264,6 @@ button:focus-visible {
   color: var(--haze-dim);
 }
 
-.weather-pill {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.4rem 0.75rem;
-  border: 1px solid var(--panel-line);
-  border-radius: 999px;
-  background: var(--panel);
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  color: var(--haze);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.weather-pill.is-ready {
-  opacity: 1;
-}
-
-.weather-pill .weather-icon {
-  font-size: 0.95rem;
-  line-height: 1;
-}
-
-.weather-pill .weather-temp {
-  color: var(--paper);
-  font-weight: 500;
-}
-
-.weather-pill .weather-place {
-  color: var(--haze-dim);
-  max-width: 9rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.weather-pill .weather-place:empty {
-  display: none;
-}
-
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -1053,6 +1012,16 @@ button:focus-visible {
   color: var(--paper);
 }
 
+.project-link--youtube {
+  border-color: #c4291c;
+  color: #c4291c;
+}
+
+.project-link--youtube:hover {
+  background: #c4291c;
+  color: #fff;
+}
+
 .is-hidden {
   display: none !important;
 }
@@ -1338,10 +1307,6 @@ blockquote {
 }
 
 @media (max-width: 680px) {
-  .weather-pill {
-    display: none;
-  }
-
   .nav-shell {
     padding-block: 0.85rem;
   }
