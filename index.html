@@ -7,15 +7,15 @@
     <title>Babatunde Ayoola Awoyemi | Atmospheric Physics, STEM &amp; Climate Research</title>
     <meta
       name="description"
-      content="Babatunde Ayoola Awoyemi — atmospheric physicist, STEM educator, EdTech consultant and climate researcher based in Ibadan, Nigeria. Solar irradiance modelling, robotics and coding education, and practical AI for learning."
+      content="Babatunde Ayoola Awoyemi — atmospheric physicist, STEM educator, EdTech consultant and climate researcher. Solar irradiance modelling, robotics and coding education, and practical AI for learning."
     />
-    <meta name="theme-color" content="#faf7f0" />
+    <meta name="theme-color" content="#f6f9fc" />
     <link rel="canonical" href="https://babatundeawo.github.io/" />
     <meta property="og:url" content="https://babatundeawo.github.io/" />
     <meta property="og:title" content="Babatunde Ayoola Awoyemi" />
     <meta
       property="og:description"
-      content="Babatunde Ayoola Awoyemi — atmospheric physicist, STEM educator, EdTech consultant and climate researcher based in Ibadan, Nigeria. Solar irradiance modelling, robotics and coding education, and practical AI for learning."
+      content="Babatunde Ayoola Awoyemi — atmospheric physicist, STEM educator, EdTech consultant and climate researcher. Solar irradiance modelling, robotics and coding education, and practical AI for learning."
     />
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,6 +25,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script>
+      // Set theme before first paint to avoid a flash of the wrong theme.
+      (function () {
+        var saved = localStorage.getItem("theme");
+        var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        if (theme === "dark") document.documentElement.setAttribute("data-theme", "dark");
+      })();
+    </script>
     <script defer src="js/script.js"></script>
   
   </head>
@@ -33,7 +41,7 @@
 
 <header class="site-header" data-header>
       <div class="container nav-shell">
-        <a class="brand" href="index.html" aria-label="Babatunde Awoyemi home">
+        <a class="brand" href="#home" aria-label="Babatunde Awoyemi home">
           <span class="brand-mark">BA</span>
           <span>
             <strong>Babatunde Ayoola Awoyemi</strong>
@@ -55,15 +63,20 @@
 
         <nav aria-label="Primary navigation">
           <ul class="nav-links" id="primary-navigation" data-nav>
-            <li><a href="index.html" class="is-active" aria-current="page">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="credentials.html">Credentials</a></li>
-            <li><a href="philosophy.html">Philosophy</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#home" class="is-active" aria-current="page">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#credentials">Credentials</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+              <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+                <span class="icon-light">🌙</span>
+                <span class="icon-dark">☀️</span>
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -75,7 +88,7 @@
         <div class="container hero-grid">
           <div class="hero-copy reveal">
             <div class="instrument-rule" aria-hidden="true"></div>
-            <p class="eyebrow">Ibadan-born physicist · Climate modeller · STEM builder</p>
+            <p class="eyebrow">Physicist · Climate modeller · STEM builder</p>
             <h1>Reading the sky to teach the <em>fundamentals</em> better.</h1>
             <p class="hero-lede">
               Babatunde Ayoola Awoyemi is an atmospheric physicist, STEM educator, EdTech consultant
@@ -84,8 +97,8 @@
             </p>
 
             <div class="hero-actions" aria-label="Primary calls to action">
-              <a class="btn btn-primary" href="contact.html">Start a collaboration</a>
-              <a class="btn btn-secondary" href="research.html">View research track</a>
+              <a class="btn btn-primary" href="#contact">Start a collaboration</a>
+              <a class="btn btn-secondary" href="#research">View research track</a>
             </div>
           </div>
 
@@ -152,59 +165,1023 @@
         </div>
       </section>
 
-      <section id="explore" class="section-pad explore-section muted-section">
+      <section id="about" class="section-pad about-section split-section">
+        <div class="container">
+          <div class="section-intro reveal">
+            <div class="instrument-rule" aria-hidden="true"></div>
+            <p class="eyebrow">About</p>
+            <h2>Working at the intersection of atmospheric physics, climate research, and STEM education.</h2>
+          </div>
+          <div class="about-copy reveal" data-delay="80">
+            <p>
+              Babatunde works across atmospheric physics, climate data and renewable-energy research on one
+              side, and STEM education, curriculum design and practical technology training on the other —
+              turning satellite datasets and scientific method into insight for researchers and into clear,
+              hands-on lessons for learners.
+            </p>
+            <p>
+              His technical grounding spans solar-irradiance and wind-energy modelling, statistical analysis
+              of climate datasets, and front-end web development, which he applies to build the very tools —
+              dashboards, courses, and learning platforms — that he uses to teach.
+            </p>
+            <div class="capability-grid">
+              <span>Atmospheric &amp; climate modelling</span>
+              <span>Remote sensing</span>
+              <span>Solar radiation modelling</span>
+              <span>Wind energy statistics (Weibull)</span>
+              <span>Data analysis with SPSS</span>
+              <span>Python &amp; Fortran</span>
+              <span>HTML, CSS &amp; JavaScript</span>
+              <span>STEM curriculum design</span>
+              <span>Robotics &amp; coding labs</span>
+              <span>AI prompt engineering</span>
+              <span>Practical AI usage</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="section-pad education-section muted-section">
         <div class="container">
           <div class="section-heading reveal">
             <div class="instrument-rule" aria-hidden="true"></div>
-            <p class="eyebrow">Explore the site</p>
-            <h2>Eight pages, one story — pick where to start.</h2>
+            <p class="eyebrow">Education</p>
+            <h2>From foundational schooling to postgraduate atmospheric physics.</h2>
             <p>
-              The portfolio is organised into focused pages instead of one long scroll. Jump straight to
-              what interests you.
+              A learning path spanning early academic excellence, boarding-school formation, physics,
+              and postgraduate atmospheric science.
             </p>
           </div>
 
-          <div class="feature-grid reveal" data-delay="40">
-            <a class="feature-card nav-tile" href="about.html">
-              <span class="card-kicker">01 · Background</span>
-              <h3>👤 About</h3>
-              <p>The story behind the science — faith, curiosity, and a hands-on path into physics.</p>
-            </a>
-            <a class="feature-card nav-tile" href="education.html">
-              <span class="card-kicker">02 · Learning path</span>
-              <h3>🎓 Education</h3>
-              <p>From an Akobo primary school to postgraduate atmospheric physics at the University of Ibadan.</p>
-            </a>
-            <a class="feature-card nav-tile" href="research.html">
-              <span class="card-kicker">03 · Publications</span>
-              <h3>🔬 Research</h3>
-              <p>Solar irradiance, wind-energy statistics, and tropical solar-radiation modelling.</p>
-            </a>
-            <a class="feature-card nav-tile" href="experience.html">
-              <span class="card-kicker">04 · Roles</span>
-              <h3>💼 Experience</h3>
-              <p>STEM teaching, EdTech consulting, and programme leadership across seven roles.</p>
-            </a>
-            <a class="feature-card nav-tile" href="projects.html">
-              <span class="card-kicker">05 · Builds</span>
-              <h3>🚀 Projects</h3>
-              <p>32 live, open-source builds across four GitHub accounts — personal tools, babatundeawo-labs, Knowledge Base International Schools, and the Techbase STEM Academy curriculum.</p>
-            </a>
-            <a class="feature-card nav-tile" href="credentials.html">
-              <span class="card-kicker">06 · Recognition</span>
-              <h3>🏆 Credentials</h3>
-              <p>Leadership, design thinking, ICT, and community-impact certifications.</p>
-            </a>
-            <a class="feature-card nav-tile" href="philosophy.html">
-              <span class="card-kicker">07 · Outlook</span>
-              <h3>🧭 Philosophy</h3>
-              <p>Skills, interests, and the thinking that shapes the work.</p>
-            </a>
-            <a class="feature-card nav-tile" href="contact.html">
-              <span class="card-kicker">08 · Get in touch</span>
-              <h3>✉️ Contact</h3>
-              <p>Start a conversation about STEM, climate, or education-technology collaboration.</p>
-            </a>
+          <div class="education-grid">
+            <article class="education-card reveal">
+              <span>1994 — 2002</span>
+              <h3>Ronk New Age Nursery and Primary School</h3>
+              <p>Akobo, Ibadan. Graduated among the top students and was noted for hard work and sports.</p>
+            </article>
+            <article class="education-card reveal" data-delay="60">
+              <span>2002 — 2008</span>
+              <h3>Federal Government College Ogbomoso</h3>
+              <p>
+                Boarding-school education that developed resilience, independence, and social confidence.
+              </p>
+            </article>
+            <article class="education-card reveal" data-delay="100">
+              <span>2009 — 2014</span>
+              <h3>B.Sc. Physics — University of Ibadan</h3>
+              <p>
+                Completed undergraduate study in Physics, moving from disliking secondary-school physics
+                to excelling in it at university level.
+              </p>
+            </article>
+            <article class="education-card reveal" data-delay="140">
+              <span>Completed March 2019</span>
+              <h3>M.Sc. Physics (Atmospheric Physics) — University of Ibadan</h3>
+              <p>Deepened his focus on solar irradiance and atmospheric modelling through postgraduate research.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="research" class="section-pad research-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="instrument-rule" aria-hidden="true"></div>
+            <p class="eyebrow">Research &amp; publications</p>
+            <h2>Solar dynamics, atmospheric radiation, and wind-energy statistics.</h2>
+            <p>
+              His research combines satellite datasets, atmospheric modelling, numerical tools, and
+              statistical validation to support renewable-energy planning across tropical regions.
+            </p>
+          </div>
+
+          <div class="feature-grid reveal" data-delay="60">
+            <article class="feature-card large-card">
+              <span class="card-kicker">M.Sc. project · Published 2020</span>
+              <h3>Parametric Estimation of Direct Irradiance under All-Sky Conditions</h3>
+              <p>
+                Published in the <em>Bulletin of the Science Association of Nigeria</em>, the work estimated
+                direct irradiance from publicly available satellite datasets for all-sky conditions.
+              </p>
+              <ul class="check-list">
+                <li>Applied atmospheric physics to renewable-energy data challenges.</li>
+                <li>Supported solar planning where dense ground observations are limited.</li>
+                <li>Built on computational workflows using climate and satellite-data tools.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card">
+              <span class="card-kicker">Undergraduate project · ICRERA review</span>
+              <h3>Investigating Solar Dynamics</h3>
+              <p>
+                This project explored solar structure and variability and was prepared for review by the
+                International Conference on Renewable Energy Research and Applications.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <span class="card-kicker">Wind energy · Published 2022</span>
+              <h3>Weibull Wind-Speed Distribution in Nigeria</h3>
+              <p>
+                Published in the <em>Journal of Science and Technology</em>, with additional preparation for
+                the <em>International Journal of Energy and Environmental Engineering</em>.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section-pad muted-section">
+        <div class="container split-section">
+          <div class="section-intro reveal">
+            <div class="instrument-rule" aria-hidden="true"></div>
+            <p class="eyebrow">Professional experience</p>
+            <h2>Leading classrooms, consulting programmes, and data-driven learning projects.</h2>
+          </div>
+
+          <div class="timeline reveal" data-delay="100">
+            <article class="timeline-item">
+              <span>January 2025 — Present</span>
+              <h3>STEM Educator — Oyo State TESCOM</h3>
+              <p>Strengthening STEM access in public education.</p>
+            </article>
+            <article class="timeline-item">
+              <span>January 2022 — Present</span>
+              <h3>Lead Consultant — <a href="https://techbasengr.com.ng" target="_blank" rel="noopener">Techbase Consulting Services</a></h3>
+              <p>
+                Provides STEM educational services and consultancy to schools and private individuals, combining coding, robotics,
+                physics, mathematics, and STEM Educator training.
+              </p>
+            </article>
+            <article class="timeline-item">
+              <span>January 2022 — Present</span>
+              <h3>Lead Consultant — <a href="https://kbischools.com.ng" target="_blank" rel="noopener">Knowledge Base International Schools</a></h3>
+              <p>
+                Leads STEM and education-technology consulting across Knowledge Base International Schools, Ibadan.
+              </p>
+            </article>
+            <article class="timeline-item">
+              <span>2017 — 2022</span>
+              <h3>Head of Training and Programs — Techbridge Consulting Limited</h3>
+              <p>
+                Directed robotics and coding programmes, developed Python, Scratch, and web-development
+                curricula, and contributed to major company revenue growth within a single year.
+              </p>
+            </article>
+            <article class="timeline-item">
+              <span>2016 — 2019</span>
+              <h3>NTeach Instructor — Federal Government NTeach Programme</h3>
+              <p>Delivered STEM education via the ICT instruction route.</p>
+            </article>
+            <article class="timeline-item">
+              <span>2015 — 2016</span>
+              <h3>Data Analyst — International Institute of Tropical Agriculture (IITA)</h3>
+              <p>Analysed agricultural datasets with SPSS and reported on climate resilience in West Africa.</p>
+            </article>
+            <article class="timeline-item">
+              <span>2014 — 2015</span>
+              <h3>NYSC Teacher — Akwa Ibom State</h3>
+              <p>
+                Delivered secondary-level instruction with a visual-aid based teaching approach, recognised
+                for exemplary work output during service year.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section-pad muted-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="instrument-rule" aria-hidden="true"></div>
+            <p class="eyebrow">Projects &amp; repositories</p>
+            <h2>What I've built — tools, curriculum, and open STEM resources.</h2>
+            <p>
+              32 live, open-source builds across four GitHub accounts — personal tools and AI-project
+              guides, babatundeawo-labs experiments, the Knowledge Base International Schools portal, and the
+              Techbase STEM Academy curriculum I lead and maintain. Every card previews the live homepage and
+              links straight to it and to the source code.
+            </p>
+          </div>
+
+          <div class="project-stats reveal" data-delay="20">
+            <span><strong>32</strong> live projects</span>
+            <span><strong>4</strong> GitHub accounts</span>
+            <span><strong>356+</strong> free STEM lessons</span>
+            <span><strong>100%</strong> open source</span>
+          </div>
+
+          <div class="project-filter reveal" data-delay="30" role="tablist" aria-label="Filter projects">
+            <button type="button" class="filter-btn is-active" data-filter="all">All projects</button>
+            <button type="button" class="filter-btn" data-filter="personal">Personal projects &amp; tools</button>
+            <button type="button" class="filter-btn" data-filter="labs">babatundeawo-labs</button>
+            <button type="button" class="filter-btn" data-filter="kbi">Knowledge Base Schools</button>
+            <button type="button" class="filter-btn" data-filter="techbase">Techbase STEM Academy</button>
+          </div>
+
+<div class="project-group-heading reveal" data-delay="20" data-group="personal">
+            <h3>Personal projects & tools · github.com/babatundeawo</h3>
+            <span>20 repositories</span>
+          </div>
+
+          <div class="feature-grid project-preview-grid reveal" data-delay="40">
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/ilado-school-dashboard/" loading="lazy" tabindex="-1" title="Live homepage preview of Ilado-Sagbo Community Grammar School — Records Dashboard"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · School dashboard</span>
+                <h3>🏫 Ilado-Sagbo Community Grammar School — Records Dashboard</h3>
+                <p>A multi-page, light-themed, mobile-responsive administrative dashboard preloaded with real ISCGS enrollment, term-result, staff and retirement/handover records — built for a local, offline presentation to Oyo State education officials.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/ilado-school-dashboard/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/ilado-school-dashboard" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/deep-calls/" loading="lazy" tabindex="-1" title="Live homepage preview of Deep Calls"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · Faith & theology</span>
+                <h3>✝️ Deep Calls</h3>
+                <p>Long-form Christian apologetics essays — grace, sovereignty, spiritual warfare, church and culture. A custom Python static-site generator turns Markdown essays into a Bible-study-styled site with scripture-blue and warm-gold theming, live search, and scroll-reveal animation.</p>
+                <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/deep-calls/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/deep-calls" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/ai-prompt-library/" loading="lazy" tabindex="-1" title="Live homepage preview of PromptOS — AI Prompt Library"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · AI tool</span>
+                <h3>📚 PromptOS — AI Prompt Library</h3>
+                <p>A curated, searchable library of AI prompts across categories, styled as a light, "dev tool" interface with code-editor-style cards. Fully searchable, one-click copy, mobile-first, and works entirely offline as a single file.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/ai-prompt-library/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/ai-prompt-library" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/deploybase/" loading="lazy" tabindex="-1" title="Live homepage preview of Deploybase — AI Deployment Directory"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · AI directory</span>
+                <h3>🗂️ Deploybase — AI Deployment Directory</h3>
+                <p>A directory listing every deployed Claude Project (custom AI system) built and run by Babatunde Awoyemi / Techbase Consultant Services — what each one does, who it serves, and how a session with it works.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/deploybase/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/deploybase" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/educator-ai-toolkit/" loading="lazy" tabindex="-1" title="Live homepage preview of Educator AI Toolkit"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · EdTech tool</span>
+                <h3>🧰 Educator AI Toolkit</h3>
+                <p>A free, mobile-first reference site for Nigerian educators covering two Claude AI setups — an exam, marking-guide & revision-file generator, and a weekly lesson-note generator — plus onboarding, resources, and FAQ pages.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/educator-ai-toolkit/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/educator-ai-toolkit" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/globalwarming/" loading="lazy" tabindex="-1" title="Live homepage preview of Global Warming Explorer"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · Education site</span>
+                <h3>🌍 Global Warming Explorer</h3>
+                <p>A from-scratch rebuild of a classroom presentation into a 27-page, mobile-friendly interactive learning site — free-roam exploration, an 8-lesson guided course with worksheets and a certificate, live weather data, and a classroom check-in dashboard.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/globalwarming/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/globalwarming" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/ai-studio-android-guide/" loading="lazy" tabindex="-1" title="Live homepage preview of AI Studio → Android Deployment Guide"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · Guide</span>
+                <h3>📱 AI Studio → Android Deployment Guide</h3>
+                <p>A 23-step interactive walkthrough for building an AI-powered app in Google AI Studio and shipping it as an installable Android PWA via GitHub and Vercel — written for people with no coding experience.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/ai-studio-android-guide/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/ai-studio-android-guide" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/career-engine-guide/" loading="lazy" tabindex="-1" title="Live homepage preview of Personal AI Career Engine"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · Guide</span>
+                <h3>💼 Personal AI Career Engine</h3>
+                <p>A free guide to building a CV and career documents with NotebookLM and a configured Claude Project — turning everyday AI tools into a personal career engine.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/career-engine-guide/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/career-engine-guide" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/classpulse-national/" loading="lazy" tabindex="-1" title="Live homepage preview of ClassPulse National"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · AI education tool</span>
+                <h3>📊 ClassPulse National</h3>
+                <p>A Claude Project write-up: the instructions behind an AI programming tutor that guides a student developer through building a national, multi-school classroom feedback platform for Nigeria, one class at a time.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/classpulse-national/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/classpulse-national" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/github-lesson-writer/" loading="lazy" tabindex="-1" title="Live homepage preview of GitHub Lesson Writer"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · AI education tool</span>
+                <h3>✍️ GitHub Lesson Writer</h3>
+                <p>A Claude Project write-up: the instructions behind a curriculum writer that turns source links into complete, beginner-safe HTML lessons grounded in Nigerian classrooms.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/github-lesson-writer/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/github-lesson-writer" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/github-portfolio-rebuild/" loading="lazy" tabindex="-1" title="Live homepage preview of GitHub Portfolio Rebuild"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · AI project-management tool</span>
+                <h3>🗃️ GitHub Portfolio Rebuild</h3>
+                <p>A Claude Project write-up: the project-manager instructions used to keep two GitHub profiles and portfolio sites consistent, accurate and up to date as new repositories ship.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/github-portfolio-rebuild/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/github-portfolio-rebuild" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/nigerian-christian-apologist/" loading="lazy" tabindex="-1" title="Live homepage preview of Nigerian Christian Apologist"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · AI voice/content tool</span>
+                <h3>🎙️ Nigerian Christian Apologist</h3>
+                <p>A Claude Project write-up: the voice engine behind Deep Calls, turning sermon notes, transcripts and Bible study material into structured, publish-ready apologetics essays.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/nigerian-christian-apologist/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/nigerian-christian-apologist" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/social-content-engine/" loading="lazy" tabindex="-1" title="Live homepage preview of Social Content Engine"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · AI content tool</span>
+                <h3>📣 Social Content Engine</h3>
+                <p>A Claude Project write-up: the system instructions behind a daily social-media content generator that turns a topic or theme into a ready-to-post caption set.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/social-content-engine/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/social-content-engine" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/substack-post-formatter/" loading="lazy" tabindex="-1" title="Live homepage preview of Substack Post Formatter"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · AI publishing tool</span>
+                <h3>📰 Substack Post Formatter</h3>
+                <p>A Claude Project write-up: the instructions behind a publishing assistant that turns a finished write-up into a complete, publish-ready Substack post package.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/substack-post-formatter/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/substack-post-formatter" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/techbase-code-coach/" loading="lazy" tabindex="-1" title="Live homepage preview of Techbase Code Coach"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · STEM Academy tool</span>
+                <h3>👨‍💻 Techbase Code Coach</h3>
+                <p>A Claude Project write-up: the instructions behind a phase-by-phase coding tutor for young Techbase STEM Academy students, ending in a real project the student hosts themselves.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/techbase-code-coach/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/techbase-code-coach" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/exam-revision-generator/" loading="lazy" tabindex="-1" title="Live homepage preview of Exam & Revision File Generator"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · AI education tool</span>
+                <h3>📝 Exam & Revision File Generator</h3>
+                <p>A Claude Project write-up: the instructions behind a tool that turns uploaded e-notes into a properly formatted exam paper with its own marking guide, or a self-study revision file, for any Nigerian secondary school term, subject and class.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/exam-revision-generator/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/exam-revision-generator" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/lesson-note-generator/" loading="lazy" tabindex="-1" title="Live homepage preview of Weekly Lesson Note Generator"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · AI education tool</span>
+                <h3>🗒️ Weekly Lesson Note Generator</h3>
+                <p>A Claude Project write-up: the instructions behind a tool that generates a complete weekly lesson-note booklet — objectives, presentation steps, evaluation and assignments for every period — from e-notes or a topic list alone.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/lesson-note-generator/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/lesson-note-generator" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/bible-family-feud/" loading="lazy" tabindex="-1" title="Live homepage preview of Bible Family Feud"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · Church event tool</span>
+                <h3>🎉 Bible Family Feud</h3>
+                <p>An interactive, Bible-themed Family Feud game show built for church events — 37 rounds, live scoring, and no install needed for hosts or players.</p>
+                <div class="project-tags">
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/bible-family-feud/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/bible-family-feud" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo.github.io/akinyele-spelling-challenge/" loading="lazy" tabindex="-1" title="Live homepage preview of Akinyele Spelling Challenge"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · Event microsite</span>
+                <h3>🔤 Akinyele Spelling Challenge</h3>
+                <p>A fully responsive, static microsite built to document the 2026 Akinyele Spelling Challenge — event details, participating schools, and results, presented as a clean public record.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo.github.io/akinyele-spelling-challenge/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/akinyele-spelling-challenge" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="personal">
+              <div class="project-preview project-preview--fallback" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-fallback">
+                  <span class="preview-fallback-icon">💰</span>
+                  <span class="preview-fallback-label">Hosted externally</span>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Personal · Mindset app</span>
+                <h3>💰 Millionaire Mindset</h3>
+                <p>A personal-development app exploring wealth-building habits and mindset shifts — built and hosted on Replit rather than GitHub Pages.</p>
+                <div class="project-tags">
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://replit.com/@ba-awoyemi/Millionaire-Mindset" target="_blank" rel="noopener">Visit Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo/Millionaire-Mindset" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="project-group-heading reveal" data-delay="20" data-group="labs">
+            <h3>babatundeawo-labs · github.com/babatundeawo-labs</h3>
+            <span>3 repositories</span>
+          </div>
+
+          <div class="feature-grid project-preview-grid reveal" data-delay="40">
+            <article class="feature-card project-card" data-project-category="labs">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo-labs.github.io/smart-form-validator/" loading="lazy" tabindex="-1" title="Live homepage preview of Magical Regex Form & Secret Code Playground"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">babatundeawo-labs · Teaching tool</span>
+                <h3>🧩 Magical Regex Form & Secret Code Playground</h3>
+                <p>A modernised, child-friendly web app that teaches kids and students Regular Expressions through gamified interaction — a live regex sandbox, a password-strength "secret code" checker with real-time scoring, and a playful pastel design system.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo-labs.github.io/smart-form-validator/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo-labs/smart-form-validator" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="labs">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo-labs.github.io/student-report-card/" loading="lazy" tabindex="-1" title="Live homepage preview of Student Report Card System"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">babatundeawo-labs · School management</span>
+                <h3>🧾 Student Report Card System</h3>
+                <p>A student information and performance management system for recording grades, generating report cards, and tracking class performance — a self-contained browser app built for schools with no server or database required.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo-labs.github.io/student-report-card/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo-labs/student-report-card" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="labs">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://babatundeawo-labs.github.io/safe-calculator/" loading="lazy" tabindex="-1" title="Live homepage preview of Safe Calculator"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">babatundeawo-labs · Utility tool</span>
+                <h3>🧮 Safe Calculator</h3>
+                <p>A lightweight, browser-based calculator tool — no install, no dependencies, just open and use.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://babatundeawo-labs.github.io/safe-calculator/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/babatundeawo-labs/safe-calculator" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="project-group-heading reveal" data-delay="20" data-group="kbi">
+            <h3>Knowledge Base International Schools · github.com/kbischool</h3>
+            <span>2 repositories</span>
+          </div>
+
+          <div class="feature-grid project-preview-grid reveal" data-delay="40">
+            <article class="feature-card project-card large-card" data-project-category="kbi">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://kbischool.github.io/" loading="lazy" tabindex="-1" title="Live homepage preview of Knowledge Base International Schools"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Organisation · School hub</span>
+                <h3>🏫 Knowledge Base International Schools</h3>
+                <p>The public hub site for Knowledge Base International Schools, Apapa/Moniya, Ibadan — school information plus a link through to the private fee-lookup portal, built and maintained as Lead Consultant.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">GitHub Pages</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://kbischool.github.io/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/kbischool/kbischool.github.io" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="kbi">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://kbischool.github.io/school-fee-portal/" loading="lazy" tabindex="-1" title="Live homepage preview of School Fee Payment Portal"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Knowledge Base · School administration</span>
+                <h3>💳 School Fee Payment Portal</h3>
+                <p>A secure, private lookup system for parents to check a child's school-fee balance and itemised breakdown by unique family code, term by term — mobile-friendly, real-time, and built to store no sensitive personal data client-side.</p>
+                <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://kbischool.github.io/school-fee-portal/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/kbischool/school-fee-portal" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="project-group-heading reveal" data-delay="20" data-group="techbase">
+            <h3>Techbase STEM Academy · github.com/techbaseng</h3>
+            <span>7 repositories</span>
+          </div>
+
+          <div class="feature-grid project-preview-grid reveal" data-delay="40">
+            <article class="feature-card project-card large-card" data-project-category="techbase">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://techbaseng.github.io/" loading="lazy" tabindex="-1" title="Live homepage preview of Techbase STEM Academy"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Organisation · STEM Academy hub</span>
+                <h3>🎓 Techbase STEM Academy</h3>
+                <p>The hub for 356+ free lessons and projects across six self-paced courses — HTML, CSS, JavaScript, Python, Scratch, and Robotics/micro:bit — built for beginner-to-intermediate African learners. No sign-up, no cost, no prerequisites to start.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">Jekyll / GitHub Pages</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://techbaseng.github.io/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/techbaseng/techbaseng.github.io" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                  <a class="project-link project-link--youtube" href="https://www.youtube.com/@techbasengr" target="_blank" rel="noopener">YouTube ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="techbase">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://techbaseng.github.io/techbase-html/" loading="lazy" tabindex="-1" title="Live homepage preview of HTML Fundamentals"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Course · 34 lessons · Beginner</span>
+                <h3>🌐 HTML Fundamentals</h3>
+                <p>Free beginner HTML course — the first step on the Techbase web-development track.</p>
+                <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://techbaseng.github.io/techbase-html/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/techbaseng/techbase-html" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="techbase">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://techbaseng.github.io/techbase-css/" loading="lazy" tabindex="-1" title="Live homepage preview of CSS Styling"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Course · 73 lessons · Beginner → Advanced</span>
+                <h3>🎨 CSS Styling</h3>
+                <p>Free CSS course covering layout, responsive design, and modern styling techniques.</p>
+                <div class="project-tags">
+                <span class="project-tag">CSS</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://techbaseng.github.io/techbase-css/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/techbaseng/techbase-css" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="techbase">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://techbaseng.github.io/techbase-js/" loading="lazy" tabindex="-1" title="Live homepage preview of JavaScript"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Course · 46 lessons · Intermediate</span>
+                <h3>⚡ JavaScript</h3>
+                <p>Free JavaScript course taking learners from fundamentals to interactive, dynamic pages.</p>
+                <div class="project-tags">
+                <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://techbaseng.github.io/techbase-js/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/techbaseng/techbase-js" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="techbase">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://techbaseng.github.io/techbase-python/" loading="lazy" tabindex="-1" title="Live homepage preview of Python Programming"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Course · 45 lessons · Beginner → Advanced</span>
+                <h3>🐍 Python Programming</h3>
+                <p>Free Python course spanning core syntax through to more advanced programming concepts.</p>
+                <div class="project-tags">
+                <span class="project-tag">Python</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://techbaseng.github.io/techbase-python/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/techbaseng/techbase-python" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="techbase">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://techbaseng.github.io/techbase-scratch/" loading="lazy" tabindex="-1" title="Live homepage preview of Scratch Programming"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Course · 35 projects · Ages 8–16</span>
+                <h3>🟠 Scratch Programming</h3>
+                <p>Free Scratch course for younger and complete-beginner learners, based on the Raspberry Pi Foundation curriculum, taught through 35 hands-on projects.</p>
+                <div class="project-tags">
+                <span class="project-tag">Scratch</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://techbaseng.github.io/techbase-scratch/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/techbaseng/techbase-scratch" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="feature-card project-card" data-project-category="techbase">
+              <div class="project-preview" aria-hidden="true">
+                <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                <div class="preview-frame">
+                  <iframe src="https://techbaseng.github.io/techbase-robotics/" loading="lazy" tabindex="-1" title="Live homepage preview of Robotics & micro:bit"></iframe>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="card-kicker">Course · 123 projects · Beginner → Advanced</span>
+                <h3>🤖 Robotics & micro:bit</h3>
+                <p>Free robotics and physical-computing course covering all 123 official BBC micro:bit projects from microbit.org.</p>
+                <div class="project-tags">
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">MakeCode</span>
+                </div>
+                <div class="project-links">
+                  <a class="project-link project-link--live" href="https://techbaseng.github.io/techbase-robotics/" target="_blank" rel="noopener">Live Site ↗</a>
+                  <a class="project-link project-link--repo" href="https://github.com/techbaseng/techbase-robotics" target="_blank" rel="noopener">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="credentials" class="section-pad credentials-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="instrument-rule" aria-hidden="true"></div>
+            <p class="eyebrow">Credentials &amp; recognition</p>
+            <h2>A layered portfolio of leadership, design thinking, ICT, and community-impact credentials.</h2>
+          </div>
+
+          <div class="credentials-grid">
+            <article class="credential-card reveal">
+              <span>Leadership</span>
+              <strong>YALI RLC West Africa Leadership Certification</strong>
+              <small>2024/2025</small>
+            </article>
+            <article class="credential-card reveal" data-delay="60">
+              <span>Design thinking</span>
+              <strong>Australian Computing Academy, Cartedo, and Unilever Level-Up 2.0</strong>
+              <small>Space Invaders Blockly · COVID-19 response · Business perspective</small>
+            </article>
+            <article class="credential-card reveal" data-delay="100">
+              <span>Web &amp; ICT</span>
+              <strong>WordPress, HTML5, coding foundations, graphic design, and Hour of Code</strong>
+              <small>Coursera · University of Michigan · SoloLearn · LinkedIn Learning</small>
+            </article>
+            <article class="credential-card reveal" data-delay="140">
+              <span>Community impact</span>
+              <strong>STEM for Development Programs Associate and LEAP Africa volunteer certification</strong>
+              <small>SDG-focused volunteering</small>
+            </article>
+            <article class="credential-card reveal" data-delay="180">
+              <span>Recognition</span>
+              <strong>RCCG Most Outstanding Worker and Healing Lives Initiative appreciation</strong>
+              <small>2013/2014 · July 2024</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-pad contact-section">
+        <div class="container contact-panel reveal">
+          <div>
+            <div class="instrument-rule" aria-hidden="true"></div>
+            <p class="eyebrow">Contact</p>
+            <h2>Let's build the next STEM, climate, or education technology solution.</h2>
+            <p>
+              Open to collaborations in physics teaching, STEM education, climate modelling, renewable
+              energy, remote sensing, education consultancy, and web development.
+            </p>
+          </div>
+
+          <div>
+            <div class="contact-links" aria-label="Contact and professional links">
+              <a href="mailto:babatundeawoyemi91@gmail.com">Email</a>
+              <a href="https://wa.me/2348126909498" target="_blank" rel="noopener">WhatsApp</a>
+              <a href="https://www.linkedin.com/in/ba-awoyemi/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://github.com/babatundeawo" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.youtube.com/@techbasengr" target="_blank" rel="noopener">YouTube</a>
+              <a href="https://x.com/ba_awoyemi" target="_blank" rel="noopener">X / Twitter</a>
+              <a href="https://scratch.mit.edu/users/DeCreed/" target="_blank" rel="noopener">Scratch</a>
+            </div>
+
+            <div class="org-strip">
+              <p>Organisations</p>
+              <div class="contact-links">
+                <a href="https://techbasengr.com.ng" target="_blank" rel="noopener">Techbase Consulting</a>
+                <a href="https://kbischools.com.ng" target="_blank" rel="noopener">KBI Schools</a>
+                <a href="https://github.com/techbaseng" target="_blank" rel="noopener">techbaseng on GitHub</a>
+                <a href="https://github.com/kbischool" target="_blank" rel="noopener">kbischool on GitHub</a>
+                <a href="https://github.com/babatundeawo-labs" target="_blank" rel="noopener">babatundeawo-labs on GitHub</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
