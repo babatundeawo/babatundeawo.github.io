@@ -10,71 +10,75 @@
    =========================================================== */
 
 :root {
-  /* Page surfaces — clear-sky theme: a cool, clean daylight
-     surface (in place of the old warm-paper cream) that still
-     carries the sun/atmosphere accent identity below. */
-  --void: #f6f9fc;          /* page background — pale, clean clear-sky white */
-  --void-rgb: 246, 249, 252;
+  /* Page surfaces — matched to the deepseek reference theme:
+     a clean white/near-white surface with a single blue accent. */
+  --void: #f8faff;          /* page background */
+  --void-rgb: 248, 250, 255;
   --panel: #ffffff;         /* card / panel surface */
-  --panel-soft: #eef3f9;    /* alternating section background — soft atmosphere blue */
-  --panel-line: rgba(20, 30, 48, 0.10);
-  --hairline: rgba(20, 30, 48, 0.07);
-  --paper: #131b2b;         /* primary ink text — deep observatory navy on light */
-  --haze: #4b5872;          /* secondary / muted text */
-  --haze-dim: #6b7690;      /* tertiary text, captions */
-  --ink: #131b2b;           /* dark text used on top of bright accent fields */
+  --panel-soft: #ffffff;    /* alternating section background */
+  --panel-line: #e8ecf4;
+  --hairline: #e8ecf4;
+  --paper: #1a1a2e;         /* primary ink text */
+  --haze: #3d3d5c;          /* secondary text */
+  --haze-dim: #6c6c8a;      /* tertiary text, captions */
+  --ink: #1a1a2e;
 
-  /* Deep, AA-contrast-safe accents — used for text, thin borders,
-     small UI (dots, underlines, kickers) */
-  --solar: #c2570e;
-  --corona: #9c6d05;
-  --irradiance: #0a7d8c;
-  --aurora: #6248c9;
+  /* Single accent (blue), used for text, borders and small UI */
+  --solar: #4f6ef7;
+  --corona: #4f6ef7;
+  --irradiance: #4f6ef7;
+  --aurora: #4f6ef7;
+  --accent-hover: #3a56d4;
+  --accent-light: rgba(79, 110, 247, 0.12);
 
   /* Bright accents — used only for large color fields: glows,
-     gradients, and the sun graphic itself */
-  --solar-bright: #ff9a4d;
-  --corona-bright: #ffcf6b;
-  --irradiance-bright: #35c8d6;
+     gradients, and the sun graphic itself. The sun keeps a warm
+     tone (it is, after all, depicting an actual sun); every other
+     UI accent uses the blue above. */
+  --solar-bright: #ffb14d;
+  --corona-bright: #ffd68a;
+  --irradiance-bright: #7b93fa;
 
-  --shadow-deep: 0 30px 80px rgba(20, 30, 48, 0.12);
-  --shadow-soft: 0 16px 40px rgba(20, 30, 48, 0.08);
-  --glow-solar: 0 0 1px rgba(194, 87, 14, 0.22), 0 20px 60px rgba(194, 87, 14, 0.10);
+  --shadow-deep: 0 16px 48px rgba(26, 26, 46, 0.10);
+  --shadow-soft: 0 8px 30px rgba(26, 26, 46, 0.06);
+  --glow-solar: 0 8px 24px rgba(79, 110, 247, 0.30);
 
-  --font-display: "Fraunces", "Iowan Old Style", serif;
-  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   color-scheme: light;
   --theme-transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* ---------- Dark theme — same instrument, read after dusk ---------- */
+/* ---------- Dark theme ---------- */
 [data-theme="dark"] {
   color-scheme: dark;
-  --void: #0b1220;
-  --void-rgb: 11, 18, 32;
-  --panel: #121b2e;
-  --panel-soft: #0f1729;
-  --panel-line: rgba(220, 230, 245, 0.12);
-  --hairline: rgba(220, 230, 245, 0.09);
-  --paper: #eaf0fa;
-  --haze: #aab6cc;
-  --haze-dim: #8290a9;
-  --ink: #0b1220;
+  --void: #0f0f1a;
+  --void-rgb: 15, 15, 26;
+  --panel: #1e1e34;
+  --panel-soft: #18182a;
+  --panel-line: #2d2d4a;
+  --hairline: #2d2d4a;
+  --paper: #ececf6;
+  --haze: #c8c8e0;
+  --haze-dim: #9494b0;
+  --ink: #0f0f1a;
 
-  --solar: #ff9a4d;
-  --corona: #ffcf6b;
-  --irradiance: #4fd6c8;
-  --aurora: #a793f5;
+  --solar: #7b93fa;
+  --corona: #7b93fa;
+  --irradiance: #7b93fa;
+  --aurora: #7b93fa;
+  --accent-hover: #5f7af0;
+  --accent-light: rgba(123, 147, 250, 0.18);
 
-  --solar-bright: #ff9a4d;
-  --corona-bright: #ffcf6b;
-  --irradiance-bright: #4fd6c8;
+  --solar-bright: #ffb14d;
+  --corona-bright: #ffd68a;
+  --irradiance-bright: #7b93fa;
 
-  --shadow-deep: 0 30px 80px rgba(0, 0, 0, 0.45);
-  --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.35);
-  --glow-solar: 0 0 1px rgba(255, 154, 77, 0.3), 0 20px 60px rgba(255, 154, 77, 0.14);
+  --shadow-deep: 0 16px 48px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.40);
+  --glow-solar: 0 8px 24px rgba(123, 147, 250, 0.35);
 }
 
 
@@ -188,22 +192,22 @@ h3 {
   font-family: var(--font-display);
   color: var(--paper);
   line-height: 1.12;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 h1 {
   font-size: clamp(2.6rem, 6vw, 4.4rem);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h2 {
   font-size: clamp(1.9rem, 3.6vw, 2.7rem);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h3 {
   font-size: 1.18rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .skip-link {
@@ -424,35 +428,39 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.4rem;
-  border-radius: 0.55rem;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  letter-spacing: 0.02em;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0;
   text-decoration: none;
-  border: 1px solid transparent;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--solar-bright), var(--corona-bright));
-  color: var(--ink);
-  box-shadow: 0 14px 30px rgba(255, 138, 61, 0.28);
+  background: var(--solar);
+  color: #ffffff;
+  box-shadow: var(--glow-solar);
 }
 
 .btn-primary:hover {
+  background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 18px 44px rgba(255, 138, 61, 0.38);
+  box-shadow: 0 12px 32px rgba(79, 110, 247, 0.40);
 }
 
 .btn-secondary {
+  background: transparent;
   border-color: var(--panel-line);
   color: var(--paper);
 }
 
 .btn-secondary:hover {
-  border-color: var(--irradiance);
-  color: var(--irradiance);
+  border-color: var(--solar);
+  color: var(--solar);
+  transform: translateY(-2px);
 }
 
 /* ---------- Hero ---------- */
@@ -1244,6 +1252,31 @@ blockquote {
     var(--void);
 }
 
+.projects-teaser-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: var(--panel);
+  border: 1px solid var(--panel-line);
+  border-radius: 1.4rem;
+  padding: clamp(1.8rem, 4vw, 3rem);
+  box-shadow: var(--shadow-soft);
+}
+
+.projects-teaser-panel > div:first-child {
+  max-width: 640px;
+}
+
+.projects-teaser-panel h2 {
+  margin: 0.6rem 0 0.8rem;
+}
+
+.projects-teaser-panel .btn {
+  flex-shrink: 0;
+}
+
 .contact-panel {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1365,6 +1398,11 @@ blockquote {
   .philosophy-grid,
   .contact-panel {
     grid-template-columns: 1fr;
+  }
+
+  .projects-teaser-panel {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .hero-visual {
