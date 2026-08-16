@@ -1,186 +1,253 @@
-const header = document.querySelector("[data-header]");
-const navToggle = document.querySelector(".nav-toggle");
-const navMenu = document.querySelector("[data-nav]");
-const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
-const revealItems = document.querySelectorAll(".reveal");
-const yearSpan = document.getElementById("year");
+(function () {
+    'use strict';
 
-if (yearSpan) {
-  yearSpan.textContent = new Date().getFullYear();
-}
+    // ===== DATA (real — no fabricated proficiency levels) =====
+    const skillsData = [
+        { name: 'HTML5', icon: 'fab fa-html5' },
+        { name: 'CSS3', icon: 'fab fa-css3-alt' },
+        { name: 'JavaScript', icon: 'fab fa-js' },
+        { name: 'Python', icon: 'fab fa-python' },
+        { name: 'Git & GitHub', icon: 'fab fa-git-alt' },
+        { name: 'Climate Modelling', icon: 'fas fa-cloud-sun' },
+        { name: 'Remote Sensing', icon: 'fas fa-satellite-dish' },
+        { name: 'Data Analysis (SPSS)', icon: 'fas fa-chart-line' },
+        { name: 'Robotics & Coding', icon: 'fas fa-robot' },
+        { name: 'AI Tools', icon: 'fas fa-brain' },
+    ];
 
-// ---------- Dark mode toggle ----------
+    // ===== DOM REFS =====
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburger');
+    const themeToggle = document.getElementById('themeToggle');
+    const scrollTopBtn = document.getElementById('scrollTop');
+    const skillsGrid = document.getElementById('skillsGrid');
+    const yearSpan = document.getElementById('year');
+    const statProjects = document.getElementById('statProjects');
+    const statPubs = document.getElementById('statPubs');
+    const statLessons = document.getElementById('statLessons');
 
-const themeToggle = document.getElementById("themeToggle");
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-const applyTheme = theme => {
-  if (theme === "dark") {
-    document.documentElement.setAttribute("data-theme", "dark");
-  } else {
-    document.documentElement.removeAttribute("data-theme");
-  }
-  themeToggle?.setAttribute("aria-pressed", String(theme === "dark"));
-};
+    // ===== THEME =====
+    function getTheme() { return localStorage.getItem('theme') || 'light'; }
 
-themeToggle?.addEventListener("click", () => {
-  const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-  const next = isDark ? "light" : "dark";
-  localStorage.setItem("theme", next);
-  applyTheme(next);
-});
-
-// ---------- One-page scroll-spy navigation ----------
-
-const sections = Array.from(navLinks)
-  .map(link => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
-
-const setActiveLink = id => {
-  navLinks.forEach(link => {
-    link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
-  });
-};
-
-if ("IntersectionObserver" in window && sections.length) {
-  const spyObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActiveLink(entry.target.id);
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        if (themeToggle) {
+            const icon = themeToggle.querySelector('i');
+            if (icon) icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         }
-      });
-    },
-    { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
-  );
+    }
+    setTheme(getTheme());
+    themeToggle && themeToggle.addEventListener('click', () => {
+        setTheme(getTheme() === 'dark' ? 'light' : 'dark');
+    });
 
-  sections.forEach(section => spyObserver.observe(section));
-}
+    // ===== MOBILE NAV =====
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function () {
+            const isOpen = navLinks.classList.toggle('open');
+            hamburger.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
 
-// Respect reduced-motion: strip the SMIL sun animation so it stays parked
-// at its resting position on the arc instead of sweeping across it.
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // ===== ACTIVE NAV LINK (scroll-spy for in-page anchors only) =====
+    const sections = document.querySelectorAll('section[id]');
+    const anchorLinks = navLinks ? navLinks.querySelectorAll("a[href^='#']") : [];
 
-if (prefersReducedMotion) {
-  document.querySelectorAll(".sun-motion").forEach(node => node.remove());
-}
+    function updateActiveNav() {
+        if (!anchorLinks.length) return;
+        const scrollY = window.scrollY + 120;
+        let current = 'home';
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            if (scrollY >= top && scrollY < top + height) current = section.id;
+        });
+        anchorLinks.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+        });
+    }
 
-const setHeaderState = () => {
-  header?.classList.toggle("is-scrolled", window.scrollY > 12);
-};
+    // ===== NAVBAR SHADOW =====
+    function handleNavShadow() {
+        navbar && navbar.classList.toggle('scrolled', window.scrollY > 20);
+    }
 
-const closeMenu = () => {
-  navToggle?.classList.remove("is-active");
-  navToggle?.setAttribute("aria-expanded", "false");
-  navMenu?.classList.remove("is-open");
-  document.body.classList.remove("nav-open");
-};
+    // ===== SCROLL TO TOP =====
+    function handleScrollTopVisibility() {
+        scrollTopBtn && scrollTopBtn.classList.toggle('visible', window.scrollY > 500);
+    }
+    scrollTopBtn && scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-navToggle?.addEventListener("click", () => {
-  const isOpen = navMenu?.classList.toggle("is-open") ?? false;
-  navToggle.classList.toggle("is-active", isOpen);
-  navToggle.setAttribute("aria-expanded", String(isOpen));
-  document.body.classList.toggle("nav-open", isOpen);
-});
+    // ===== RENDER SKILLS =====
+    function renderSkills() {
+        if (!skillsGrid) return;
+        skillsGrid.innerHTML = '';
+        skillsData.forEach((skill, index) => {
+            const card = document.createElement('div');
+            card.className = 'skill-card reveal';
+            if (index < 4) card.classList.add('reveal-delay-' + (index % 3 + 1));
+            card.innerHTML = `
+                <span class="skill-icon"><i class="${skill.icon}"></i></span>
+                <span class="skill-name">${skill.name}</span>
+            `;
+            skillsGrid.appendChild(card);
+        });
+    }
 
-navLinks.forEach(link => {
-  link.addEventListener("click", closeMenu);
-});
+    // ===== ANIMATE STATS (real figures) =====
+    function animateStats() {
+        if (!statProjects || !statPubs || !statLessons) return;
+        const targets = [
+            { el: statProjects, target: 21, suffix: '+' },
+            { el: statPubs, target: 3, suffix: '' },
+            { el: statLessons, target: 356, suffix: '+' },
+        ];
+        let animated = false;
 
-window.addEventListener("scroll", setHeaderState, { passive: true });
-setHeaderState();
-
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.dataset.delay;
-
-          if (delay) {
-            entry.target.style.setProperty("--delay", `${delay}ms`);
-          }
-
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
+        function isInView() {
+            const about = document.getElementById('about');
+            if (!about) return false;
+            const rect = about.getBoundingClientRect();
+            return rect.top < window.innerHeight - 100;
         }
-      });
-    },
-    { threshold: 0, rootMargin: "200px 0px -5% 0px" }
-  );
 
-  revealItems.forEach(item => revealObserver.observe(item));
-
-  // Fallback safety net: IntersectionObserver can miss short sections
-  // during very fast or instant scrolls (trackpad flicks, Page Down,
-  // jumping straight to a #hash). Periodically sweep for any reveal
-  // items that are already on-screen (or scrolled past) and are still
-  // hidden, and reveal them directly, so nothing gets stuck invisible.
-  let sweepScheduled = false;
-  const sweepReveals = () => {
-    sweepScheduled = false;
-    document.querySelectorAll(".reveal:not(.is-visible)").forEach(item => {
-      const rect = item.getBoundingClientRect();
-      // Reveal anything at or above ~1.5 screens below the viewport —
-      // i.e. don't hold back content that's already been scrolled past,
-      // only content that's genuinely still well below the fold.
-      if (rect.top < window.innerHeight * 1.5) {
-        item.classList.add("is-visible");
-        revealObserver.unobserve(item);
-      }
-    });
-  };
-  const scheduleSweep = () => {
-    if (!sweepScheduled) {
-      sweepScheduled = true;
-      requestAnimationFrame(sweepReveals);
+        function startCounters() {
+            if (animated || !isInView()) return;
+            animated = true;
+            targets.forEach(({ el, target, suffix }) => {
+                let current = 0;
+                const increment = Math.max(1, Math.ceil(target / 40));
+                const interval = setInterval(() => {
+                    current += increment;
+                    if (current >= target) { current = target; clearInterval(interval); }
+                    el.textContent = current + suffix;
+                }, 30);
+            });
+        }
+        window.addEventListener('scroll', startCounters);
+        setTimeout(startCounters, 300);
     }
-  };
-  window.addEventListener("scroll", scheduleSweep, { passive: true });
-  window.addEventListener("resize", scheduleSweep);
-  scheduleSweep();
 
-  // Belt-and-suspenders: also sweep on a short interval regardless of
-  // scroll events, since automated/fast scrolls can sometimes outrun
-  // scroll-event dispatch. Cheap once most items are already revealed.
-  const sweepInterval = setInterval(() => {
-    const remaining = document.querySelectorAll(".reveal:not(.is-visible)").length;
-    sweepReveals();
-    if (remaining === 0) {
-      clearInterval(sweepInterval);
+    // ===== SCROLL REVEAL (with a robust fallback sweep) =====
+    function initReveal() {
+        const revealItems = document.querySelectorAll('.reveal');
+
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver(
+                entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0, rootMargin: '200px 0px -5% 0px' }
+            );
+            revealItems.forEach(item => revealObserver.observe(item));
+
+            // Belt-and-suspenders: IntersectionObserver can miss short
+            // sections during very fast or instant scrolls (trackpad
+            // flicks, Page Down, jumping straight to a #hash). Sweep
+            // periodically for anything already on-screen (or scrolled
+            // past) that's still hidden, and reveal it directly.
+            let sweepScheduled = false;
+            const sweepReveals = () => {
+                sweepScheduled = false;
+                document.querySelectorAll('.reveal:not(.visible)').forEach(item => {
+                    const rect = item.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 1.5) {
+                        item.classList.add('visible');
+                        revealObserver.unobserve(item);
+                    }
+                });
+            };
+            const scheduleSweep = () => {
+                if (!sweepScheduled) {
+                    sweepScheduled = true;
+                    requestAnimationFrame(sweepReveals);
+                }
+            };
+            window.addEventListener('scroll', scheduleSweep, { passive: true });
+            window.addEventListener('resize', scheduleSweep);
+            scheduleSweep();
+
+            const sweepInterval = setInterval(() => {
+                const remaining = document.querySelectorAll('.reveal:not(.visible)').length;
+                sweepReveals();
+                if (remaining === 0) clearInterval(sweepInterval);
+            }, 400);
+        } else {
+            revealItems.forEach(item => item.classList.add('visible'));
+        }
     }
-  }, 400);
-} else {
-  revealItems.forEach(item => item.classList.add("is-visible"));
-}
 
-window.addEventListener("keydown", event => {
-  if (event.key === "Escape") {
-    closeMenu();
-  }
-});
+    // ===== SCROLL HANDLER =====
+    let ticking = false;
+    function onScroll() {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateActiveNav();
+                handleNavShadow();
+                handleScrollTopVisibility();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+    window.addEventListener('scroll', onScroll);
 
-// ---------- Project filter tabs ----------
+    // ===== PROJECT FILTER (projects.html) =====
+    function initProjectFilter() {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.project-card[data-project-category]');
+        if (!filterBtns.length || !cards.length) return;
 
-const filterButtons = document.querySelectorAll(".filter-btn");
-const projectCards = document.querySelectorAll("[data-project-category]");
-const projectGroupHeadings = document.querySelectorAll(".project-group-heading");
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('is-active'));
+                btn.classList.add('is-active');
+                const filter = btn.getAttribute('data-filter');
+                let anyGroupVisible = {};
+                cards.forEach(card => {
+                    const match = filter === 'all' || card.getAttribute('data-project-category') === filter;
+                    card.style.display = match ? '' : 'none';
+                });
+                document.querySelectorAll('.project-group-heading').forEach(heading => {
+                    const grid = heading.nextElementSibling;
+                    if (!grid) return;
+                    const visibleCount = Array.from(grid.querySelectorAll('.project-card')).filter(c => c.style.display !== 'none').length;
+                    heading.style.display = visibleCount ? '' : 'none';
+                    grid.style.display = visibleCount ? '' : 'none';
+                });
+            });
+        });
+    }
 
-filterButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    const filter = button.dataset.filter;
-
-    filterButtons.forEach(btn => btn.classList.remove("is-active"));
-    button.classList.add("is-active");
-
-    projectCards.forEach(card => {
-      const show = filter === "all" || card.dataset.projectCategory === filter;
-      card.classList.toggle("is-hidden", !show);
+    // ===== INIT =====
+    window.addEventListener('load', () => {
+        updateActiveNav();
+        handleNavShadow();
+        handleScrollTopVisibility();
     });
 
-    projectGroupHeadings.forEach(heading => {
-      const matches = filter === heading.dataset.group;
-      heading.classList.toggle("is-hidden", filter !== "all" && !matches);
-    });
-  });
-});
+    renderSkills();
+    animateStats();
+    initReveal();
+    initProjectFilter();
 
+})();
