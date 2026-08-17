@@ -7,12 +7,20 @@
         { name: 'CSS3', icon: 'fab fa-css3-alt' },
         { name: 'JavaScript', icon: 'fab fa-js' },
         { name: 'Python', icon: 'fab fa-python' },
+        { name: 'Fortran', icon: 'fas fa-square-root-variable' },
         { name: 'Git & GitHub', icon: 'fab fa-git-alt' },
-        { name: 'Climate Modelling', icon: 'fas fa-cloud-sun' },
+        { name: 'WordPress', icon: 'fab fa-wordpress' },
+        { name: 'Jekyll & GitHub Pages', icon: 'fas fa-globe' },
+        { name: 'Firebase', icon: 'fas fa-fire' },
+        { name: 'Scratch', icon: 'fas fa-puzzle-piece' },
+        { name: 'Climate & Atmospheric Modelling', icon: 'fas fa-cloud-sun' },
         { name: 'Remote Sensing', icon: 'fas fa-satellite-dish' },
+        { name: 'Wind Energy Statistics (Weibull)', icon: 'fas fa-wind' },
         { name: 'Data Analysis (SPSS)', icon: 'fas fa-chart-line' },
-        { name: 'Robotics & Coding', icon: 'fas fa-robot' },
-        { name: 'AI Tools', icon: 'fas fa-brain' },
+        { name: 'Robotics & micro:bit', icon: 'fas fa-robot' },
+        { name: 'STEM Curriculum Design', icon: 'fas fa-chalkboard-user' },
+        { name: 'AI Prompt Engineering', icon: 'fas fa-wand-magic-sparkles' },
+        { name: 'Practical AI Tools', icon: 'fas fa-microchip' },
     ];
 
     // ===== DOM REFS =====
