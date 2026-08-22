@@ -120,7 +120,7 @@
     function animateStats() {
         if (!statProjects || !statPubs || !statLessons) return;
         const targets = [
-            { el: statProjects, target: 21, suffix: '+' },
+            { el: statProjects, target: 22, suffix: '+' },
             { el: statPubs, target: 3, suffix: '' },
             { el: statLessons, target: 356, suffix: '+' },
         ];
