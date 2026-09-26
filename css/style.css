@@ -366,6 +366,21 @@ img { max-width: 100%; display: block; }
     color: var(--accent);
     display: block;
 }
+.stat-icon {
+    font-size: 1.5rem;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 6px;
+}
+.stat-highlight {
+    font-size: 1.35rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), #9b7bfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+}
 .stat-label {
     font-size: 0.85rem;
     color: var(--text-muted);
@@ -1040,6 +1055,8 @@ img { max-width: 100%; display: block; }
     font-size: 0.92rem;
     color: var(--text-secondary);
 }
+.project-stats span { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+.project-stats i { color: var(--accent); }
 .project-stats strong { color: var(--accent); font-weight: 700; }
 .project-filter {
     display: flex;
@@ -1145,4 +1162,152 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 768px) {
     .projects-teaser-panel { flex-direction: column; align-items: flex-start; }
     .project-group-heading { flex-direction: column; align-items: flex-start; gap: 4px; }
+}
+
+/* =========================================================================
+   PREMIUM UPGRADE LAYER
+   Senior-polish pass on top of the existing design system. Purely
+   additive — no existing rule is modified, new rules with matching
+   selectors simply take precedence via cascade order. Respects
+   prefers-reduced-motion and coarse pointers throughout.
+   ========================================================================= */
+
+:root{
+  --ease-premium: cubic-bezier(.16,1,.3,1);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+  --grad-accent: linear-gradient(135deg, var(--accent), #9b7bfa);
+  --glow-accent: 0 0 0 1px rgba(79,110,247,.14), 0 10px 24px -8px rgba(79,110,247,.4), 0 28px 56px -20px rgba(79,110,247,.3);
+  --grad-mesh: radial-gradient(1100px 520px at 92% -12%, rgba(79,110,247,.14), transparent 60%),
+               radial-gradient(760px 420px at -6% 8%, rgba(155,123,250,.10), transparent 55%);
+  --shadow-xl: 0 2px 6px rgba(20,20,40,.05), 0 40px 80px -24px rgba(20,20,40,.22);
+}
+[data-theme="dark"]{
+  --glow-accent: 0 0 0 1px rgba(123,147,250,.18), 0 10px 28px -8px rgba(0,0,0,.55), 0 28px 64px -20px rgba(0,0,0,.5);
+  --grad-mesh: radial-gradient(1100px 520px at 92% -12%, rgba(123,147,250,.14), transparent 60%),
+               radial-gradient(760px 420px at -6% 8%, rgba(155,123,250,.10), transparent 55%);
+  --shadow-xl: 0 2px 6px rgba(0,0,0,.4), 0 40px 90px -20px rgba(0,0,0,.6);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .cursor-glow, .reveal-auto, .tilt-el, .btn .ripple, #home::before, #home::after{ display:none !important; animation:none !important; }
+}
+
+/* ---- cursor glow (fine pointer only) ---- */
+.cursor-glow{
+  position:fixed; top:0; left:0; width:420px; height:420px; z-index:2; pointer-events:none;
+  border-radius:50%; transform:translate(-50%,-50%); opacity:0;
+  background:radial-gradient(circle, rgba(79,110,247,.10), rgba(79,110,247,0) 68%);
+  transition:opacity .4s ease; will-change:transform;
+}
+[data-theme="dark"] .cursor-glow{ background:radial-gradient(circle, rgba(123,147,250,.12), rgba(123,147,250,0) 68%); }
+.cursor-glow.is-active{ opacity:1; }
+@media (pointer:coarse), (hover:none){ .cursor-glow{ display:none; } }
+
+/* ---- premium scrollbar ---- */
+html{ scrollbar-width:thin; scrollbar-color:var(--accent) transparent; }
+::-webkit-scrollbar{ width:11px; height:11px; }
+::-webkit-scrollbar-track{ background:transparent; }
+::-webkit-scrollbar-thumb{ background:var(--border-color); border-radius:999px; border:3px solid var(--bg-primary); }
+::-webkit-scrollbar-thumb:hover{ background:var(--accent); }
+
+/* ---- reveal, staggered (JS adds .reveal-auto to elements the existing .reveal system doesn't reach) ---- */
+.reveal-auto{
+  opacity:0; transform:translateY(22px) scale(.985);
+  transition:opacity .7s var(--ease-premium), transform .7s var(--ease-premium);
+  transition-delay:calc(var(--ri, 0) * 60ms);
+}
+.reveal-auto.is-in{ opacity:1; transform:none; }
+
+/* ---- magnetic tilt targets ---- */
+.tilt-el{ transition:transform .35s var(--ease-premium), box-shadow .35s var(--ease-premium); transform-style:preserve-3d; will-change:transform; }
+
+/* ---- buttons: sheen sweep + ripple + richer hover ---- */
+.btn{ position:relative; overflow:hidden; isolation:isolate; }
+.btn::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.35) 46%, rgba(255,255,255,.35) 54%, transparent 70%);
+  transform:translateX(-120%); transition:transform .65s var(--ease-premium);
+}
+.btn:hover::before{ transform:translateX(120%); }
+.btn-primary{ background:var(--grad-accent); }
+.btn-primary:hover{ background:var(--grad-accent); box-shadow:var(--glow-accent); }
+.btn .ripple{
+  position:absolute; border-radius:50%; background:rgba(255,255,255,.5); pointer-events:none;
+  transform:scale(0); animation:btn-ripple .6s ease-out forwards; z-index:2;
+}
+.btn-outline .ripple{ background:rgba(79,110,247,.22); }
+@keyframes btn-ripple{ to{ transform:scale(3.2); opacity:0; } }
+
+/* ---- nav: gradient underline sweep on scroll ---- */
+.navbar{ position:relative; }
+.navbar::after{
+  content:""; position:absolute; left:0; right:0; bottom:-1px; height:1px;
+  background:linear-gradient(90deg, transparent, var(--accent), #9b7bfa, transparent);
+  opacity:0; transition:opacity .3s ease;
+}
+.navbar.scrolled::after{ opacity:.55; }
+
+/* ---- hero: animated gradient mesh + floating orbs ---- */
+#home{ position:relative; overflow:hidden; }
+#home::before, #home::after{
+  content:""; position:absolute; z-index:0; border-radius:50%; pointer-events:none; filter:blur(2px);
+  background:radial-gradient(circle, rgba(79,110,247,.16), transparent 70%);
+  animation:hero-float 14s ease-in-out infinite;
+}
+#home::before{ width:280px; height:280px; top:-40px; right:6%; }
+#home::after{
+  width:200px; height:200px; bottom:-20px; left:2%;
+  background:radial-gradient(circle, rgba(155,123,250,.14), transparent 70%);
+  animation-duration:18s; animation-delay:-4s;
+}
+@keyframes hero-float{
+  0%,100%{ transform:translate(0,0) scale(1); }
+  50%{ transform:translate(-16px, 22px) scale(1.06); }
+}
+.hero-grid{ position:relative; z-index:1; animation:hero-rise .8s var(--ease-premium) both; }
+@keyframes hero-rise{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:none; } }
+.hero-avatar .avatar-box{ box-shadow:var(--shadow-xl); }
+
+/* ---- cards: lift + edge-glow + icon motion ---- */
+.project-card, .feature-card, .credential-card, .skill-card, .education-card, .stat-card{
+  transition:transform .35s var(--ease-premium), box-shadow .35s var(--ease-premium), border-color .35s ease;
+}
+.project-card:hover, .feature-card:hover{ box-shadow:var(--shadow-xl); }
+.skill-card:hover .skill-icon{ transform:scale(1.15) rotate(-6deg); }
+.skill-card .skill-icon{ transition:transform .3s var(--ease-spring); display:inline-block; }
+.project-card:hover .project-thumb i{ transform:scale(1.12); }
+.project-thumb i{ transition:transform .3s var(--ease-spring); }
+.stat-card:hover .stat-icon{ transform:scale(1.15); }
+.stat-icon{ transition:transform .3s var(--ease-spring); }
+
+/* ---- avatar ring: livelier glow ---- */
+.hero-avatar .avatar-box::after{ opacity:.45; }
+
+/* ---- timeline dot: pulse on the current role ---- */
+.timeline-item:first-child::before{
+  box-shadow:0 0 0 4px var(--accent-light), 0 0 16px -2px var(--accent);
+}
+
+/* ---- filter buttons: spring pop ---- */
+.filter-btn{ transition:transform .25s var(--ease-spring), background .2s ease, border-color .2s ease, color .2s ease; }
+.filter-btn:hover{ transform:translateY(-2px); }
+.filter-btn.is-active{ box-shadow:var(--glow-accent); }
+
+/* ---- back-to-top + theme toggle: spring pop ---- */
+.scroll-top, .theme-toggle{ transition:transform .25s var(--ease-spring), box-shadow .25s ease, background .15s ease, color .15s ease; }
+.scroll-top:hover{ transform:translateY(-3px) scale(1.05); box-shadow:var(--glow-accent); }
+
+/* ---- page-load fade ---- */
+html:not(.is-ready) body{ opacity:0; }
+html.is-ready body{ opacity:1; transition:opacity .35s ease; }
+
+/* ---- richer focus ring ---- */
+a:focus-visible, button:focus-visible{
+  outline:none; box-shadow:0 0 0 3px var(--bg-primary), 0 0 0 6px var(--accent), 0 0 18px -2px var(--accent);
+  border-radius:6px;
+}
+
+@media (max-width:640px){
+  .cursor-glow{ display:none; }
+  .project-card:hover, .feature-card:hover{ transform:none; }
 }

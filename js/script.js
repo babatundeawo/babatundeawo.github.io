@@ -31,9 +31,6 @@
     const scrollTopBtn = document.getElementById('scrollTop');
     const skillsGrid = document.getElementById('skillsGrid');
     const yearSpan = document.getElementById('year');
-    const statProjects = document.getElementById('statProjects');
-    const statPubs = document.getElementById('statPubs');
-    const statLessons = document.getElementById('statLessons');
 
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
@@ -114,40 +111,6 @@
             `;
             skillsGrid.appendChild(card);
         });
-    }
-
-    // ===== ANIMATE STATS (real figures) =====
-    function animateStats() {
-        if (!statProjects || !statPubs || !statLessons) return;
-        const targets = [
-            { el: statProjects, target: 22, suffix: '+' },
-            { el: statPubs, target: 3, suffix: '' },
-            { el: statLessons, target: 356, suffix: '+' },
-        ];
-        let animated = false;
-
-        function isInView() {
-            const about = document.getElementById('about');
-            if (!about) return false;
-            const rect = about.getBoundingClientRect();
-            return rect.top < window.innerHeight - 100;
-        }
-
-        function startCounters() {
-            if (animated || !isInView()) return;
-            animated = true;
-            targets.forEach(({ el, target, suffix }) => {
-                let current = 0;
-                const increment = Math.max(1, Math.ceil(target / 40));
-                const interval = setInterval(() => {
-                    current += increment;
-                    if (current >= target) { current = target; clearInterval(interval); }
-                    el.textContent = current + suffix;
-                }, 30);
-            });
-        }
-        window.addEventListener('scroll', startCounters);
-        setTimeout(startCounters, 300);
     }
 
     // ===== SCROLL REVEAL (with a robust fallback sweep) =====
@@ -254,7 +217,6 @@
     });
 
     renderSkills();
-    animateStats();
     initReveal();
     initProjectFilter();
 

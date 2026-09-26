@@ -9,9 +9,10 @@ A static, two-page site (no build step, no framework — vanilla HTML/CSS/JS) wi
 ```
 babatundeawo.github.io/
 ├── index.html          Home page — about, education, research, experience, credentials, contact
-├── projects.html        Full portfolio: 25 repositories (22 live) across three GitHub accounts
+├── projects.html        Full portfolio: open-source repositories across four GitHub accounts, most with live demos
 ├── css/style.css        Design system for both pages
 ├── js/script.js          Theme toggle, nav, and page interactions
+├── js/premium.js         Scroll reveal, magnetic tilt, button ripple, cursor glow
 └── assets/images/        Profile photo
 ```
 
@@ -29,7 +30,7 @@ Single-page layout with the following sections:
 
 ## Projects page (`projects.html`)
 
-Catalogues all 25 open-source repositories (22 with live demos) spanning:
+Catalogues all open-source repositories (most with live demos) spanning:
 
 - Personal tools and sites (`babatundeawo/*`)
 - AI project guides (exam/lesson generators, career and content tools)
