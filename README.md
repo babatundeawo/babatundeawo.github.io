@@ -32,9 +32,10 @@ Single-page layout with the following sections:
 
 Catalogues all open-source repositories (most with live demos) spanning:
 
-- Personal tools and sites (`babatundeawo/*`)
+- Personal tools and sites (`babatundeawo/*`) — including the Class Scoresheet teacher tool and the installable Timekeeper, Attendance and Daily Greetings apps (tools holding real people's data are repo-only)
 - AI project guides (exam/lesson generators, career and content tools)
-- Knowledge Base International Schools portal (`kbischool/*`)
+- Knowledge Base International Schools website and private tools (`kbischool/*`)
+- RCCG Kingdom Diplomats event games (`rccgkd/*`)
 - Techbase STEM Academy curriculum (`techbaseng/*`)
 
 Every entry links directly to its GitHub repo.

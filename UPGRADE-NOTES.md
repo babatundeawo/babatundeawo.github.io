@@ -92,3 +92,12 @@ Same treatment as the last upgrade: additive, nothing existing rewritten.
   from your public-facing pages. If you want those pages themselves
   gated (e.g. with auth), that's a separate change to the tools
   themselves, not something I can do from here.
+
+---
+
+# Update — new repos added
+
+- **Class Scoresheet** (`babatundeawo/scoresheet`, live at `/scoresheet/`) — new project card on the projects page and a new row in the profile README.
+- **Daily Greetings / `wa-greetings`** — new card and row, marked *Private* and repo-only (it works from a personal contact list, consistent with how the other people-data tools are handled).
+- **KBI Schools — Website** (`kbischool/kbischool.github.io`) was on the site but missing from the profile README's KBIS table; added.
+- Profile README intro now says *three* organisations (kbischool, rccgkd, techbaseng), not two. Site README lists the RCCG Kingdom Diplomats games too.
