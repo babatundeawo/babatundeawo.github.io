@@ -1,54 +1,84 @@
-# babatundeawo.github.io
+<div align="center">
 
-Personal portfolio site for **Babatunde Ayoola Awoyemi** — atmospheric physicist, STEM educator, EdTech consultant, and climate researcher. Live at **[babatundeawo.github.io](https://babatundeawo.github.io/)**.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-dark.svg">
+  <img src="docs/assets/logo-light.svg" alt="Sun rising over a horizon line, the logo mark" width="64" height="64">
+</picture>
 
-A static, two-page site (no build step, no framework — vanilla HTML/CSS/JS) with light/dark theme support (auto-detects system preference, remembers your choice via `localStorage`).
+# Babatunde Ayoola Awoyemi
 
-## What's here
+**Atmospheric physicist, STEM educator and climate researcher.**
 
+[![Deploy site](https://github.com/babatundeawo/babatundeawo.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/babatundeawo/babatundeawo.github.io/actions/workflows/deploy.yml)
+[![CodeQL](https://github.com/babatundeawo/babatundeawo.github.io/actions/workflows/codeql.yml/badge.svg)](https://github.com/babatundeawo/babatundeawo.github.io/actions/workflows/codeql.yml)
+[![Live site](https://img.shields.io/website?url=https%3A%2F%2Fbabatundeawo.github.io&label=live%20site)](https://babatundeawo.github.io/)
+
+[Live site](https://babatundeawo.github.io/) · [Projects](https://babatundeawo.github.io/projects.html) · [Report an issue](https://github.com/babatundeawo/babatundeawo.github.io/issues)
+
+</div>
+
+![The home page: a serif headline reading "Reading the sky to teach the fundamentals better", with a portrait and links to GitHub, LinkedIn and other profiles.](docs/assets/preview-home.webp)
+
+## About
+
+The personal site of Babatunde Ayoola Awoyemi. It brings together his work in atmospheric physics and climate research (solar irradiance and wind-energy statistics), his teaching and consulting in STEM education, and the open-source tools, courses and games he has built. It is written for collaborators, schools, students and anyone curious about the work.
+
+## Features
+
+- A single-page profile covering about, skills, education, research, experience, credentials and contact.
+- A searchable, filterable catalogue of open-source projects across four GitHub accounts, with live demos where they are safe to share.
+- Light and dark themes that follow your system setting and remember your choice.
+- Keyboard-friendly navigation, a skip link, reduced-motion support and a printable layout.
+- A one-click "Copy" button for the email address.
+
+## How to use it
+
+1. Open the [live site](https://babatundeawo.github.io/) and scroll, or use the menu to jump to a section.
+2. Visit [Projects](https://babatundeawo.github.io/projects.html). Use the group buttons or the search box to narrow the list. A link such as `projects.html#techbase` opens a single group directly.
+3. Use the sun/moon button in the header to switch between light and dark.
+4. Get in touch from the [Contact](https://babatundeawo.github.io/#contact) section by email or any linked profile.
+
+![The projects page: filter buttons, a search box and project cards with Live and GitHub links.](docs/assets/preview-projects.webp)
+
+## Tech stack
+
+- Hand-written HTML, CSS and JavaScript. No framework and no runtime dependencies.
+- Self-hosted fonts and an inline SVG icon sprite, so pages make no third-party requests.
+- GitHub Actions for checks and deployment to GitHub Pages; CodeQL and Dependabot for security upkeep.
+
+## Project structure
+
+```text
+.
+├── index.html            Home page
+├── projects.html         Project catalogue
+├── 404.html              Not-found page
+├── css/style.css         Design tokens and all styles
+├── js/main.js            Theme, menu, reveal effects, project filter
+├── assets/
+│   ├── fonts/            Self-hosted web fonts and their licences
+│   ├── icons/            Favicon and app icons
+│   └── images/           Portrait (AVIF, WebP, JPEG) and social preview image
+├── docs/                 Owner guides and README images
+├── scripts/              Build check used by the deploy workflow
+└── .github/              Deployment, CodeQL and Dependabot configuration
 ```
-babatundeawo.github.io/
-├── index.html          Home page — about, education, research, experience, credentials, contact
-├── projects.html        Full portfolio: open-source repositories across four GitHub accounts, most with live demos
-├── css/style.css        Design system for both pages
-├── js/script.js          Theme toggle, nav, and page interactions
-├── js/premium.js         Scroll reveal, magnetic tilt, button ripple, cursor glow
-└── assets/images/        Profile photo
-```
 
-## Home page (`index.html`)
+## Contributing
 
-Single-page layout with the following sections:
+Spotted a typo, a broken link or an accessibility problem? [Open an issue](https://github.com/babatundeawo/babatundeawo.github.io/issues) on GitHub and describe what you saw and on which page. Pull requests that fix a specific problem are welcome.
 
-- **About** — atmospheric physics, climate research, and STEM education intersection
-- **Education** — from Ronk New Age Nursery/Primary and Federal Government College Ogbomoso through B.Sc. Physics and M.Sc. Atmospheric Physics (University of Ibadan)
-- **Research** — solar irradiance modelling, atmospheric radiation, and wind-energy statistics, including the "Parametric Estimation of Direct Irradiance under All-Sky Conditions" and Weibull wind-speed distribution work
-- **Experience** — TESCOM teaching post, Techbase and Knowledge Base International School consultancies, Techbridge Consulting, NTeach, IITA, and NYSC
-- **Projects teaser** — links out to the full portfolio
-- **Credentials** — leadership, design thinking, ICT, and community-impact certifications
-- **Contact**
+## Security
 
-## Projects page (`projects.html`)
+To report a vulnerability privately, see [SECURITY.md](SECURITY.md).
 
-Catalogues all open-source repositories (most with live demos) spanning:
+## Credits
 
-- Personal tools and sites (`babatundeawo/*`) — including the Class Scoresheet teacher tool and the installable Timekeeper, Attendance and Daily Greetings apps (tools holding real people's data are repo-only)
-- AI project guides (exam/lesson generators, career and content tools)
-- Knowledge Base International Schools website and private tools (`kbischool/*`)
-- RCCG Kingdom Diplomats event games (`rccgkd/*`)
-- Techbase STEM Academy curriculum (`techbaseng/*`)
+- Fonts: [Fraunces](https://github.com/undercasetype/Fraunces) and [Inter](https://github.com/rsms/inter), both under the SIL Open Font License 1.1.
+- Icons: [Lucide](https://lucide.dev) (ISC), [Simple Icons](https://simpleicons.org) (CC0) and [Font Awesome Free](https://fontawesome.com) LinkedIn glyph (CC BY 4.0).
 
-Every entry links directly to its GitHub repo.
+Site content and portrait &copy; Babatunde Ayoola Awoyemi.
 
-## Run locally
+## Contact
 
-No build tools required — just open `index.html` in a browser, or serve the folder with any static file server:
-
-```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000
-```
-
-## Deploy
-
-This repo is already configured for GitHub Pages (repo name `babatundeawo.github.io` — GitHub serves it automatically at the root domain on push to `main`). No extra configuration needed.
+[babatundeawoyemi91@gmail.com](mailto:babatundeawoyemi91@gmail.com) · [LinkedIn](https://www.linkedin.com/in/ba-awoyemi/) · [GitHub](https://github.com/babatundeawo)
