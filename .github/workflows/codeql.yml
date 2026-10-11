@@ -24,7 +24,7 @@ jobs:
         language: [javascript-typescript, actions]
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v7.0.1
 
       - name: Set up CodeQL
         uses: github/codeql-action/init@v4
