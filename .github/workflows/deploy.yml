@@ -1,0 +1,102 @@
+# Builds, checks and publishes the site to GitHub Pages.
+#  - Pull requests: build and check only. The live site is never touched.
+#  - Push to main (or "Run workflow" button): build, check and publish.
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Never run two deployments at once; a newer push waits for the current one.
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    name: Build and check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Assemble the site into dist/
+        run: |
+          mkdir dist
+          cp -r index.html projects.html 404.html css js assets dist/
+          cp favicon.ico manifest.webmanifest robots.txt sitemap.xml dist/
+
+      - name: Check that every internal link, image and anchor exists
+        run: node scripts/check-site.mjs dist
+
+      - name: Upload a downloadable preview (pull requests)
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: site-preview
+          path: dist
+          retention-days: 14
+
+      - name: Set up GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5.0.0
+
+      - name: Package the site for GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3.0.1
+        with:
+          path: dist
+
+  # Reports only: these steps never block a deployment.
+  quality:
+    name: Quality report
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Assemble the site into dist/
+        run: |
+          mkdir dist
+          cp -r index.html projects.html 404.html css js assets dist/
+          cp favicon.ico manifest.webmanifest robots.txt sitemap.xml dist/
+
+      - name: Lint the HTML
+        continue-on-error: true
+        run: npx --yes htmlhint@1.1.4 "dist/*.html"
+
+      - name: Check links (social networks are skipped because they block bots)
+        continue-on-error: true
+        run: >
+          npx --yes linkinator@6.1.1 dist --recurse
+          --skip "^https?://((www|web)\.)?(linkedin|facebook|instagram|threads|x)\.(com|net)"
+
+      - name: Lighthouse report
+        continue-on-error: true
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
+
+  deploy:
+    name: Publish to GitHub Pages
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4.0.5
