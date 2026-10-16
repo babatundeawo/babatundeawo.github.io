@@ -21,12 +21,12 @@
 
 ## About
 
-The personal site of Babatunde Ayoola Awoyemi. It brings together his work in atmospheric physics and climate research (solar irradiance and wind-energy statistics), his teaching and consulting in STEM education, and the open-source tools, courses and games he has built. It is written for collaborators, schools, students and anyone curious about the work.
+The personal site of Babatunde Ayoola Awoyemi, a Nigerian atmospheric physicist, STEM educator and EdTech consultant. It sets out his research in solar irradiance and wind-energy statistics, his teaching and consulting work in schools, and his credentials and contact details. It also catalogues the tools, school systems, learning sites and games he has built across four GitHub accounts, each with a live site and its source code. It is written for collaborators, schools, students and anyone curious about the work.
 
 ## Features
 
 - A single-page profile covering about, skills, education, research, experience, credentials and contact.
-- A searchable, filterable catalogue of open-source projects across four GitHub accounts, with live demos where they are safe to share.
+- A searchable, filterable catalogue of projects across four GitHub accounts. Every project links to its live site and its GitHub repository.
 - Light and dark themes that follow your system setting and remember your choice.
 - Keyboard-friendly navigation, a skip link, reduced-motion support and a printable layout.
 - A one-click "Copy" button for the email address.
@@ -34,9 +34,10 @@ The personal site of Babatunde Ayoola Awoyemi. It brings together his work in at
 ## How to use it
 
 1. Open the [live site](https://babatundeawo.github.io/) and scroll, or use the menu to jump to a section.
-2. Visit [Projects](https://babatundeawo.github.io/projects.html). Use the group buttons or the search box to narrow the list. A link such as `projects.html#techbase` opens a single group directly.
-3. Use the sun/moon button in the header to switch between light and dark.
-4. Get in touch from the [Contact](https://babatundeawo.github.io/#contact) section by email or any linked profile.
+2. Visit [Projects](https://babatundeawo.github.io/projects.html). Use the group buttons or the search box to narrow the list. A link such as `projects.html#kbi` opens a single group directly.
+3. Choose **Live site** on a card to open the project, or **GitHub repo** to read its code. School and records tools open to a sign-in screen and are available only to approved staff.
+4. Use the sun/moon button in the header to switch between light and dark.
+5. Get in touch from the [Contact](https://babatundeawo.github.io/#contact) section by email or any linked profile.
 
 ![The projects page: filter buttons, a search box and project cards with Live and GitHub links.](docs/assets/preview-projects.webp)
 
