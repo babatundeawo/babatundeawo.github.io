@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Projects | Babatunde Ayoola Awoyemi</title>
   <meta name="description" content="Open-source projects by Babatunde Ayoola Awoyemi across personal tools, the Knowledge Base International Schools portals, the Techbase STEM Academy and RCCG Kingdom Diplomats games.">
   <link rel="canonical" href="https://babatundeawo.github.io/projects.html">
@@ -31,6 +31,10 @@
   <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="B. Awoyemi">
   <link rel="manifest" href="manifest.webmanifest">
 
   <link rel="preload" href="assets/fonts/fraunces-latin-600.woff2" as="font" type="font/woff2" crossorigin>
@@ -76,11 +80,11 @@
       <div class="container">
         <p class="eyebrow hero__enter">Projects &amp; repositories</p>
         <h1 class="hero__enter">What I've built — tools, school systems &amp; open STEM resources</h1>
-        <p class="section__lede hero__enter">Project cards across four GitHub accounts: personal tools, the Knowledge Base International Schools portals, the Techbase STEM Academy, and games built for RCCG Kingdom Diplomats events. Every card links to its live site and its source code. Tools that hold school records or personal data open to a sign-in screen, and only approved users can get past it.</p>
+        <p class="section__lede hero__enter">Project cards across several GitHub accounts: personal tools, the Knowledge Base International Schools portals, the Techbase STEM Academy, games built for RCCG Kingdom Diplomats events, and the Termbook and Agrictool sites. Every card links to its live site and its source code. Tools that hold school records or personal data open to a sign-in screen, and only approved users can get past it.</p>
         <div class="stat-row hero__enter">
           <span class="badge"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg> Live demos</span>
           <span class="badge"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg> Personal &amp; org projects</span>
-          <span class="badge"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-git-branch"/></svg> Four GitHub accounts</span>
+          <span class="badge"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-git-branch"/></svg> Several GitHub accounts</span>
           <span class="badge"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-school"/></svg> School systems</span>
         </div>
       </div>
@@ -89,11 +93,15 @@
     <div class="container" data-projects>
       <div class="controls">
         <div class="filters" role="group" aria-label="Filter projects by group">
+<!-- FILTERS:START -->
           <button class="filter" type="button" data-filter="all" aria-pressed="true">All projects</button>
           <button class="filter" type="button" data-filter="personal" aria-pressed="false">Personal projects &amp; tools</button>
           <button class="filter" type="button" data-filter="kbi" aria-pressed="false">Knowledge Base Schools</button>
           <button class="filter" type="button" data-filter="techbase" aria-pressed="false">Techbase STEM Academy</button>
           <button class="filter" type="button" data-filter="rccg" aria-pressed="false">RCCG Kingdom Diplomats</button>
+          <button class="filter" type="button" data-filter="termbook" aria-pressed="false">Termbook</button>
+          <button class="filter" type="button" data-filter="agrictool" aria-pressed="false">Agrictool</button>
+<!-- FILTERS:END -->
         </div>
         <label class="search">
           <span class="sr-only">Search projects</span>
@@ -103,6 +111,7 @@
         <p class="results-status" data-status role="status" aria-live="polite"></p>
       </div>
 
+        <!-- PROJECTS:START -->
         <section class="group" id="personal" data-group="personal" aria-labelledby="g-personal">
           <div class="group__head">
             <h2 id="g-personal">Personal projects &amp; tools</h2>
@@ -115,7 +124,7 @@
               <h3>Global Warming Explorer</h3>
               <p>Multi-page interactive climate-science learning site with a guided course and classroom check-in dashboard.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/globalwarming/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/globalwarming" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/globalwarming/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/globalwarming" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -124,7 +133,7 @@
               <h3>PromptOS — AI Prompt Library</h3>
               <p>Curated AI prompts across multiple categories, searchable and editable, works offline.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/ai-prompt-library/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/ai-prompt-library" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/ai-prompt-library/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/ai-prompt-library" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -133,7 +142,7 @@
               <h3>Deploybase — AI Deployment Directory</h3>
               <p>Registry of every deployed Claude Project built and run by Techbase / Babatunde Awoyemi.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/deploybase/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/deploybase" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/deploybase/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/deploybase" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -142,7 +151,7 @@
               <h3>Educator AI Toolkit</h3>
               <p>Free reference site for Nigerian educators — exam/marking-guide and lesson-note AI generators.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/educator-ai-toolkit/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/educator-ai-toolkit" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/educator-ai-toolkit/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/educator-ai-toolkit" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -151,7 +160,7 @@
               <h3>AI Studio → Android Deployment Guide</h3>
               <p>Step-by-step guide to shipping a Google AI Studio app as an installable Android PWA.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/ai-studio-android-guide/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/ai-studio-android-guide" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/ai-studio-android-guide/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/ai-studio-android-guide" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -160,7 +169,7 @@
               <h3>Personal AI Career Engine</h3>
               <p>Free guide to building CV &amp; career documents with NotebookLM and a configured Claude Project.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/career-engine-guide/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/career-engine-guide" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/career-engine-guide/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/career-engine-guide" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -169,7 +178,7 @@
               <h3>Deep Calls</h3>
               <p>Long-form Christian apologetics essays, served from a custom Python static-site generator.</p>
               <ul class="tags" aria-label="Technologies"><li>Python</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/deep-calls/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/deep-calls" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/deep-calls/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/deep-calls" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -178,7 +187,7 @@
               <h3>RCCG Training Portal</h3>
               <p>Interactive, mobile-first discipleship training portal replacing three printed RCCG manuals (Believers', Baptismal, Workers-in-Training) with guided lessons, scripture-reveal quizzes, and progress sync.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Firebase</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/rccg-training-portal/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/rccg-training-portal" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/rccg-training-portal/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/rccg-training-portal" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -187,7 +196,7 @@
               <h3>Akinyele Spelling Challenge</h3>
               <p>Official multi-page site for the 2026 Akinyele Spelling Challenge — results, a large word bank, a practice trainer with a head-to-head Spelling Bee game, and event gallery.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/akinyele-spelling-challenge/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/akinyele-spelling-challenge" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/akinyele-spelling-challenge/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/akinyele-spelling-challenge" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -196,7 +205,7 @@
               <h3>Millionaire Mindset</h3>
               <p>Personal-development app on wealth-building habits and mindset shifts — deployed to both GitHub Pages and Replit.</p>
               <ul class="tags" aria-label="Technologies"><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/Millionaire-Mindset/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/Millionaire-Mindset" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/Millionaire-Mindset/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/Millionaire-Mindset" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -205,7 +214,7 @@
               <h3>Personal Projects (monorepo)</h3>
               <p>A collection of smaller personal builds and coursework — a calculator, a regex-teaching playground, a student report-card system, and AI agent-building exercises — consolidated into one repository.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/personal-projects/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/personal-projects" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/personal-projects/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/personal-projects" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -214,7 +223,7 @@
               <h3>Naija Monopoly</h3>
               <p>Nigeria-themed Monopoly game with the full official rule set — playable instantly in the browser, or packaged as a Windows desktop app via Electron and an automated GitHub Actions build workflow.</p>
               <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Electron</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/naija-monopoly/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/naija-monopoly" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/naija-monopoly/releases" target="_blank" rel="noopener noreferrer">Windows download <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/naija-monopoly/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/naija-monopoly" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/naija-monopoly/releases" target="_blank" rel="noopener noreferrer">Windows download <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -223,7 +232,7 @@
               <h3>Timekeeper</h3>
               <p>Installable clock, countdown, stopwatch, focus timer and alarms — one quiet instrument, no framework, with a single brass-ring progress indicator reused across every mode.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PWA</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/timekeeper/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/timekeeper" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/timekeeper/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/timekeeper" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -232,7 +241,7 @@
               <h3>ISCGS Register — School Dashboard</h3>
               <p>Register of students, staff and records for Ilado-Sagbo Community Grammar School — student registry, staff directory, term records, school profile and inventory. Sign-in is limited to staff approved by an administrator.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Firebase</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/ilado-school-dashboard/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/ilado-school-dashboard" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/ilado-school-dashboard/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/ilado-school-dashboard" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -241,16 +250,7 @@
               <h3>Attendance Register</h3>
               <p>Daily AM/PM attendance register for teachers with weekly and term reports, student records, a holiday calendar and CSV export. Works offline and installs to the home screen; sign-in is limited to approved staff.</p>
               <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Vite</li><li>Firebase</li><li>PWA</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/attendance/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/attendance" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-table"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Class Scoresheet</h3>
-              <p>Installable-style scoresheet for teachers — create classes, load student lists, enter CA, open-day and exam marks, apply bonus marks, and get grades, positions and term-by-term report cards. Prints reports to PDF and exports to Excel in the paper-sheet layout. Each teacher signs in and sees only their own classes; works offline and syncs when back online.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>JavaScript</li><li>Firebase</li><li>Excel Export</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/scoresheet/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/scoresheet" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/attendance/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/attendance" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -259,7 +259,25 @@
               <h3>Daily Greetings (WhatsApp)</h3>
               <p>Themed, prayerful WhatsApp greetings with a Nigerian touch, ready to send in one tap. Installable on a phone or desktop, with a sign-in and a private contact database.</p>
               <ul class="tags" aria-label="Technologies"><li>PWA</li><li>JavaScript</li><li>Firebase</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/wa-greetings/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/wa-greetings" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/wa-greetings/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/wa-greetings" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-gamepad"/></svg></span><span class="badge badge--live">Live</span></div>
+              <h3>Quizmaster</h3>
+              <p>A browser-based quiz app. Short description to be added by the owner.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/quizmaster/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/quizmaster" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-users"/></svg></span><span class="badge badge--live">Live</span></div>
+              <h3>Family Roots</h3>
+              <p>A family-tree and family-records app hosted on Firebase. Short description to be added by the owner.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Firebase</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://family-roots-3c16d.web.app/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/family-roots" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           </ul>
@@ -276,7 +294,7 @@
               <h3>KBI Schools — Website</h3>
               <p>Public website for Knowledge Base International Schools — admissions, academics, facilities and news. The org's live GitHub Pages site.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://kbischool.github.io/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/kbischool/kbischool.github.io" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://kbischool.github.io/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/kbischool/kbischool.github.io" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -285,7 +303,7 @@
               <h3>School Fee Payment Portal</h3>
               <p>The fee and school-information portal of Knowledge Base International Schools. Parents see their child's fees and payments, staff see who has paid, and the owner sees school-wide financial health. Sign-in required.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Firebase</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://school-fee-portal-4f0e6.web.app/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/kbischool/school-fee-portal" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://school-fee-portal-4f0e6.web.app/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/kbischool/school-fee-portal" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -294,7 +312,7 @@
               <h3>KBIS Records — Student Records &amp; Fees</h3>
               <p>Staff-only student records and fee accounts for KBIS Schools — student search, itemised fee accounts per term, fee structures and stock. Works offline and installs to the home screen.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Firebase</li><li>PWA</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://kbischool.github.io/kbis-records-app/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/kbischool/kbis-records-app" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://kbischool.github.io/kbis-records-app/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/kbischool/kbis-records-app" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           </ul>
@@ -311,7 +329,7 @@
               <h3>Techbase STEM Academy (hub)</h3>
               <p>Landing page for Techbase STEM Academy, the STEM education arm of Techbase Consultant Services.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Jekyll / GitHub Pages</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://techbaseng.github.io/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/techbaseng/techbaseng.github.io" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://techbaseng.github.io/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/techbaseng/techbaseng.github.io" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           </ul>
@@ -328,7 +346,7 @@
               <h3>Bible Family Feud</h3>
               <p>Stage-ready Bible-themed Family Feud game for church events — dozens of rounds, a dual-window host/answer view, strike/steal logic and synthesized background music, all in the browser.</p>
               <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://rccgkd.github.io/bible-family-feud/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/rccgkd/bible-family-feud" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://rccgkd.github.io/bible-family-feud/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/rccgkd/bible-family-feud" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           <li class="reveal">
@@ -337,11 +355,47 @@
               <h3>Bible Trivia Game</h3>
               <p>Browser-based Bible trivia game for church events — quick, no-dependency static site.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://rccgkd.github.io/bible-trivia-game/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/rccgkd/bible-trivia-game" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://rccgkd.github.io/bible-trivia-game/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/rccgkd/bible-trivia-game" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           </ul>
         </section>
+        <section class="group" id="termbook" data-group="termbook" aria-labelledby="g-termbook">
+          <div class="group__head">
+            <h2 id="g-termbook">Termbook</h2>
+            <a class="group__src" href="https://github.com/termbook" target="_blank" rel="noopener noreferrer">github.com/termbook <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a>
+          </div>
+          <ul class="cards" data-stagger>
+          <li class="reveal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-book-open"/></svg></span><span class="badge badge--live">Live</span></div>
+              <h3>Termbook</h3>
+              <p>The Termbook site. Short description to be added by the owner.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://termbook.github.io/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/termbook/termbook.github.io" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          </ul>
+        </section>
+        <section class="group" id="agrictool" data-group="agrictool" aria-labelledby="g-agrictool">
+          <div class="group__head">
+            <h2 id="g-agrictool">Agrictool</h2>
+            <a class="group__src" href="https://github.com/agrictool" target="_blank" rel="noopener noreferrer">github.com/agrictool <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a>
+          </div>
+          <ul class="cards" data-stagger>
+          <li class="reveal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-thermometer"/></svg></span><span class="badge badge--live">Live</span></div>
+              <h3>Agrictool</h3>
+              <p>The Agrictool site. Short description to be added by the owner.</p>
+              <ul class="tags" aria-label="Technologies"><li>TypeScript</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://agrictool.github.io/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/agrictool/agrictool.github.io" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          </ul>
+        </section>
+<!-- PROJECTS:END -->
+
 
       <div class="empty" data-empty hidden>
         <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-search-x"/></svg>
@@ -381,5 +435,6 @@
   <div class="toast" data-toast role="status" aria-live="polite"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-toast-text></span></div>
 
   <script src="js/main.js" defer></script>
+  <script src="js/pwa.js" defer></script>
 </body>
 </html>

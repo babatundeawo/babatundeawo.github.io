@@ -36,7 +36,7 @@ The redesign arrives as a **pull request**: a proposed set of changes you can in
 3. Make the change, click **Commit changes**, and choose **Commit directly to the main branch**.
 4. The site republishes by itself. See [CUSTOMIZING.md](CUSTOMIZING.md) for where things live.
 
-To add a project, copy one whole `<li class="reveal"> ... </li>` block inside `projects.html`, paste it into the right group, and change the text and links.
+To add or change a project, open `data/projects.json`, copy one whole project entry (from `{` to `}`) inside the right group, and change the text and links. Do not edit the cards in `projects.html`; the build rewrites them from this file.
 
 ## Checking that a deployment worked
 
@@ -65,13 +65,25 @@ If there is no Revert button, open the **Commits** list (on the main page of the
 2. In the repository open **Settings > Pages**, type the domain under **Custom domain** and click **Save**.
 3. At your registrar add the DNS records GitHub shows in its help page "Managing a custom domain for your GitHub Pages site": four `A` records for the bare domain and a `CNAME` record for `www`.
 4. Back on the Pages settings, tick **Enforce HTTPS** once it becomes available (it can take up to a day).
-5. Edit the web addresses inside `index.html`, `projects.html`, `sitemap.xml` and `robots.txt` that start with `https://babatundeawo.github.io` so they use the new domain. This keeps search engines and link previews correct.
+5. Edit the web addresses inside `index.html`, `projects.html`, `404.html`, `offline.html`, `robots.txt` and the `SITE` line near the top of `scripts/build.mjs` that start with `https://babatundeawo.github.io` so they use the new domain. This keeps search engines and link previews correct.
 
 ## Automatic security upkeep
 
 - **Dependabot** opens a pull request when a newer version of an automation step is available. Merge it when its checks are green.
 - **CodeQL** scans the code weekly and on every change. Results appear under **Security > Code scanning**.
 - Hosting on GitHub Pages does not let a site set its own response headers, so the pages carry a Content Security Policy in a `<meta>` tag instead.
+
+## Updating from GitHub Desktop
+
+1. Open GitHub Desktop and choose the repository. Click **Fetch origin**, then **Pull origin** if it offers.
+2. Change files in Windows File Explorer (or extract a new ZIP over the folder). To see the `.github` folder, open File Explorer, click **View > Show > Hidden items**.
+3. Back in GitHub Desktop, read the list of changed files on the left.
+4. Type a short summary at the bottom left and click **Commit to main**.
+5. Click **Push origin**. The Actions tab shows the deployment.
+
+## Installing the site as an app and how updates arrive
+
+Visitors can install the site from Chrome on Android (an **Install** card appears after a short while) or from Safari on iPhone (**Share > Add to Home Screen**; the site shows the steps). Every deployment gets a new version number. A visitor who already has the site sees a "A new version is ready" card and taps **Refresh**. Pages open offline only after they have been opened once online.
 
 ## Redirects
 

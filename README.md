@@ -21,15 +21,17 @@
 
 ## About
 
-The personal site of Babatunde Ayoola Awoyemi, a Nigerian atmospheric physicist, STEM educator and EdTech consultant. It sets out his research in solar irradiance and wind-energy statistics, his teaching and consulting work in schools, and his credentials and contact details. It also catalogues the tools, school systems, learning sites and games he has built across four GitHub accounts, each with a live site and its source code. It is written for collaborators, schools, students and anyone curious about the work.
+The personal site of Babatunde Ayoola Awoyemi, a Nigerian atmospheric physicist, STEM educator and EdTech consultant. It sets out his research in solar irradiance and wind-energy statistics, his teaching and consulting work in schools, and his credentials and contact details. It also catalogues the tools, school systems, learning sites and games he has built across several GitHub accounts, each with a live site and its source code. It is written for collaborators, schools, students and anyone curious about the work.
 
 ## Features
 
 - A single-page profile covering about, skills, education, research, experience, credentials and contact.
-- A searchable, filterable catalogue of projects across four GitHub accounts. Every project links to its live site and its GitHub repository.
+- A searchable, filterable catalogue of projects across several GitHub accounts. Every project links to its live site and its GitHub repository.
 - Light and dark themes that follow your system setting and remember your choice.
 - Keyboard-friendly navigation, a skip link, reduced-motion support and a printable layout.
 - A one-click "Copy" button for the email address.
+- Installable on Android and iPhone, and readable offline once visited. A short notice appears when a new version is ready.
+- A scroll indicator shaped like the sun crossing the sky, which also moves the glow behind the home page headline.
 
 ## How to use it
 
@@ -45,24 +47,28 @@ The personal site of Babatunde Ayoola Awoyemi, a Nigerian atmospheric physicist,
 
 - Hand-written HTML, CSS and JavaScript. No framework and no runtime dependencies.
 - Self-hosted fonts and an inline SVG icon sprite, so pages make no third-party requests.
+- A small Node build script (run by GitHub Actions) that writes the project cards from `data/projects.json`, the sitemap and the service worker.
 - GitHub Actions for checks and deployment to GitHub Pages; CodeQL and Dependabot for security upkeep.
 
 ## Project structure
 
 ```text
 .
-├── index.html            Home page
-├── projects.html         Project catalogue
-├── 404.html              Not-found page
-├── css/style.css         Design tokens and all styles
-├── js/main.js            Theme, menu, reveal effects, project filter
-├── assets/
-│   ├── fonts/            Self-hosted web fonts and their licences
-│   ├── icons/            Favicon and app icons
-│   └── images/           Portrait (AVIF, WebP, JPEG) and social preview image
-├── docs/                 Owner guides and README images
-├── scripts/              Build check used by the deploy workflow
-└── .github/              Deployment, CodeQL and Dependabot configuration
+├── index.html              Home page
+├── projects.html           Project catalogue (cards are generated from data/projects.json)
+├── 404.html                Not-found page
+├── offline.html            Page shown when a page has not been saved for offline use
+├── sw.template.js          Service worker source; the build adds a version and file list
+├── manifest.webmanifest    Install details: name, icons, shortcuts, screenshots
+├── css/style.css           Design tokens and all styles
+├── js/
+│   ├── main.js             Theme, menu, reveal effects, project filter, scroll indicator
+│   └── pwa.js              Offline support, install prompt, update notice
+├── data/projects.json      The project catalogue
+├── assets/                 Fonts, icons, portrait and social images
+├── docs/                   Owner guides and README images
+├── scripts/                build.mjs and check-site.mjs, used by the deploy workflow
+└── .github/                Deployment, CodeQL and Dependabot configuration
 ```
 
 ## Contributing

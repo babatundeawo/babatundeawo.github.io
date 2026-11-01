@@ -1203,3 +1203,96 @@ em { font-style: normal; }
   .band h2, .band p, .band .eyebrow { color: #000; }
   a[href^="http"]:not(.btn):not(.link-pill)::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #444; }
 }
+
+
+/* ==========================================================================
+   11. App behaviour: install card, update notice, offline notice
+   ========================================================================== */
+.pwa-card {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--space-5) + env(safe-area-inset-bottom, 0px));
+  z-index: var(--z-toast);
+  width: min(26rem, calc(100vw - 2rem));
+  padding: var(--space-5);
+  background: var(--surface);
+  color: var(--text);
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-3);
+  opacity: 0;
+  transform: translate(-50%, 16px);
+  transition: opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
+}
+.pwa-card.is-visible { opacity: 1; transform: translate(-50%, 0); }
+.pwa-card__title { margin: 0 0 var(--space-1); font-family: var(--font-display); font-size: var(--step-1); color: var(--ink); }
+.pwa-card__body { margin: 0 0 var(--space-4); font-size: var(--step--1); color: var(--muted); }
+.pwa-card__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.pwa-steps { margin: 0 0 var(--space-4); padding-left: 1.25rem; font-size: var(--step--1); }
+.pwa-steps li + li { margin-top: var(--space-1); }
+.pwa-live {
+  position: fixed;
+  left: 50%;
+  top: calc(var(--header-h) + var(--space-3));
+  z-index: var(--z-toast);
+  max-width: calc(100vw - 2rem);
+  padding: 0.6rem 1rem;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-2);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -8px);
+  transition: opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
+}
+.pwa-live.is-visible { opacity: 1; transform: translate(-50%, 0); }
+
+/* Installed-app polish: notched phones, no accidental selection on controls, no pull-to-refresh bounce */
+@supports (padding: max(0px)) {
+  .site-header .container { padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+}
+.site-header, .filters, .btn, .icon-btn, .chip { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+body { overscroll-behavior-y: none; }
+@media (display-mode: standalone) {
+  .site-header { padding-top: env(safe-area-inset-top, 0px); height: calc(var(--header-h) + env(safe-area-inset-top, 0px)); }
+}
+@media print { .pwa-card, .pwa-live { display: none !important; } }
+
+/* ==========================================================================
+   12. Signature: the sun that travels with you
+   The scroll bar is the day's arc. A small sun rides its head, and in the
+   hero the glow slides from dawn to noon as the page moves.
+   ========================================================================== */
+.progress { background: none; transform: none; overflow: visible; }
+.progress::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  clip-path: inset(0 calc((1 - var(--p, 0)) * 100%) 0 0);
+}
+.progress::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft), 0 0 14px 4px var(--accent-glow);
+  transform: translateX(calc(var(--p, 0) * (100vw - 9px)));
+}
+@media (forced-colors: active) { .progress::before, .progress::after { background: Highlight; } }
+.hero__bg {
+  background:
+    radial-gradient(55% 55% at calc(88% - var(--day, 0) * 38%) calc(18% + var(--day, 0) * 26%), var(--accent-glow), transparent 70%),
+    radial-gradient(60% 70% at 6% -5%, var(--primary-glow), transparent 70%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .progress::after { display: none; }
+  .hero__bg { background: radial-gradient(55% 55% at 88% 18%, var(--accent-glow), transparent 70%), radial-gradient(60% 70% at 6% -5%, var(--primary-glow), transparent 70%); }
+}

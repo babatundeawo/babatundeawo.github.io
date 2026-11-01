@@ -1,0 +1,681 @@
+{
+  "groups": [
+    {
+      "id": "personal",
+      "title": "Personal projects & tools",
+      "source": "https://github.com/babatundeawo",
+      "projects": [
+        {
+          "icon": "thermometer",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Global Warming Explorer",
+          "summary": "Multi-page interactive climate-science learning site with a guided course and classroom check-in dashboard.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/globalwarming/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/globalwarming",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "brain",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "PromptOS — AI Prompt Library",
+          "summary": "Curated AI prompts across multiple categories, searchable and editable, works offline.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/ai-prompt-library/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/ai-prompt-library",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "server",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Deploybase — AI Deployment Directory",
+          "summary": "Registry of every deployed Claude Project built and run by Techbase / Babatunde Awoyemi.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/deploybase/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/deploybase",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "presentation",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Educator AI Toolkit",
+          "summary": "Free reference site for Nigerian educators — exam/marking-guide and lesson-note AI generators.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/educator-ai-toolkit/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/educator-ai-toolkit",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "smartphone",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "AI Studio → Android Deployment Guide",
+          "summary": "Step-by-step guide to shipping a Google AI Studio app as an installable Android PWA.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/ai-studio-android-guide/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/ai-studio-android-guide",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "briefcase",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Personal AI Career Engine",
+          "summary": "Free guide to building CV & career documents with NotebookLM and a configured Claude Project.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/career-engine-guide/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/career-engine-guide",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "book-open",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Deep Calls",
+          "summary": "Long-form Christian apologetics essays, served from a custom Python static-site generator.",
+          "tags": [
+            "Python",
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/deep-calls/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/deep-calls",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "church",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "RCCG Training Portal",
+          "summary": "Interactive, mobile-first discipleship training portal replacing three printed RCCG manuals (Believers', Baptismal, Workers-in-Training) with guided lessons, scripture-reveal quizzes, and progress sync.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Firebase"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/rccg-training-portal/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/rccg-training-portal",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "spell-check",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Akinyele Spelling Challenge",
+          "summary": "Official multi-page site for the 2026 Akinyele Spelling Challenge — results, a large word bank, a practice trainer with a head-to-head Spelling Bee game, and event gallery.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/akinyele-spelling-challenge/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/akinyele-spelling-challenge",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "piggy-bank",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Millionaire Mindset",
+          "summary": "Personal-development app on wealth-building habits and mindset shifts — deployed to both GitHub Pages and Replit.",
+          "tags": [
+            "JavaScript"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/Millionaire-Mindset/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/Millionaire-Mindset",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "boxes",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Personal Projects (monorepo)",
+          "summary": "A collection of smaller personal builds and coursework — a calculator, a regex-teaching playground, a student report-card system, and AI agent-building exercises — consolidated into one repository.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Python"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/personal-projects/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/personal-projects",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "dice",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Naija Monopoly",
+          "summary": "Nigeria-themed Monopoly game with the full official rule set — playable instantly in the browser, or packaged as a Windows desktop app via Electron and an automated GitHub Actions build workflow.",
+          "tags": [
+            "JavaScript",
+            "Electron"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/naija-monopoly/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/naija-monopoly",
+              "primary": false
+            },
+            {
+              "label": "Windows download",
+              "url": "https://github.com/babatundeawo/naija-monopoly/releases",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "timer",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Timekeeper",
+          "summary": "Installable clock, countdown, stopwatch, focus timer and alarms — one quiet instrument, no framework, with a single brass-ring progress indicator reused across every mode.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "PWA"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/timekeeper/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/timekeeper",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "users",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "ISCGS Register — School Dashboard",
+          "summary": "Register of students, staff and records for Ilado-Sagbo Community Grammar School — student registry, staff directory, term records, school profile and inventory. Sign-in is limited to staff approved by an administrator.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Firebase"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/ilado-school-dashboard/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/ilado-school-dashboard",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "clipboard-check",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Attendance Register",
+          "summary": "Daily AM/PM attendance register for teachers with weekly and term reports, student records, a holiday calendar and CSV export. Works offline and installs to the home screen; sign-in is limited to approved staff.",
+          "tags": [
+            "JavaScript",
+            "Vite",
+            "Firebase",
+            "PWA"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/attendance/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/attendance",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "message",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Daily Greetings (WhatsApp)",
+          "summary": "Themed, prayerful WhatsApp greetings with a Nigerian touch, ready to send in one tap. Installable on a phone or desktop, with a sign-in and a private contact database.",
+          "tags": [
+            "PWA",
+            "JavaScript",
+            "Firebase"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/wa-greetings/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/wa-greetings",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "gamepad",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Quizmaster",
+          "summary": "A browser-based quiz app. Short description to be added by the owner.",
+          "tags": [
+            "JavaScript"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://babatundeawo.github.io/quizmaster/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/quizmaster",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "users",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Family Roots",
+          "summary": "A family-tree and family-records app hosted on Firebase. Short description to be added by the owner.",
+          "tags": [
+            "JavaScript",
+            "Firebase"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://family-roots-3c16d.web.app/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/babatundeawo/family-roots",
+              "primary": false
+            }
+          ]
+        }
+      ],
+      "short": "Personal projects & tools"
+    },
+    {
+      "id": "kbi",
+      "title": "Knowledge Base International Schools",
+      "source": "https://github.com/kbischool",
+      "projects": [
+        {
+          "icon": "school",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "KBI Schools — Website",
+          "summary": "Public website for Knowledge Base International Schools — admissions, academics, facilities and news. The org's live GitHub Pages site.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://kbischool.github.io/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/kbischool/kbischool.github.io",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "landmark",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "School Fee Payment Portal",
+          "summary": "The fee and school-information portal of Knowledge Base International Schools. Parents see their child's fees and payments, staff see who has paid, and the owner sees school-wide financial health. Sign-in required.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Firebase"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://school-fee-portal-4f0e6.web.app/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/kbischool/school-fee-portal",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "receipt",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "KBIS Records — Student Records & Fees",
+          "summary": "Staff-only student records and fee accounts for KBIS Schools — student search, itemised fee accounts per term, fee structures and stock. Works offline and installs to the home screen.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Firebase",
+            "PWA"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://kbischool.github.io/kbis-records-app/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/kbischool/kbis-records-app",
+              "primary": false
+            }
+          ]
+        }
+      ],
+      "short": "Knowledge Base Schools"
+    },
+    {
+      "id": "techbase",
+      "title": "Techbase STEM Academy",
+      "source": "https://github.com/techbaseng",
+      "projects": [
+        {
+          "icon": "graduation-cap",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Techbase STEM Academy (hub)",
+          "summary": "Landing page for Techbase STEM Academy, the STEM education arm of Techbase Consultant Services.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Jekyll / GitHub Pages"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://techbaseng.github.io/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/techbaseng/techbaseng.github.io",
+              "primary": false
+            }
+          ]
+        }
+      ],
+      "short": "Techbase STEM Academy"
+    },
+    {
+      "id": "rccg",
+      "title": "RCCG Kingdom Diplomats",
+      "source": "https://github.com/rccgkd",
+      "projects": [
+        {
+          "icon": "gamepad",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Bible Family Feud",
+          "summary": "Stage-ready Bible-themed Family Feud game for church events — dozens of rounds, a dual-window host/answer view, strike/steal logic and synthesized background music, all in the browser.",
+          "tags": [
+            "JavaScript",
+            "HTML",
+            "CSS"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://rccgkd.github.io/bible-family-feud/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/rccgkd/bible-family-feud",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "icon": "book-marked",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Bible Trivia Game",
+          "summary": "Browser-based Bible trivia game for church events — quick, no-dependency static site.",
+          "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://rccgkd.github.io/bible-trivia-game/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/rccgkd/bible-trivia-game",
+              "primary": false
+            }
+          ]
+        }
+      ],
+      "short": "RCCG Kingdom Diplomats"
+    },
+    {
+      "id": "termbook",
+      "title": "Termbook",
+      "source": "https://github.com/termbook",
+      "projects": [
+        {
+          "icon": "book-open",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Termbook",
+          "summary": "The Termbook site. Short description to be added by the owner.",
+          "tags": [
+            "JavaScript"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://termbook.github.io/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/termbook/termbook.github.io",
+              "primary": false
+            }
+          ]
+        }
+      ],
+      "short": "Termbook"
+    },
+    {
+      "id": "agrictool",
+      "title": "Agrictool",
+      "source": "https://github.com/agrictool",
+      "projects": [
+        {
+          "icon": "thermometer",
+          "statusClass": "live",
+          "status": "Live",
+          "title": "Agrictool",
+          "summary": "The Agrictool site. Short description to be added by the owner.",
+          "tags": [
+            "TypeScript"
+          ],
+          "links": [
+            {
+              "label": "Live site",
+              "url": "https://agrictool.github.io/",
+              "primary": true
+            },
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/agrictool/agrictool.github.io",
+              "primary": false
+            }
+          ]
+        }
+      ],
+      "short": "Agrictool"
+    }
+  ]
+}

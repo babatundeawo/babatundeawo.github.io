@@ -119,6 +119,7 @@
     var max = root.scrollHeight - window.innerHeight;
     if (header) header.classList.toggle("is-scrolled", y > 8);
     if (progress) progress.style.setProperty("--p", max > 0 ? Math.min(y / max, 1).toFixed(4) : "0");
+    root.style.setProperty("--day", Math.min(y / Math.max(window.innerHeight, 1), 1).toFixed(3));
     if (toTop) toTop.classList.toggle("is-visible", y > 600);
     ticking = false;
   }

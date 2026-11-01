@@ -18,7 +18,7 @@ Light colours are in `:root { ... }`. Dark colours are in `:root[data-theme="dar
 ## Text
 
 - Home page: `index.html`. Each section starts with a comment such as `<!-- ===== ABOUT ===== -->`.
-- Projects: `projects.html`. Each project is one `<li class="reveal">` block.
+- Projects: `data/projects.json`. Each project is one entry; the build writes the cards into `projects.html`. Group names and the filter buttons come from the same file.
 - Page titles and search descriptions: the `<title>` and `<meta name="description">` lines at the top of each page.
 - Email address: search for `babatundeawoyemi91@gmail.com` (it appears in a few places on `index.html` and `projects.html`).
 
@@ -26,7 +26,7 @@ Light colours are in `:root { ... }`. Dark colours are in `:root[data-theme="dar
 
 - Portrait: replace `assets/images/babatunde.jpg`, then replace the sized copies `babatunde-320`, `-480` and `-646` in `.avif`, `.webp` and `.jpg`. If you only replace the `.jpg` files the AVIF and WebP versions will still show the old photo, so either replace all of them or remove the two `<source>` lines in the portrait block of `index.html`.
 - Social preview image (the card shown when the link is shared): `assets/images/og-image.png`, 1200 by 630 pixels.
-- Favicon and app icons: `assets/icons/` and `favicon.ico`.
+- Favicon and app icons: `assets/icons/` and `favicon.ico`. The install screenshots shown by Android are `assets/images/shot-wide.png` (1280 by 720) and `shot-narrow.png` (720 by 1280); replace them with real screenshots of the site when the design changes.
 
 ## Fonts
 

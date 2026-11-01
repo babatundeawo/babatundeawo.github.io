@@ -26,13 +26,10 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v7.0.1
 
-      - name: Assemble the site into dist/
-        run: |
-          mkdir dist
-          cp -r index.html projects.html 404.html css js assets dist/
-          cp favicon.ico manifest.webmanifest robots.txt sitemap.xml dist/
+      - name: Build the site into dist/ (project cards, sitemap, offline support)
+        run: node scripts/build.mjs
 
-      - name: Check that every internal link, image and anchor exists
+      - name: Check links, images, anchors, manifest, icons and the service worker
         run: node scripts/check-site.mjs dist
 
       - name: Upload a downloadable preview (pull requests)
@@ -62,11 +59,8 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v7.0.1
 
-      - name: Assemble the site into dist/
-        run: |
-          mkdir dist
-          cp -r index.html projects.html 404.html css js assets dist/
-          cp favicon.ico manifest.webmanifest robots.txt sitemap.xml dist/
+      - name: Build the site into dist/ (project cards, sitemap, offline support)
+        run: node scripts/build.mjs
 
       - name: Lint the HTML
         continue-on-error: true

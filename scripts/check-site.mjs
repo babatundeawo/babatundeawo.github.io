@@ -40,6 +40,28 @@ for (const page of pages) {
   }
 }
 
+// Installable-app checks: manifest, icons, screenshots, offline page and service worker.
+try {
+  const manifest = JSON.parse(readFileSync(join(root, "manifest.webmanifest"), "utf8"));
+  for (const key of ["name", "short_name", "start_url", "scope", "display", "icons"]) {
+    if (!manifest[key]) problems.push(`manifest.webmanifest: missing "${key}"`);
+  }
+  const sizes = new Set((manifest.icons || []).map((i) => i.sizes));
+  for (const need of ["192x192", "512x512"]) if (!sizes.has(need)) problems.push(`manifest.webmanifest: no ${need} icon`);
+  if (!(manifest.icons || []).some((i) => (i.purpose || "").includes("maskable"))) problems.push("manifest.webmanifest: no maskable icon");
+  for (const item of [...(manifest.icons || []), ...(manifest.screenshots || []), ...(manifest.shortcuts || []).flatMap((s) => s.icons || [])]) {
+    if (!existsSync(join(root, item.src))) problems.push(`manifest.webmanifest: missing file "${item.src}"`);
+  }
+} catch (error) {
+  problems.push("manifest.webmanifest: cannot be read (" + error.message + ")");
+}
+for (const needed of ["offline.html", "sw.js", "404.html", "sitemap.xml"]) {
+  if (!existsSync(join(root, needed))) problems.push(`missing ${needed}`);
+}
+if (existsSync(join(root, "sw.js")) && /__(VERSION|PRECACHE)__/.test(readFileSync(join(root, "sw.js"), "utf8").replace(/^\/\*[\s\S]*?\*\//, ""))) {
+  problems.push("sw.js: the build did not fill in the version or file list");
+}
+
 if (problems.length) {
   console.error("Site check found problems:\n - " + problems.join("\n - "));
   process.exit(1);

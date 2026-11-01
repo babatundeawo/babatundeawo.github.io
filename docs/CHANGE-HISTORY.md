@@ -1,3 +1,16 @@
+# Change history
+
+## Rebuild: installable app and complete project catalogue
+
+- **Installable and offline.** Added a service worker, an offline page, an install card for Android, step-by-step instructions for iPhone, and an "update ready" notice. The manifest now has shortcuts and install screenshots.
+- **Project catalogue from one file.** Cards now come from `data/projects.json`. Added Quizmaster, Family Roots, Termbook and Agrictool, so the catalogue matches the repositories in the personal account and the five organisation accounts. The Class Scoresheet card was removed because that repository is no longer in the account. The two quiz-host repositories you asked to leave out (`quizmaster-Ire`, `quizmaster-David`) are not listed.
+- **Scroll indicator.** The progress bar is now a small sun that crosses the sky as you scroll.
+- **Build.** The deploy workflow runs `scripts/build.mjs`, which also writes the sitemap and checks the manifest, icons and service worker.
+- **Placeholders.** Quizmaster, Family Roots, Termbook and Agrictool have one-line placeholder descriptions in `data/projects.json`. Replace them with real text.
+- No page addresses changed, so no redirects were needed.
+
+---
+
 # What changed — privacy pass + premium design upgrade
 
 Two things happened here, on both `babatundeawo.github.io` (the site) and
