@@ -11,6 +11,7 @@
    3. Reset and base         8. Projects page
    4. Layout helpers         9. Footer, toast, scroll-to-top
    5. Components            10. Motion, print and preferences
+                            11. Sun path, app layer (install, update, offline)
    ========================================================================== */
 
 
@@ -182,21 +183,21 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../assets/fonts/inter-latin-regular.woff") format("woff");
+  src: url("../assets/fonts/inter-latin-regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("../assets/fonts/inter-latin-medium.woff") format("woff");
+  src: url("../assets/fonts/inter-latin-medium.woff2") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("../assets/fonts/inter-latin-semibold.woff") format("woff");
+  src: url("../assets/fonts/inter-latin-semibold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Fraunces";
@@ -418,6 +419,19 @@ em { font-style: normal; }
 .logo__mark { width: 30px; height: 30px; flex: none; }
 .logo__mark .sun { fill: var(--accent); }
 .logo__mark .line { stroke: var(--ink); fill: none; stroke-width: 2.5; stroke-linecap: round; }
+.logo__short { display: none; }
+
+/* On narrow phones the name, theme button and menu button must all fit, so the
+   logo tightens first (and shows "B. Awoyemi" on the very smallest screens). */
+@media (max-width: 25rem) {
+  .logo { gap: 0.5rem; font-size: 1rem; }
+  .logo__mark { width: 26px; height: 26px; }
+  .nav { gap: var(--space-3); }
+}
+@media (max-width: 21.25rem) {
+  .logo__full { display: none; }
+  .logo__short { display: inline; }
+}
 
 .nav__list { display: flex; align-items: center; gap: clamp(0.25rem, 1.2vw, 1.1rem); }
 .nav__link {
@@ -1206,93 +1220,167 @@ em { font-style: normal; }
 
 
 /* ==========================================================================
-   11. App behaviour: install card, update notice, offline notice
+   11. Sun path, app layer (install, update, offline) and dialog
    ========================================================================== */
-.pwa-card {
+
+/* ---- Sun path: the explorable About illustration ---- */
+.sg-b { stop-opacity: calc(0.06 + 0.14 * var(--day, 1)); }
+
+.sunpath { display: grid; gap: var(--space-1); padding: var(--space-4) var(--space-2) 0; }
+.sunpath__label { font-size: var(--step--1); font-weight: 600; color: var(--ink); }
+.sunpath__out { min-height: 3.4em; font-size: var(--step--1); line-height: 1.6; color: var(--muted); }
+
+.sunpath__range {
+  --pct: 50%;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 44px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.sunpath__range:focus-visible { outline: none; }
+.sunpath__range::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, var(--accent) var(--pct), var(--line-strong) var(--pct));
+}
+.sunpath__range::-moz-range-track { height: 6px; border-radius: var(--radius-pill); background: var(--line-strong); }
+.sunpath__range::-moz-range-progress { height: 6px; border-radius: var(--radius-pill); background: var(--accent); }
+.sunpath__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  margin-top: -11px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--surface);
+  box-shadow: 0 0 0 2px var(--accent-ink), var(--shadow-1);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.sunpath__range::-moz-range-thumb {
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--surface);
+  box-shadow: 0 0 0 2px var(--accent-ink), var(--shadow-1);
+}
+.sunpath__range:active::-webkit-slider-thumb { transform: scale(1.12); }
+.sunpath__range:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 2px var(--accent-ink), 0 0 0 4px var(--surface), 0 0 0 7px var(--focus); }
+.sunpath__range:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 2px var(--accent-ink), 0 0 0 4px var(--surface), 0 0 0 7px var(--focus); }
+
+
+/* ---- Footer actions (share, install) ---- */
+/* Leave room for the back-to-top button so it never covers the footer actions. */
+.footer__bottom { padding-inline-end: calc(48px + var(--space-6)); }
+.footer__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--space-5); }
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding-inline: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+  border-radius: var(--radius-sm);
+  transition: color var(--dur-fast);
+}
+.link-btn:hover { color: var(--primary); }
+.link-btn .icon { width: 1.1em; height: 1.1em; }
+
+
+/* ---- Install, update and offline notices ---- */
+@keyframes app-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+.app-stack {
   position: fixed;
-  left: 50%;
-  bottom: calc(var(--space-5) + env(safe-area-inset-bottom, 0px));
   z-index: var(--z-toast);
-  width: min(26rem, calc(100vw - 2rem));
-  padding: var(--space-5);
+  left: max(var(--space-4), env(safe-area-inset-left, 0px));
+  right: max(var(--space-4), env(safe-area-inset-right, 0px));
+  bottom: max(var(--space-4), env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  pointer-events: none;
+}
+.app-stack > * { pointer-events: auto; }
+.toast { z-index: calc(var(--z-toast) + 1); }
+
+.app-card {
+  display: grid;
+  gap: var(--space-3);
+  width: min(100%, 28rem);
+  padding: var(--space-4);
   background: var(--surface);
   color: var(--text);
-  border: var(--border);
+  border: 1px solid var(--line-strong);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-3);
-  opacity: 0;
-  transform: translate(-50%, 16px);
-  transition: opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
+  animation: app-in var(--dur-med) var(--ease-out) both;
 }
-.pwa-card.is-visible { opacity: 1; transform: translate(-50%, 0); }
-.pwa-card__title { margin: 0 0 var(--space-1); font-family: var(--font-display); font-size: var(--step-1); color: var(--ink); }
-.pwa-card__body { margin: 0 0 var(--space-4); font-size: var(--step--1); color: var(--muted); }
-.pwa-card__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
-.pwa-steps { margin: 0 0 var(--space-4); padding-left: 1.25rem; font-size: var(--step--1); }
-.pwa-steps li + li { margin-top: var(--space-1); }
-.pwa-live {
-  position: fixed;
-  left: 50%;
-  top: calc(var(--header-h) + var(--space-3));
-  z-index: var(--z-toast);
-  max-width: calc(100vw - 2rem);
-  padding: 0.6rem 1rem;
+.app-card__title { font-weight: 600; line-height: 1.4; color: var(--ink); }
+.app-card__text { font-size: 0.92rem; line-height: 1.55; color: var(--muted); }
+.app-card__row { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+.app-chip {
+  padding: 0.55rem 1rem;
   background: var(--ink);
   color: var(--bg);
   border-radius: var(--radius-pill);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 500;
+  line-height: 1.4;
   box-shadow: var(--shadow-2);
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, -8px);
-  transition: opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
+  animation: app-in var(--dur-med) var(--ease-out) both;
 }
-.pwa-live.is-visible { opacity: 1; transform: translate(-50%, 0); }
 
-/* Installed-app polish: notched phones, no accidental selection on controls, no pull-to-refresh bounce */
-@supports (padding: max(0px)) {
-  .site-header .container { padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
-}
-.site-header, .filters, .btn, .icon-btn, .chip { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
-body { overscroll-behavior-y: none; }
-@media (display-mode: standalone) {
-  .site-header { padding-top: env(safe-area-inset-top, 0px); height: calc(var(--header-h) + env(safe-area-inset-top, 0px)); }
-}
-@media print { .pwa-card, .pwa-live { display: none !important; } }
+/* Keep the back-to-top button out from under an open card. */
+.has-app-card .to-top { opacity: 0; visibility: hidden; }
 
-/* ==========================================================================
-   12. Signature: the sun that travels with you
-   The scroll bar is the day's arc. A small sun rides its head, and in the
-   hero the glow slides from dawn to noon as the page moves.
-   ========================================================================== */
-.progress { background: none; transform: none; overflow: visible; }
-.progress::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, var(--accent), var(--primary));
-  clip-path: inset(0 calc((1 - var(--p, 0)) * 100%) 0 0);
+
+/* ---- Add to Home Screen guide (native dialog) ---- */
+.dialog {
+  width: min(calc(100% - 2rem), 28rem);
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-3);
 }
-.progress::after {
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: 0;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft), 0 0 14px 4px var(--accent-glow);
-  transform: translateX(calc(var(--p, 0) * (100vw - 9px)));
+.dialog::backdrop { background: rgb(9 14 26 / 0.6); }
+.dialog[open] { animation: app-in var(--dur-med) var(--ease-out) both; }
+.dialog__body { display: grid; gap: var(--space-4); padding: var(--space-6) var(--space-5) var(--space-5); }
+.dialog__title { font-size: var(--step-2); }
+.dialog__lead { font-size: 0.95rem; line-height: 1.6; color: var(--muted); }
+.steps { display: grid; gap: var(--space-3); }
+.steps li { display: grid; grid-template-columns: 2.75rem 1fr; align-items: center; gap: var(--space-3); font-size: 0.97rem; line-height: 1.5; }
+.steps__icon { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: var(--radius-md); background: var(--primary-soft); color: var(--primary); }
+.steps__icon .icon { width: 1.35rem; height: 1.35rem; }
+
+/* Offline page */
+.offline { position: relative; isolation: isolate; overflow: clip; min-height: 100svh; display: grid; align-items: center; }
+.offline h1 { font-size: var(--step-5); letter-spacing: -0.03em; max-width: 14ch; }
+.offline p { margin-top: var(--space-4); max-width: 34rem; font-size: var(--step-1); color: var(--muted); }
+.offline .icon-offline { width: 3rem; height: 3rem; margin-bottom: var(--space-4); color: var(--accent-ink); }
+.offline .hero__actions { margin-top: var(--space-6); }
+
+@media (forced-colors: active) {
+  .app-card, .app-chip, .dialog { border: 1px solid CanvasText; }
+  .sunpath__range::-webkit-slider-thumb, .sunpath__range::-moz-range-thumb { border: 2px solid CanvasText; }
 }
-@media (forced-colors: active) { .progress::before, .progress::after { background: Highlight; } }
-.hero__bg {
-  background:
-    radial-gradient(55% 55% at calc(88% - var(--day, 0) * 38%) calc(18% + var(--day, 0) * 26%), var(--accent-glow), transparent 70%),
-    radial-gradient(60% 70% at 6% -5%, var(--primary-glow), transparent 70%);
+
+@media print {
+  .app-stack, .dialog, .footer__actions, .sunpath { display: none !important; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .progress::after { display: none; }
-  .hero__bg { background: radial-gradient(55% 55% at 88% 18%, var(--accent-glow), transparent 70%), radial-gradient(60% 70% at 6% -5%, var(--primary-glow), transparent 70%); }
-}
+

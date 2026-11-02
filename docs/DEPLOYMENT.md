@@ -1,90 +1,87 @@
 # Deployment guide
 
-This guide is for the site owner. Everything is done on the GitHub website. You never need to install anything or open a terminal.
+This guide is for the site owner. Everything is done on the GitHub website or in GitHub Desktop. You never need a terminal.
 
 ## How it works
 
-Whenever a change is saved to the `main` branch, a GitHub "workflow" called **Deploy site** wakes up, checks the files, and publishes them to GitHub Pages. Your site at https://babatundeawo.github.io/ updates about a minute later.
+Whenever a change reaches the `main` branch, a GitHub "workflow" called **Deploy site** wakes up. It builds the site, runs its checks, and only then publishes to GitHub Pages. Your site at https://babatundeawo.github.io/ updates about a minute later.
 
-Changes made on any other branch, or in a pull request, are checked but **never published**. That is what keeps the live site safe until you decide.
+A change on any other branch, or in a pull request, is built and checked by **Check pull request** but is **never published**. The live site stays safe until you decide.
 
-## One-time setup (do this once, before the first merge)
+Two more jobs run beside this:
 
-1. Open https://github.com/babatundeawo/babatundeawo.github.io in your browser and sign in.
-2. Click **Settings** (the tab with the gear icon, near the top right of the repository).
+- **Quality report**: HTML lint, link check and a mobile Lighthouse report. These are for information and never stop a deployment.
+- **CodeQL**: a weekly and per-change security scan.
+
+## One-time setup
+
+1. Open https://github.com/babatundeawo/babatundeawo.github.io and sign in.
+2. Click **Settings** (the tab with the gear icon).
 3. In the left menu click **Pages**.
-4. Under **Build and deployment**, find **Source** and choose **GitHub Actions** from the drop-down.
-5. You should see the choice saved. Nothing else needs changing on this page.
+4. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+5. In **Settings > Code security** switch on **Dependabot alerts**, **Secret scanning** and **Push protection**.
 
-Optional but recommended: in **Settings > Code security** switch on **Secret scanning** and **Push protection**. These warn you if a password or key is ever saved in the repository by mistake.
+The repository must stay **public**: GitHub Pages on the Free plan does not publish private repositories.
 
-## Reviewing and publishing the redesign (pull request)
+## Publishing a change safely (pull request)
 
-The redesign arrives as a **pull request**: a proposed set of changes you can inspect before accepting.
+1. In GitHub Desktop choose **Current Branch > New Branch**, name it (for example `update-site`) and click **Create Branch**.
+2. Make your changes in the folder, then in GitHub Desktop write a short summary, click **Commit to update-site**, then **Publish branch**.
+3. Click **Create Pull Request**. Your browser opens GitHub.
+4. On the pull request page wait for the green ticks under **Checks**. A red cross means something is wrong; click **Details** and read the last lines.
+5. To look at the new site first: click **Actions**, open the newest **Check pull request** run, scroll to **Artifacts** and click **site-preview**. Unzip the download and open `index.html`. Pages that need the internet or the service worker (offline mode, install) only work on the live site.
+6. Happy? Click **Merge pull request**, then **Confirm merge**.
+7. Click **Actions**: the newest **Deploy site** run should show a green tick in a couple of minutes.
 
-1. Click the **Pull requests** tab and open the pull request titled for the redesign.
-2. Click the **Checks** tab (or scroll to the bottom of the conversation) and wait for the green ticks. A yellow dot means it is still running.
-3. To look at the new site before publishing: click **Actions** (top menu), open the newest run for the pull request, scroll to **Artifacts** at the bottom, and click **site-preview**. A zip file downloads. Unzip it (double-click it) and open `index.html` in your browser. The 404 page only looks right on the live site, so ignore it in the preview.
-4. If you are happy, go back to the pull request and click the green **Merge pull request** button, then **Confirm merge**.
-5. Click the **Actions** tab. The newest **Deploy site** run should show a green tick within a couple of minutes. Open https://babatundeawo.github.io/ and refresh.
-6. If you do not like it, click **Close pull request** instead. The live site stays exactly as it was.
+## Checking a deployment
+
+1. Click the **Actions** tab and open the newest run named **Deploy site**.
+   - Green tick: published.
+   - Red cross: nothing was changed on the live site. Click the run, click the step with the red cross and read the last lines. A message such as `missing file for "assets/images/x.jpg"` means a page points at a file that was not uploaded.
+   - Yellow dot: still running.
+2. If the **Read the GitHub Pages settings** step fails, Pages is not set to **GitHub Actions** yet (see One-time setup).
+3. The live address appears in the **Publish to GitHub Pages** step.
+
+## What visitors see after an update
+
+The site saves its pages on each visitor's device so it can work offline. When you publish, visitors who already have the site get a small notice, **A new version of this site is ready**, with **Refresh** and **Later** buttons. New visitors always get the newest version. Nobody is stuck on an old version: closing and reopening the site also picks it up.
 
 ## Updating content later
 
-1. Open the file on GitHub (for example `index.html`).
-2. Click the pencil icon (**Edit this file**).
-3. Make the change, click **Commit changes**, and choose **Commit directly to the main branch**.
-4. The site republishes by itself. See [CUSTOMIZING.md](CUSTOMIZING.md) for where things live.
+1. Open the file on GitHub (for example `index.html`) and click the pencil icon.
+2. Make the change, click **Commit changes** and choose **Commit directly to the main branch**.
+3. The site republishes by itself. See [CUSTOMIZING.md](CUSTOMIZING.md) for where things live.
 
-To add or change a project, open `data/projects.json`, copy one whole project entry (from `{` to `}`) inside the right group, and change the text and links. Do not edit the cards in `projects.html`; the build rewrites them from this file.
+To add a project, copy one whole `<li class="reveal"> ... </li>` block inside `projects.html`, paste it into the right group and change the text and links.
 
-## Checking that a deployment worked
+## Rolling back
 
-1. Click the **Actions** tab.
-2. Find the newest run named **Deploy site**.
-   - Green tick: published.
-   - Red cross: something is wrong; the live site was **not** changed.
-   - Yellow dot: still running.
-3. To see what went wrong, click the run, click the step with the red cross, and read the last few lines. A message such as `missing file for "assets/images/x.jpg"` means a page points at a file that was not uploaded; upload it or fix the name and commit again.
+1. Click **Pull requests**, then **Closed**, and open the pull request you want to undo.
+2. Click **Revert**. GitHub prepares a new pull request that undoes it.
+3. Click **Create pull request**, wait for the green ticks, then **Merge pull request**. The site republishes with the earlier version.
 
-The **Quality report** job shows lint, link and Lighthouse results. Warnings there never stop a deployment. Opening its steps tells you about broken external links or slow pages.
-
-## Rolling back to an earlier version
-
-Every version is kept in the history, so nothing is ever lost.
-
-1. Click the **Pull requests** tab, then **Closed**, and open the pull request you want to undo.
-2. Click the **Revert** button near the top. GitHub creates a new pull request that undoes it.
-3. Click **Create pull request**, then **Merge pull request**. The site republishes with the earlier version.
-
-If there is no Revert button, open the **Commits** list (on the main page of the repository click the clock icon labelled with a number of commits), click the last good commit, and use the button on its right to browse the files. Copy the text of a file you want back, then edit the current file and paste.
+If a change was saved straight to `main` (no pull request), open **Commits**, click the bad commit and use **Revert** there.
 
 ## Connecting a custom domain (optional)
 
 1. Buy a domain from any registrar.
 2. In the repository open **Settings > Pages**, type the domain under **Custom domain** and click **Save**.
-3. At your registrar add the DNS records GitHub shows in its help page "Managing a custom domain for your GitHub Pages site": four `A` records for the bare domain and a `CNAME` record for `www`.
-4. Back on the Pages settings, tick **Enforce HTTPS** once it becomes available (it can take up to a day).
-5. Edit the web addresses inside `index.html`, `projects.html`, `404.html`, `offline.html`, `robots.txt` and the `SITE` line near the top of `scripts/build.mjs` that start with `https://babatundeawo.github.io` so they use the new domain. This keeps search engines and link previews correct.
+3. At your registrar add the DNS records shown in GitHub's help page "Managing a custom domain for your GitHub Pages site": four `A` records for the bare domain and a `CNAME` record for `www`.
+4. When it becomes available tick **Enforce HTTPS**.
+5. Nothing needs editing in the files. The deploy step reads the real address from GitHub and updates the canonical links, social preview addresses, sitemap and robots file by itself. Add the new domain to the project sites that link back to you if they use absolute addresses.
 
-## Automatic security upkeep
+## Security notes
 
-- **Dependabot** opens a pull request when a newer version of an automation step is available. Merge it when its checks are green.
-- **CodeQL** scans the code weekly and on every change. Results appear under **Security > Code scanning**.
-- Hosting on GitHub Pages does not let a site set its own response headers, so the pages carry a Content Security Policy in a `<meta>` tag instead.
+- GitHub Pages cannot set HTTP response headers, so each page carries a Content-Security-Policy and a referrer policy in `<meta>` tags. Headers that only a server can send (for example `frame-ancestors`, `X-Content-Type-Options`, `Permissions-Policy`) cannot be set on this host.
+- **Dependabot** opens a pull request when a newer version of a workflow step exists. Merge it when its checks are green.
+- **CodeQL** results appear under **Security > Code scanning**.
 
-## Updating from GitHub Desktop
+## Sharing the web address with your other projects
 
-1. Open GitHub Desktop and choose the repository. Click **Fetch origin**, then **Pull origin** if it offers.
-2. Change files in Windows File Explorer (or extract a new ZIP over the folder). To see the `.github` folder, open File Explorer, click **View > Show > Hidden items**.
-3. Back in GitHub Desktop, read the list of changed files on the left.
-4. Type a short summary at the bottom left and click **Commit to main**.
-5. Click **Push origin**. The Actions tab shows the deployment.
+Every project at `babatundeawo.github.io/<name>/` shares this site's address. The service worker is built to touch only this site's own files, and the saved theme choice is stored under its own name (`ba-theme`). Project sites that have no service worker of their own open normally while online; while offline they show this site's offline page.
 
-## Installing the site as an app and how updates arrive
-
-Visitors can install the site from Chrome on Android (an **Install** card appears after a short while) or from Safari on iPhone (**Share > Add to Home Screen**; the site shows the steps). Every deployment gets a new version number. A visitor who already has the site sees a "A new version is ready" card and taps **Refresh**. Pages open offline only after they have been opened once online.
+When the installed app is open, links to those project sites open inside the app window, because they live under the same address.
 
 ## Redirects
 
-No page addresses changed (`index.html` and `projects.html` are unchanged), so no redirects were needed. GitHub Pages cannot send true 301 redirects. If a page is ever moved, leave a small page at the old address that contains a `<meta http-equiv="refresh">` pointing to the new one.
+No page addresses changed (`index.html`, `projects.html` and `404.html` are as before). GitHub Pages cannot send true 301 redirects; if a page is ever moved, leave a small page at the old address with a `<meta http-equiv="refresh">`, a visible link and a canonical link to the new one.

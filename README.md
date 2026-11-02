@@ -21,17 +21,17 @@
 
 ## About
 
-The personal site of Babatunde Ayoola Awoyemi, a Nigerian atmospheric physicist, STEM educator and EdTech consultant. It sets out his research in solar irradiance and wind-energy statistics, his teaching and consulting work in schools, and his credentials and contact details. It also catalogues the tools, school systems, learning sites and games he has built across several GitHub accounts, each with a live site and its source code. It is written for collaborators, schools, students and anyone curious about the work.
+The personal site of Babatunde Ayoola Awoyemi, a Nigerian atmospheric physicist, STEM educator and EdTech consultant. It sets out his research in solar irradiance and wind-energy statistics, his teaching and consulting work in schools, and his credentials and contact details. It also catalogues the tools, school systems, learning sites and games he has built across four GitHub accounts, each with a live site and its source code. It is written for collaborators, schools, students and anyone curious about the work.
 
 ## Features
 
 - A single-page profile covering about, skills, education, research, experience, credentials and contact.
-- A searchable, filterable catalogue of projects across several GitHub accounts. Every project links to its live site and its GitHub repository.
+- An explorable illustration in the About section: move a slider to carry the sun across an idealised clear day and see how irradiance builds and fades.
+- A searchable, filterable catalogue of projects across four GitHub accounts. Every project links to its live site and its GitHub repository.
 - Light and dark themes that follow your system setting and remember your choice.
+- Installable as an app on Android, iPhone, iPad and desktop. Pages you have opened keep working offline, and a notice offers an update when a new version is published.
 - Keyboard-friendly navigation, a skip link, reduced-motion support and a printable layout.
-- A one-click "Copy" button for the email address.
-- Installable on Android and iPhone, and readable offline once visited. A short notice appears when a new version is ready.
-- A scroll indicator shaped like the sun crossing the sky, which also moves the glow behind the home page headline.
+- One-tap sharing and a "Copy" button for the email address.
 
 ## How to use it
 
@@ -39,36 +39,40 @@ The personal site of Babatunde Ayoola Awoyemi, a Nigerian atmospheric physicist,
 2. Visit [Projects](https://babatundeawo.github.io/projects.html). Use the group buttons or the search box to narrow the list. A link such as `projects.html#kbi` opens a single group directly.
 3. Choose **Live site** on a card to open the project, or **GitHub repo** to read its code. School and records tools open to a sign-in screen and are available only to approved staff.
 4. Use the sun/moon button in the header to switch between light and dark.
-5. Get in touch from the [Contact](https://babatundeawo.github.io/#contact) section by email or any linked profile.
+5. Choose **Install app** in the footer (or your browser's install button) to add the site to your device. On iPhone and iPad it shows the Add to Home Screen steps.
+6. Get in touch from the [Contact](https://babatundeawo.github.io/#contact) section by email or any linked profile.
 
 ![The projects page: filter buttons, a search box and project cards with Live and GitHub links.](docs/assets/preview-projects.webp)
 
 ## Tech stack
 
 - Hand-written HTML, CSS and JavaScript. No framework and no runtime dependencies.
-- Self-hosted fonts and an inline SVG icon sprite, so pages make no third-party requests.
-- A small Node build script (run by GitHub Actions) that writes the project cards from `data/projects.json`, the sitemap and the service worker.
-- GitHub Actions for checks and deployment to GitHub Pages; CodeQL and Dependabot for security upkeep.
+- Self-hosted WOFF2 fonts and an inline SVG icon sprite, so pages make no third-party requests.
+- A hand-written service worker (versioned cache, offline page, user-approved updates) and a web app manifest.
+- A small dependency-free Node build step and GitHub Actions for checks and deployment to GitHub Pages; CodeQL and Dependabot for security upkeep.
 
 ## Project structure
 
 ```text
 .
-├── index.html              Home page
-├── projects.html           Project catalogue (cards are generated from data/projects.json)
-├── 404.html                Not-found page
-├── offline.html            Page shown when a page has not been saved for offline use
-├── sw.template.js          Service worker source; the build adds a version and file list
-├── manifest.webmanifest    Install details: name, icons, shortcuts, screenshots
-├── css/style.css           Design tokens and all styles
+├── index.html            Home page
+├── projects.html         Project catalogue
+├── 404.html              Not-found page
+├── offline.html          Shown when offline and a page is not saved
+├── sw.js                 Service worker (offline support, updates)
+├── manifest.webmanifest  Web app manifest (install details)
+├── css/style.css         Design tokens and all styles
 ├── js/
-│   ├── main.js             Theme, menu, reveal effects, project filter, scroll indicator
-│   └── pwa.js              Offline support, install prompt, update notice
-├── data/projects.json      The project catalogue
-├── assets/                 Fonts, icons, portrait and social images
-├── docs/                   Owner guides and README images
-├── scripts/                build.mjs and check-site.mjs, used by the deploy workflow
-└── .github/                Deployment, CodeQL and Dependabot configuration
+│   ├── main.js           Theme, menu, reveal effects, sun path, project filter
+│   └── pwa.js            Offline status, update notice, install prompt
+├── assets/
+│   ├── fonts/            Self-hosted web fonts and their licences
+│   ├── icons/            Favicon and app icons
+│   ├── images/           Portrait (AVIF, WebP, JPEG) and social preview image
+│   └── screenshots/      Screenshots shown in the install dialog
+├── docs/                 Owner guides and README images
+├── scripts/              Build and check scripts used by the workflows
+└── .github/              Deployment, pull request, CodeQL and Dependabot configuration
 ```
 
 ## Contributing
@@ -81,7 +85,7 @@ To report a vulnerability privately, see [SECURITY.md](SECURITY.md).
 
 ## Credits
 
-- Fonts: [Fraunces](https://github.com/undercasetype/Fraunces) and [Inter](https://github.com/rsms/inter), both under the SIL Open Font License 1.1.
+- Fonts: [Fraunces](https://github.com/undercasetype/Fraunces) and [Inter](https://github.com/rsms/inter), both under the SIL Open Font License 1.1 (licence files in `assets/fonts/`).
 - Icons: [Lucide](https://lucide.dev) (ISC), [Simple Icons](https://simpleicons.org) (CC0) and [Font Awesome Free](https://fontawesome.com) LinkedIn glyph (CC BY 4.0).
 
 Site content and portrait &copy; Babatunde Ayoola Awoyemi.

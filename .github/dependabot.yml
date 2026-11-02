@@ -1,5 +1,5 @@
 # Keeps the GitHub Actions used by this repository up to date.
-# Dependabot opens a pull request when a newer version is available.
+# Dependabot opens one pull request a week when newer versions are available.
 version: 2
 updates:
   - package-ecosystem: "github-actions"
@@ -8,3 +8,6 @@ updates:
       interval: "weekly"
     commit-message:
       prefix: "chore"
+    groups:
+      github-actions:
+        patterns: ["*"]

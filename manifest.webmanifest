@@ -1,12 +1,19 @@
 {
+  "id": "/",
   "name": "Babatunde Ayoola Awoyemi",
   "short_name": "B. Awoyemi",
-  "description": "Atmospheric physicist, STEM educator and climate researcher. Research, experience and a catalogue of live projects.",
-  "start_url": "/?source=pwa",
-  "scope": "/",
+  "description": "Atmospheric physicist, STEM educator and climate researcher. Research, experience and projects, available offline.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#fbfaf7",
   "theme_color": "#fbfaf7",
+  "categories": [
+    "education",
+    "science"
+  ],
   "icons": [
     {
       "src": "assets/icons/icon-192.png",
@@ -27,21 +34,25 @@
       "purpose": "maskable"
     }
   ],
-  "id": "/",
-  "orientation": "portrait-primary",
-  "lang": "en",
-  "dir": "ltr",
-  "categories": [
-    "education",
-    "science",
-    "portfolio"
-  ],
   "shortcuts": [
     {
       "name": "Projects",
       "short_name": "Projects",
-      "description": "Browse every live project",
-      "url": "/projects.html?source=shortcut",
+      "description": "Browse all projects",
+      "url": "projects.html",
+      "icons": [
+        {
+          "src": "assets/icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Research",
+      "short_name": "Research",
+      "description": "Published research",
+      "url": "index.html#research",
       "icons": [
         {
           "src": "assets/icons/icon-192.png",
@@ -54,7 +65,7 @@
       "name": "Contact",
       "short_name": "Contact",
       "description": "Get in touch",
-      "url": "/?source=shortcut#contact",
+      "url": "index.html#contact",
       "icons": [
         {
           "src": "assets/icons/icon-192.png",
@@ -66,18 +77,32 @@
   ],
   "screenshots": [
     {
-      "src": "assets/images/shot-wide.png",
+      "src": "assets/screenshots/home-wide.webp",
       "sizes": "1280x720",
-      "type": "image/png",
+      "type": "image/webp",
       "form_factor": "wide",
-      "label": "Home page"
+      "label": "Home page: research, experience and credentials"
     },
     {
-      "src": "assets/images/shot-narrow.png",
-      "sizes": "720x1280",
-      "type": "image/png",
+      "src": "assets/screenshots/projects-wide.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Projects page: filterable catalogue of tools and learning sites"
+    },
+    {
+      "src": "assets/screenshots/home-narrow.webp",
+      "sizes": "780x1688",
+      "type": "image/webp",
       "form_factor": "narrow",
-      "label": "Projects on a phone"
+      "label": "Home page on a phone"
+    },
+    {
+      "src": "assets/screenshots/projects-narrow.webp",
+      "sizes": "780x1688",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Projects page on a phone"
     }
   ]
 }

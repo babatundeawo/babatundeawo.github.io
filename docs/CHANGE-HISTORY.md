@@ -1,16 +1,3 @@
-# Change history
-
-## Rebuild: installable app and complete project catalogue
-
-- **Installable and offline.** Added a service worker, an offline page, an install card for Android, step-by-step instructions for iPhone, and an "update ready" notice. The manifest now has shortcuts and install screenshots.
-- **Project catalogue from one file.** Cards now come from `data/projects.json`. Added Quizmaster, Family Roots, Termbook and Agrictool, so the catalogue matches the repositories in the personal account and the five organisation accounts. The Class Scoresheet card was removed because that repository is no longer in the account. The two quiz-host repositories you asked to leave out (`quizmaster-Ire`, `quizmaster-David`) are not listed.
-- **Scroll indicator.** The progress bar is now a small sun that crosses the sky as you scroll.
-- **Build.** The deploy workflow runs `scripts/build.mjs`, which also writes the sitemap and checks the manifest, icons and service worker.
-- **Placeholders.** Quizmaster, Family Roots, Termbook and Agrictool have one-line placeholder descriptions in `data/projects.json`. Replace them with real text.
-- No page addresses changed, so no redirects were needed.
-
----
-
 # What changed — privacy pass + premium design upgrade
 
 Two things happened here, on both `babatundeawo.github.io` (the site) and
@@ -114,3 +101,18 @@ Same treatment as the last upgrade: additive, nothing existing rewritten.
 - **Daily Greetings / `wa-greetings`** — new card and row, marked *Private* and repo-only (it works from a personal contact list, consistent with how the other people-data tools are handled).
 - **KBI Schools — Website** (`kbischool/kbischool.github.io`) was on the site but missing from the profile README's KBIS table; added.
 - Profile README intro now says *three* organisations (kbischool, rccgkd, techbaseng), not two. Site README lists the RCCG Kingdom Diplomats games too.
+
+---
+
+# Update: installable, offline-ready rebuild
+
+Earlier notes above mention files that no longer exist (`js/script.js`, `js/premium.js`); the site now uses `js/main.js` and `js/pwa.js`.
+
+- **Fixed**: on phones narrower than about 390 pixels the menu button was partly off-screen. The logo now tightens (and shows "B. Awoyemi" under 340 pixels) so every control fits.
+- **Added**: a service worker, an offline page, a full web app manifest (name, id, shortcuts, screenshots), iOS app meta tags, an install card for Android and desktop, an Add to Home Screen guide for iPhone and iPad, an update notice and an offline indicator.
+- **Added**: an explorable sun-path illustration in the About section, a Share button and a retry button on the offline page.
+- **Changed**: the saved theme setting is now stored as `ba-theme` (other projects on the same web address use their own keys). Visitors who had picked a theme once will see it reset once.
+- **Changed**: Inter fonts are now WOFF2 (about 15 per cent smaller). The Apple touch icon is now a full square without transparent corners.
+- **Changed**: deployment now runs a small Node build (`scripts/build.mjs`) and stricter checks (`scripts/check-site.mjs`); a separate workflow checks pull requests; action versions were brought up to date; Lighthouse now reports the mobile profile. A custom domain is picked up automatically.
+- **Removed**: `assets/fonts/inter-latin-*.woff` (replaced by `.woff2`). If the old files are still in your folder you can delete them.
+

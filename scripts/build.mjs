@@ -1,80 +1,115 @@
-// Builds the site into dist/ (run by the deploy workflow; never by hand).
-//  1. Writes the project cards from data/projects.json into projects.html
-//  2. Copies the site into dist/
-//  3. Writes sitemap.xml and a service worker (sw.js) with a content-based version
-// Usage: node scripts/build.mjs
-import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, readdirSync, statSync, existsSync } from "node:fs";
-import { join, relative } from "node:path";
+// Assembles the publishable site into dist/ and stamps the service worker.
+// Runs inside GitHub Actions; no packages are needed.
+//
+//   node scripts/build.mjs
+//
+// Optional environment variable SITE_URL: the public address of the site
+// (the deploy workflow supplies it from GitHub Pages, so a custom domain is
+// picked up automatically). Default: https://babatundeawo.github.io
+import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
+import { join, resolve, relative } from "node:path";
 
-const SITE = "https://babatundeawo.github.io";
-const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-const arrow = '<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span>';
+const ROOT = resolve(new URL("..", import.meta.url).pathname);
+const DIST = join(ROOT, "dist");
+const DEFAULT_ORIGIN = "https://babatundeawo.github.io";
 
-const data = JSON.parse(readFileSync("data/projects.json", "utf8"));
+const rawSite = (process.env.SITE_URL || DEFAULT_ORIGIN).trim().replace(/\/+$/, "");
+let site;
+try {
+  site = new URL(rawSite);
+} catch {
+  fail(`SITE_URL is not a valid address: "${rawSite}"`);
+}
+if (site.protocol !== "https:") fail(`SITE_URL must start with https:// (got "${rawSite}")`);
+const SITE_URL = site.origin + (site.pathname === "/" ? "" : site.pathname.replace(/\/+$/, ""));
+const BASE_PATH = site.pathname === "/" ? "" : site.pathname.replace(/\/+$/, "");
 
-/* ---- 1. Project cards ---- */
-const link = (l) =>
-  `<a class="link-pill${l.primary ? " link-pill--primary" : ""}" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label)} ${arrow}</a>`;
-const card = (p) => `          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-${esc(p.icon)}"/></svg></span><span class="badge badge--${esc(p.statusClass)}">${esc(p.status)}</span></div>
-              <h3>${esc(p.title)}</h3>
-              <p>${esc(p.summary)}</p>
-              <ul class="tags" aria-label="Technologies">${p.tags.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
-              <div class="project__links">${p.links.map(link).join("")}</div>
-            </article>
-          </li>`;
-const group = (g) => `        <section class="group" id="${esc(g.id)}" data-group="${esc(g.id)}" aria-labelledby="g-${esc(g.id)}">
-          <div class="group__head">
-            <h2 id="g-${esc(g.id)}">${esc(g.title)}</h2>
-            <a class="group__src" href="${esc(g.source)}" target="_blank" rel="noopener noreferrer">${esc(g.source.replace("https://", ""))} ${arrow}</a>
-          </div>
-          <ul class="cards" data-stagger>
-${g.projects.map(card).join("\n")}
-          </ul>
-        </section>`;
-const filters = [`          <button class="filter" type="button" data-filter="all" aria-pressed="true">All projects</button>`]
-  .concat(data.groups.map((g) => `          <button class="filter" type="button" data-filter="${esc(g.id)}" aria-pressed="false">${esc(g.short)}</button>`))
-  .join("\n");
+const FILES = ["index.html", "projects.html", "404.html", "offline.html", "favicon.ico", "manifest.webmanifest", "robots.txt", "sitemap.xml", "sw.js"];
+const DIRS = ["css", "js", "assets"];
+const ROOT_ABSOLUTE_PAGES = ["404.html", "offline.html"]; // these load from any folder depth, so their links start with "/"
 
-let page = readFileSync("projects.html", "utf8");
-const swap = (src, name, body) => {
-  const a = `<!-- ${name}:START -->`, b = `<!-- ${name}:END -->`;
-  const i = src.indexOf(a), j = src.indexOf(b);
-  if (i < 0 || j < 0) throw new Error(`projects.html is missing the ${name} markers`);
-  return src.slice(0, i + a.length) + "\n" + body + "\n" + src.slice(j);
-};
-page = swap(page, "FILTERS", filters);
-page = swap(page, "PROJECTS", data.groups.map(group).join("\n"));
-writeFileSync("projects.html", page);
+function fail(message) {
+  console.error(`Build failed: ${message}`);
+  process.exit(1);
+}
 
-/* ---- 2. Copy into dist/ ---- */
-rmSync("dist", { recursive: true, force: true });
-mkdirSync("dist");
-for (const f of ["index.html", "projects.html", "404.html", "offline.html", "favicon.ico", "manifest.webmanifest", "robots.txt"]) cpSync(f, join("dist", f));
-for (const d of ["css", "js", "assets"]) cpSync(d, join("dist", d), { recursive: true });
-writeFileSync("dist/.nojekyll", "");
+// 1. Fresh dist/ with only what the site needs.
+rmSync(DIST, { recursive: true, force: true });
+mkdirSync(DIST, { recursive: true });
+for (const file of FILES) {
+  if (!existsSync(join(ROOT, file))) fail(`required file is missing: ${file}`);
+  cpSync(join(ROOT, file), join(DIST, file));
+}
+for (const dir of DIRS) {
+  if (!existsSync(join(ROOT, dir))) fail(`required folder is missing: ${dir}/`);
+  cpSync(join(ROOT, dir), join(DIST, dir), { recursive: true });
+}
 
-/* ---- 3. Sitemap and service worker ---- */
-const today = new Date().toISOString().slice(0, 10);
-writeFileSync("dist/sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>${SITE}/</loc><lastmod>${today}</lastmod></url>
-  <url><loc>${SITE}/projects.html</loc><lastmod>${today}</lastmod></url>
-</urlset>
-`);
+// 2. Point the web addresses inside the site at SITE_URL (only needed when it differs).
+const read = (name) => readFileSync(join(DIST, name), "utf8");
+const write = (name, text) => writeFileSync(join(DIST, name), text);
+const swapOrigin = (text) => text.split(DEFAULT_ORIGIN).join(SITE_URL);
 
-const walk = (dir) => readdirSync(dir).flatMap((n) => {
-  const p = join(dir, n);
-  return statSync(p).isDirectory() ? walk(p) : [p];
-});
-const files = walk("dist").map((p) => relative("dist", p).split("\\").join("/")).filter((p) => p !== "sw.js" && p !== ".nojekyll");
-// The app shell is stored on install. Photos and the social image are stored the first time they are used.
-const precache = ["./", ...files.filter((p) => !p.startsWith("assets/images/") && !p.endsWith(".xml") && p !== "robots.txt")];
+if (SITE_URL !== DEFAULT_ORIGIN) {
+  for (const page of readdirSync(DIST).filter((f) => f.endsWith(".html"))) {
+    let html = read(page);
+    html = html
+      .replace(/(<link rel="canonical" href=")[^"]*(")/g, (m) => swapOrigin(m))
+      .replace(/(<meta (?:property="og:(?:url|image)"|name="twitter:image") content=")[^"]*(")/g, (m) => swapOrigin(m))
+      .replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g, (_, a, body, c) => a + swapOrigin(body) + c);
+    write(page, html);
+  }
+  write("sitemap.xml", swapOrigin(read("sitemap.xml")));
+  write("robots.txt", swapOrigin(read("robots.txt")));
+}
+
+// 3. A site served from a sub-folder needs the "/"-style links of the 404 and offline pages moved under it.
+if (BASE_PATH) {
+  for (const page of ROOT_ABSOLUTE_PAGES) {
+    write(page, read(page).replace(/(href|src)="\/(?!\/)/g, `$1="${BASE_PATH}/`));
+  }
+}
+
+// 4. Stamp the service worker: list of saved files plus a build id that changes with any content change.
+const precache = [
+  "index.html",
+  "projects.html",
+  "offline.html",
+  "css/style.css",
+  "js/main.js",
+  "js/pwa.js",
+  "manifest.webmanifest",
+  ...readdirSync(join(DIST, "assets/fonts")).filter((f) => f.endsWith(".woff2")).sort().map((f) => `assets/fonts/${f}`),
+  "assets/icons/favicon.svg",
+  "assets/icons/icon-192.png",
+];
 const hash = createHash("sha256");
-for (const f of files.sort()) hash.update(f).update(readFileSync(join("dist", f)));
-const version = hash.digest("hex").slice(0, 12);
-const sw = readFileSync("sw.template.js", "utf8").replaceAll("__VERSION__", version).replaceAll("__PRECACHE__", JSON.stringify(precache, null, 2));
-writeFileSync("dist/sw.js", sw);
-console.log(`Built ${files.length} files, ${data.groups.reduce((n, g) => n + g.projects.length, 0)} projects, service worker ${version}.`);
+for (const file of precache) {
+  if (!existsSync(join(DIST, file))) fail(`a file listed for offline use does not exist: ${file}`);
+  hash.update(file).update("\0").update(readFileSync(join(DIST, file))).update("\0");
+}
+const buildId = hash.digest("hex").slice(0, 10);
+
+let sw = read("sw.js");
+const idLine = /^const BUILD_ID = .*; \/\/ @build-id$/m;
+const listBlock = /^const PRECACHE_URLS = \[[\s\S]*?\]; \/\/ @precache$/m;
+if (!idLine.test(sw) || !listBlock.test(sw)) fail("sw.js is missing its @build-id or @precache marker");
+sw = sw
+  .replace(idLine, `const BUILD_ID = "${buildId}"; // @build-id`)
+  .replace(listBlock, `const PRECACHE_URLS = [\n${precache.map((f) => `  "${f}",`).join("\n")}\n]; // @precache`);
+write("sw.js", sw);
+
+// 5. Summary.
+let files = 0;
+let bytes = 0;
+(function walk(dir) {
+  for (const name of readdirSync(dir)) {
+    const path = join(dir, name);
+    if (statSync(path).isDirectory()) walk(path);
+    else { files += 1; bytes += statSync(path).size; }
+  }
+})(DIST);
+console.log(`Built ${files} files (${(bytes / 1024).toFixed(0)} KB) into ${relative(ROOT, DIST)}/`);
+console.log(`Site address: ${SITE_URL}`);
+console.log(`Offline build id: ${buildId} (${precache.length} files saved for offline use)`);

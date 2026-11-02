@@ -2,11 +2,11 @@
 <html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page not found | Babatunde Ayoola Awoyemi</title>
   <meta name="description" content="The page you were looking for could not be found.">
   <meta name="robots" content="noindex">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-iR9NJaXJ5oc6DtYkl7KszH3W9oG9ek3ZoZBlAa5pGQo='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-34yN/0HLWdiUbCt1qwoA4f6y437marJyNK51BWop+4I='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; frame-src 'none'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbfaf7">
@@ -30,16 +30,17 @@
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="application-name" content="B. Awoyemi">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="B. Awoyemi">
-  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
   <link rel="preload" href="/assets/fonts/fraunces-latin-600.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/inter-latin-regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
-  <script>(function(){var d=document.documentElement;d.className=d.className.replace('no-js','js');var t=null;try{t=localStorage.getItem('theme');}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}d.setAttribute('data-theme',t);})();</script>
+  <script>(function(){var d=document.documentElement;d.className=d.className.replace('no-js','js');var t=null;try{t=localStorage.getItem('ba-theme');}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}d.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
   <!-- Icons: Lucide (ISC), Simple Icons (CC0), Font Awesome Free (CC BY 4.0) -->
@@ -51,7 +52,7 @@
     <div class="container nav">
       <a class="logo" href="/index.html" aria-label="Babatunde Awoyemi, home">
           <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path class="sun" d="M8 21a8 8 0 0 1 16 0z"/><path class="line" d="M3 21h26M9 26.5h14"/></svg>
-          <span>Babatunde Awoyemi</span>
+          <span class="logo__full">Babatunde Awoyemi</span><span class="logo__short" aria-hidden="true">B. Awoyemi</span>
         </a>
       <nav aria-label="Primary">
         <ul class="nav__list" id="primary-nav">
@@ -112,6 +113,5 @@
   <div class="toast" data-toast role="status" aria-live="polite"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-toast-text></span></div>
 
   <script src="/js/main.js" defer></script>
-  <script src="/js/pwa.js" defer></script>
 </body>
 </html>

@@ -1,22 +1,19 @@
 # Builds, checks and publishes the site to GitHub Pages.
-#  - Pull requests: build and check only. The live site is never touched.
-#  - Push to main (or "Run workflow" button): build, check and publish.
+# Runs when something is saved to the main branch, or when you press "Run workflow".
 name: Deploy site
 
 on:
   push:
-    branches: [main]
-  pull_request:
     branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
 
-# Never run two deployments at once; a newer push waits for the current one.
+# Never run two deployments at once; a newer one waits for the current one.
 concurrency:
-  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || 'pages' }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -24,42 +21,49 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v7.0.1
+        uses: actions/checkout@v7
 
-      - name: Build the site into dist/ (project cards, sitemap, offline support)
+      - name: Set up Node.js (long-term support line)
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      # Tells us the real public address (including a custom domain, if one is set).
+      - name: Read the GitHub Pages settings
+        id: pages
+        uses: actions/configure-pages@v6
+
+      - name: Assemble the site into dist/
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: node scripts/build.mjs
 
-      - name: Check links, images, anchors, manifest, icons and the service worker
+      - name: Check links, manifest, service worker and security rules
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: node scripts/check-site.mjs dist
 
-      - name: Upload a downloadable preview (pull requests)
-        if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v7.0.2
-        with:
-          name: site-preview
-          path: dist
-          retention-days: 14
-
-      - name: Set up GitHub Pages
-        if: github.event_name != 'pull_request'
-        uses: actions/configure-pages@v6.0.0
-
       - name: Package the site for GitHub Pages
-        if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v3.0.1
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
-  # Reports only: these steps never block a deployment.
+  # Reports only: nothing in this job can stop a deployment.
   quality:
     name: Quality report
     needs: build
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v7.0.1
+        uses: actions/checkout@v7
 
-      - name: Build the site into dist/ (project cards, sitemap, offline support)
+      - name: Set up Node.js (long-term support line)
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Assemble the site into dist/
         run: node scripts/build.mjs
 
       - name: Lint the HTML
@@ -72,7 +76,7 @@ jobs:
           npx --yes linkinator@6.1.1 dist --recurse
           --skip "^https?://((www|web)\.)?(linkedin|facebook|instagram|threads|x)\.(com|net)"
 
-      - name: Lighthouse report
+      - name: Lighthouse report (mobile profile)
         continue-on-error: true
         uses: treosh/lighthouse-ci-action@v12
         with:
@@ -82,7 +86,6 @@ jobs:
   deploy:
     name: Publish to GitHub Pages
     needs: build
-    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -93,4 +96,4 @@ jobs:
     steps:
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v5.0.1
+        uses: actions/deploy-pages@v5
