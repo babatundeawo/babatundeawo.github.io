@@ -261,7 +261,7 @@
 
     groups.forEach(function (group) {
       $$(".cards > li", group).forEach(function (li) {
-        items.push({ el: li, group: group, text: li.textContent.toLowerCase().replace(/\s+/g, " ") });
+        items.push({ el: li, group: group, account: li.getAttribute("data-account"), text: li.textContent.toLowerCase().replace(/\s+/g, " ") });
       });
     });
 
@@ -273,7 +273,7 @@
       var perGroup = new Map();
 
       items.forEach(function (item) {
-        var inGroup = state.filter === "all" || item.group.getAttribute("data-group") === state.filter;
+        var inGroup = state.filter === "all" || item.account === state.filter;
         var matches = terms.every(function (term) { return item.text.indexOf(term) !== -1; });
         var visible = inGroup && matches;
         item.el.hidden = !visible;

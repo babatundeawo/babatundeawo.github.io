@@ -18,7 +18,7 @@ Light colours are in `:root { ... }`. Dark colours are in `:root[data-theme="dar
 ## Text
 
 - Home page: `index.html`. Each section starts with a comment such as `<!-- ===== ABOUT ===== -->`.
-- Projects: `projects.html`. Each project is one `<li class="reveal">` block.
+- Projects: `projects.html`. Each project is one `<li class="reveal" data-account="...">` block inside a ranking tier (Flagship platforms, Complete products, Guides, sites and tools, Class exercises). The `#1`, `#2` rank numbers are typed in each card, so renumber them if you move a card. `data/projects.json` is a reference copy of the same ranked list; the site does not read it.
 - Page titles and search descriptions: the `<title>` and `<meta name="description">` lines at the top of each page.
 - Email address: search for `babatundeawoyemi91@gmail.com` (it appears in a few places on `index.html` and `projects.html`).
 - The sun-path illustration: its caption and the figure are in the About section of `index.html`; the wording of its readout is in `js/main.js` (section 9).

@@ -80,12 +80,12 @@
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="container">
         <p class="eyebrow hero__enter">Projects &amp; repositories</p>
-        <h1 class="hero__enter">What I've built — tools, school systems &amp; open STEM resources</h1>
-        <p class="section__lede hero__enter">Project cards across four GitHub accounts: personal tools, the Knowledge Base International Schools portals, the Techbase STEM Academy, and games built for RCCG Kingdom Diplomats events. Every card links to its live site and its source code. Tools that hold school records or personal data open to a sign-in screen, and only approved users can get past it.</p>
+        <h1 class="hero__enter">What I've built, ranked by how substantial it is</h1>
+        <p class="section__lede hero__enter">29 projects across six GitHub accounts: personal tools, school systems, learning sites and church games. They are ranked by my own judgement of scope and engineering: real accounts and databases, access rules, offline support, and size of the codebase come first; small starters come last. Every card links to its source code. Apps that hold school records or personal data open to a sign-in screen, and only approved users can get past it.</p>
         <div class="stat-row hero__enter">
           <span class="badge"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg> Live demos</span>
           <span class="badge"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg> Personal &amp; org projects</span>
-          <span class="badge"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-git-branch"/></svg> Four GitHub accounts</span>
+          <span class="badge"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-git-branch"/></svg> Six GitHub accounts</span>
           <span class="badge"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-school"/></svg> School systems</span>
         </div>
       </div>
@@ -93,12 +93,15 @@
 
     <div class="container" data-projects>
       <div class="controls">
+        <span id="personal"></span><span id="kbi"></span><span id="techbase"></span><span id="rccg"></span><span id="termbook"></span><span id="agrictool"></span>
         <div class="filters" role="group" aria-label="Filter projects by group">
           <button class="filter" type="button" data-filter="all" aria-pressed="true">All projects</button>
-          <button class="filter" type="button" data-filter="personal" aria-pressed="false">Personal projects &amp; tools</button>
+          <button class="filter" type="button" data-filter="personal" aria-pressed="false">Personal</button>
           <button class="filter" type="button" data-filter="kbi" aria-pressed="false">Knowledge Base Schools</button>
-          <button class="filter" type="button" data-filter="techbase" aria-pressed="false">Techbase STEM Academy</button>
+          <button class="filter" type="button" data-filter="techbase" aria-pressed="false">Techbase</button>
           <button class="filter" type="button" data-filter="rccg" aria-pressed="false">RCCG Kingdom Diplomats</button>
+          <button class="filter" type="button" data-filter="termbook" aria-pressed="false">Termbook</button>
+          <button class="filter" type="button" data-filter="agrictool" aria-pressed="false">Agrictool</button>
         </div>
         <label class="search">
           <span class="sr-only">Search projects</span>
@@ -108,241 +111,324 @@
         <p class="results-status" data-status role="status" aria-live="polite"></p>
       </div>
 
-        <section class="group" id="personal" data-group="personal" aria-labelledby="g-personal">
+        <section class="group" id="flagship" data-group="flagship" aria-labelledby="g-flagship">
           <div class="group__head">
-            <h2 id="g-personal">Personal projects &amp; tools</h2>
-            <a class="group__src" href="https://github.com/babatundeawo" target="_blank" rel="noopener noreferrer">github.com/babatundeawo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a>
+            <h2 id="g-flagship">Flagship platforms</h2>
+            <p class="group__blurb">Full systems with accounts, databases and access rules, or large codebases with real users in mind.</p>
           </div>
           <ul class="cards" data-stagger>
-          <li class="reveal">
+          <li class="reveal" data-account="kbi">
             <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-thermometer"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Global Warming Explorer</h3>
-              <p>Multi-page interactive climate-science learning site with a guided course and classroom check-in dashboard.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/globalwarming/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/globalwarming" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-brain"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>PromptOS — AI Prompt Library</h3>
-              <p>Curated AI prompts across multiple categories, searchable and editable, works offline.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/ai-prompt-library/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/ai-prompt-library" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-server"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Deploybase — AI Deployment Directory</h3>
-              <p>Registry of every deployed Claude Project built and run by Techbase / Babatunde Awoyemi.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/deploybase/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/deploybase" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-presentation"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Educator AI Toolkit</h3>
-              <p>Free reference site for Nigerian educators — exam/marking-guide and lesson-note AI generators.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/educator-ai-toolkit/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/educator-ai-toolkit" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-smartphone"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>AI Studio → Android Deployment Guide</h3>
-              <p>Step-by-step guide to shipping a Google AI Studio app as an installable Android PWA.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/ai-studio-android-guide/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/ai-studio-android-guide" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Personal AI Career Engine</h3>
-              <p>Free guide to building CV &amp; career documents with NotebookLM and a configured Claude Project.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/career-engine-guide/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/career-engine-guide" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-book-open"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Deep Calls</h3>
-              <p>Long-form Christian apologetics essays, served from a custom Python static-site generator.</p>
-              <ul class="tags" aria-label="Technologies"><li>Python</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/deep-calls/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/deep-calls" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-church"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>RCCG Training Portal</h3>
-              <p>Interactive, mobile-first discipleship training portal replacing three printed RCCG manuals (Believers', Baptismal, Workers-in-Training) with guided lessons, scripture-reveal quizzes, and progress sync.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Firebase</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/rccg-training-portal/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/rccg-training-portal" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-spell-check"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Akinyele Spelling Challenge</h3>
-              <p>Official multi-page site for the 2026 Akinyele Spelling Challenge — results, a large word bank, a practice trainer with a head-to-head Spelling Bee game, and event gallery.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/akinyele-spelling-challenge/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/akinyele-spelling-challenge" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-piggy-bank"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Millionaire Mindset</h3>
-              <p>Personal-development app on wealth-building habits and mindset shifts — deployed to both GitHub Pages and Replit.</p>
-              <ul class="tags" aria-label="Technologies"><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/Millionaire-Mindset/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/Millionaire-Mindset" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-boxes"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Personal Projects (monorepo)</h3>
-              <p>A collection of smaller personal builds and coursework — a calculator, a regex-teaching playground, a student report-card system, and AI agent-building exercises — consolidated into one repository.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/personal-projects/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/personal-projects" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-dice"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Naija Monopoly</h3>
-              <p>Nigeria-themed Monopoly game with the full official rule set — playable instantly in the browser, or packaged as a Windows desktop app via Electron and an automated GitHub Actions build workflow.</p>
-              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Electron</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/naija-monopoly/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/naija-monopoly" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/naija-monopoly/releases" target="_blank" rel="noopener noreferrer">Windows download <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-timer"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Timekeeper</h3>
-              <p>Installable clock, countdown, stopwatch, focus timer and alarms — one quiet instrument, no framework, with a single brass-ring progress indicator reused across every mode.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PWA</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/timekeeper/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/timekeeper" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-users"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>ISCGS Register — School Dashboard</h3>
-              <p>Register of students, staff and records for Ilado-Sagbo Community Grammar School — student registry, staff directory, term records, school profile and inventory. Sign-in is limited to staff approved by an administrator.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Firebase</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/ilado-school-dashboard/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/ilado-school-dashboard" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-clipboard-check"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Attendance Register</h3>
-              <p>Daily AM/PM attendance register for teachers with weekly and term reports, student records, a holiday calendar and CSV export. Works offline and installs to the home screen; sign-in is limited to approved staff.</p>
-              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Vite</li><li>Firebase</li><li>PWA</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/attendance/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/attendance" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-table"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Class Scoresheet</h3>
-              <p>Installable-style scoresheet for teachers — create classes, load student lists, enter CA, open-day and exam marks, apply bonus marks, and get grades, positions and term-by-term report cards. Prints reports to PDF and exports to Excel in the paper-sheet layout. Each teacher signs in and sees only their own classes; works offline and syncs when back online.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>JavaScript</li><li>Firebase</li><li>Excel Export</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/scoresheet/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/scoresheet" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-message"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Daily Greetings (WhatsApp)</h3>
-              <p>Themed, prayerful WhatsApp greetings with a Nigerian touch, ready to send in one tap. Installable on a phone or desktop, with a sign-in and a private contact database.</p>
-              <ul class="tags" aria-label="Technologies"><li>PWA</li><li>JavaScript</li><li>Firebase</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/wa-greetings/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/babatundeawo/wa-greetings" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          </ul>
-        </section>
-        <section class="group" id="kbi" data-group="kbi" aria-labelledby="g-kbi">
-          <div class="group__head">
-            <h2 id="g-kbi">Knowledge Base International Schools</h2>
-            <a class="group__src" href="https://github.com/kbischool" target="_blank" rel="noopener noreferrer">github.com/kbischool <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a>
-          </div>
-          <ul class="cards" data-stagger>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-school"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>KBI Schools — Website</h3>
-              <p>Public website for Knowledge Base International Schools — admissions, academics, facilities and news. The org's live GitHub Pages site.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://kbischool.github.io/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/kbischool/kbischool.github.io" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
-            </article>
-          </li>
-          <li class="reveal">
-            <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-landmark"/></svg></span><span class="badge badge--live">Live</span></div>
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-piggy-bank"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#1</span><span class="badge badge--private">Sign-in app</span></div>
               <h3>School Fee Payment Portal</h3>
-              <p>The fee and school-information portal of Knowledge Base International Schools. Parents see their child's fees and payments, staff see who has paid, and the owner sees school-wide financial health. Sign-in required.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Firebase</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://school-fee-portal-4f0e6.web.app/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/kbischool/school-fee-portal" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <p class="project__account">Knowledge Base Schools</p>
+              <p>Fee and school-information portal for Knowledge Base International Schools. Parents see itemised fees and payments, staff see who has paid, and the owner sees the whole school's finances and runs data imports. Real accounts on Firebase.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Firebase</li><li>Python</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://school-fee-portal-4f0e6.web.app/" target="_blank" rel="noopener noreferrer">Open app <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/kbischool/school-fee-portal" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
-          <li class="reveal">
+          <li class="reveal" data-account="techbase">
             <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-receipt"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>KBIS Records — Student Records &amp; Fees</h3>
-              <p>Staff-only student records and fee accounts for KBIS Schools — student search, itemised fee accounts per term, fee structures and stock. Works offline and installs to the home screen.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Firebase</li><li>PWA</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://kbischool.github.io/kbis-records-app/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/kbischool/kbis-records-app" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-graduation-cap"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#2</span><span class="badge badge--live">Live</span></div>
+              <h3>Techbase STEM Academy</h3>
+              <p class="project__account">Techbase</p>
+              <p>The Techbase Consultant Services website plus a free academy of 472 lessons across eight courses, built from source files by a Python pipeline.</p>
+              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>JavaScript</li><li>Python</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://techbaseng.github.io/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/techbaseng/techbaseng.github.io" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="termbook">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-clipboard-check"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#3</span><span class="badge badge--live">Live</span></div>
+              <h3>Termbook</h3>
+              <p class="project__account">Termbook</p>
+              <p>Free daily AM/PM attendance registers, per-subject score sheets and term report cards for Nigerian secondary schools. Admins, teachers and parents each see only what their role allows. Installs on a phone and works offline.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Firebase</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://termbook.github.io/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/termbook/termbook.github.io" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="agrictool">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-boxes"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#4</span><span class="badge badge--live">Live</span></div>
+              <h3>RAISSAT Digital Food Systems Platform</h3>
+              <p class="project__account">Agrictool</p>
+              <p>Web platform for the RAISSAT digital food systems community project at FUTA, Akure: participant registration, pre and post assessments, certificates, a searchable toolkit directory and an administrator dashboard.</p>
+              <ul class="tags" aria-label="Technologies"><li>TypeScript</li><li>Firebase</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://agrictool.github.io/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/agrictool/agrictool.github.io" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-dice"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#5</span><span class="badge badge--live">Live</span></div>
+              <h3>Naija Monopoly</h3>
+              <p class="project__account">Personal</p>
+              <p>A Nigeria-themed Monopoly with the full official rules. Play it in the browser, or install the Windows desktop version built with Electron.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Electron</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/naija-monopoly/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/naija-monopoly" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-gamepad"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#6</span><span class="badge badge--live">Live</span></div>
+              <h3>Millionaire Mindset</h3>
+              <p class="project__account">Personal</p>
+              <p>A free quiz game in the browser: climb a 15-step prize ladder, use three lifelines, and choose between risking it and walking away.</p>
+              <ul class="tags" aria-label="Technologies"><li>TypeScript</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/Millionaire-Mindset/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/Millionaire-Mindset" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-school"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#7</span><span class="badge badge--private">Sign-in app</span></div>
+              <h3>ISCGS Register</h3>
+              <p class="project__account">Personal</p>
+              <p>Register of students, staff and records for Ilado-Sagbo Community Grammar School: student roll, staff directory, attendance and assessment coverage, school profile and inventory. Only staff approved by an administrator can sign in.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Firebase</li><li>Python</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/ilado-school-dashboard/" target="_blank" rel="noopener noreferrer">Open app <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/ilado-school-dashboard" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-church"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#8</span><span class="badge badge--live">Live</span></div>
+              <h3>RCCG Training Portal</h3>
+              <p class="project__account">Personal</p>
+              <p>Mobile-first study portal that replaces three printed RCCG manuals (Believers', Baptismal and Workers-in-Training) with guided lessons, scripture that opens in place, class tests, notes, bookmarks and optional synced progress.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Firebase</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/rccg-training-portal/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/rccg-training-portal" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           </ul>
         </section>
-        <section class="group" id="techbase" data-group="techbase" aria-labelledby="g-techbase">
+        <section class="group" id="products" data-group="products" aria-labelledby="g-products">
           <div class="group__head">
-            <h2 id="g-techbase">Techbase STEM Academy</h2>
-            <a class="group__src" href="https://github.com/techbaseng" target="_blank" rel="noopener noreferrer">github.com/techbaseng <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a>
+            <h2 id="g-products">Complete products</h2>
+            <p class="group__blurb">Finished apps and sites with their own features, data and offline support.</p>
           </div>
           <ul class="cards" data-stagger>
-          <li class="reveal">
+          <li class="reveal" data-account="personal">
             <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-graduation-cap"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Techbase STEM Academy (hub)</h3>
-              <p>Landing page for Techbase STEM Academy, the STEM education arm of Techbase Consultant Services.</p>
-              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Jekyll / GitHub Pages</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://techbaseng.github.io/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/techbaseng/techbaseng.github.io" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-table"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#9</span><span class="badge badge--private">Sign-in app</span></div>
+              <h3>Class Scoresheet</h3>
+              <p class="project__account">Personal</p>
+              <p>Scoresheet for teachers: create classes, load student lists, enter CA, open-day and exam marks, apply bonus marks, and get grades, positions and term-by-term report cards. Prints reports to PDF and exports to Excel in the paper-sheet layout. Each teacher sees only their own classes; works offline.</p>
+              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>JavaScript</li><li>Firebase</li><li>Excel Export</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/scoresheet/" target="_blank" rel="noopener noreferrer">Open app <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/scoresheet" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
-          </ul>
-        </section>
-        <section class="group" id="rccg" data-group="rccg" aria-labelledby="g-rccg">
-          <div class="group__head">
-            <h2 id="g-rccg">RCCG Kingdom Diplomats</h2>
-            <a class="group__src" href="https://github.com/rccgkd" target="_blank" rel="noopener noreferrer">github.com/rccgkd <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a>
-          </div>
-          <ul class="cards" data-stagger>
-          <li class="reveal">
+          <li class="reveal" data-account="personal">
             <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-gamepad"/></svg></span><span class="badge badge--live">Live</span></div>
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-gamepad"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#10</span><span class="badge badge--live">Live</span></div>
+              <h3>QuizMaster</h3>
+              <p class="project__account">Personal</p>
+              <p>A quiz game with 400 questions, difficulty levels, a countdown timer and an online leaderboard. Players can also write their own questions.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Firebase</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/quizmaster/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/quizmaster" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-thermometer"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#11</span><span class="badge badge--live">Live</span></div>
+              <h3>Global Warming Explorer</h3>
+              <p class="project__account">Personal</p>
+              <p>Interactive climate-science course with a footprint calculator, charts, quizzes, certificates and a classroom check-in dashboard. Written from a background in atmospheric physics.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Python</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/globalwarming/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/globalwarming" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="rccg">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-church"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#12</span><span class="badge badge--live">Live</span></div>
+              <h3>Kingdom Quiz (Bible Trivia)</h3>
+              <p class="project__account">RCCG Kingdom Diplomats</p>
+              <p>Host-led Bible trivia for church game nights. One person hosts on the big screen, up to four players take turns, and the audience joins from their phones with a four-letter code.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Firebase</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://rccgkd.github.io/bible-trivia-game/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/rccgkd/bible-trivia-game" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-clipboard-check"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#13</span><span class="badge badge--private">Sign-in app</span></div>
+              <h3>Attendance Register</h3>
+              <p class="project__account">Personal</p>
+              <p>Daily AM/PM attendance register for teachers, with weekly and term reports, student records, a holiday calendar and CSV export. Shared through Firebase and usable offline.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Firebase</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/attendance/" target="_blank" rel="noopener noreferrer">Open app <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/attendance" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-server"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#14</span><span class="badge badge--live">Live</span></div>
+              <h3>Deploybase</h3>
+              <p class="project__account">Personal</p>
+              <p>A directory of configured Claude Projects, each with its working page and the exact instructions behind it.</p>
+              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>JavaScript</li><li>Python</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/deploybase/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/deploybase" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="rccg">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-users"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#15</span><span class="badge badge--live">Live</span></div>
               <h3>Bible Family Feud</h3>
-              <p>Stage-ready Bible-themed Family Feud game for church events — dozens of rounds, a dual-window host/answer view, strike/steal logic and synthesized background music, all in the browser.</p>
-              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://rccgkd.github.io/bible-family-feud/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/rccgkd/bible-family-feud" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <p class="project__account">RCCG Kingdom Diplomats</p>
+              <p>Family Feud-style Bible quiz for church events. Two teams guess the most popular answers while a host flips tiles and calls strikes from one screen. No install, no account, no server.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://rccgkd.github.io/bible-family-feud/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/rccgkd/bible-family-feud" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
-          <li class="reveal">
+          <li class="reveal" data-account="personal">
             <article class="card project">
-              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-book-marked"/></svg></span><span class="badge badge--live">Live</span></div>
-              <h3>Bible Trivia Game</h3>
-              <p>Browser-based Bible trivia game for church events — quick, no-dependency static site.</p>
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-message"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#16</span><span class="badge badge--private">Sign-in app</span></div>
+              <h3>Daily Greetings</h3>
+              <p class="project__account">Personal</p>
+              <p>Writes warm, prayerful WhatsApp greetings that fit the day and time, different for every contact. Review one, tap once, and WhatsApp opens ready to send. Keeps track of who you have greeted.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Firebase</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/wa-greetings/" target="_blank" rel="noopener noreferrer">Open app <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/wa-greetings" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-brain"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#17</span><span class="badge badge--live">Live</span></div>
+              <h3>PromptOS</h3>
+              <p class="project__account">Personal</p>
+              <p>Over 200 working AI prompts for image generation, careers, social media, presentations and business. Fill in the blanks, copy, and go. Searchable, editable, and works offline.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/ai-prompt-library/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/ai-prompt-library" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-book-marked"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#18</span><span class="badge badge--live">Live</span></div>
+              <h3>Deep Calls</h3>
+              <p class="project__account">Personal</p>
+              <p>Long-form Christian apologetics essays for people who ask hard questions, built from Markdown by a custom Python static-site generator.</p>
+              <ul class="tags" aria-label="Technologies"><li>Python</li><li>JavaScript</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/deep-calls/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/deep-calls" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-users"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#19</span><span class="badge badge--private">Sign-in app</span></div>
+              <h3>Family Roots</h3>
+              <p class="project__account">Personal</p>
+              <p>A private family tree with a story for each person, a timeline, search, and invite links that give relatives an editor or viewer role. Prints as an outline and backs up to a file.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Firebase</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://family-roots-3c16d.web.app/" target="_blank" rel="noopener noreferrer">Open app <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/family-roots" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="kbi">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-receipt"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#20</span><span class="badge badge--private">Sign-in app</span></div>
+              <h3>KBIS Records</h3>
+              <p class="project__account">Knowledge Base Schools</p>
+              <p>Staff-only student records and fee accounts for KBIS Schools: student search, itemised fee accounts per term, fee structures and stock. Works offline and installs to the home screen.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Firebase</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://kbischool.github.io/kbis-records-app/" target="_blank" rel="noopener noreferrer">Open app <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/kbischool/kbis-records-app" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          </ul>
+        </section>
+        <section class="group" id="guides" data-group="guides" aria-labelledby="g-guides">
+          <div class="group__head">
+            <h2 id="g-guides">Guides, sites and tools</h2>
+            <p class="group__blurb">Focused sites, guides and utilities, each doing one job well.</p>
+          </div>
+          <ul class="cards" data-stagger>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-presentation"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#21</span><span class="badge badge--live">Live</span></div>
+              <h3>Educator AI Toolkit</h3>
+              <p class="project__account">Personal</p>
+              <p>Guide for Nigerian teachers to set up one Claude Project that writes weekly lesson notes and exams with marking guides, plus 117 Scheme of Work files for JSS1 to SS3.</p>
+              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>JavaScript</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/educator-ai-toolkit/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/educator-ai-toolkit" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-spell-check"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#22</span><span class="badge badge--live">Live</span></div>
+              <h3>Akinyele Spelling Challenge</h3>
+              <p class="project__account">Personal</p>
+              <p>Official site for the 2026 Akinyele Spelling Challenge in Ibadan: results, format, a large word bank, a practice trainer with a Spelling Bee game, and an event gallery.</p>
+              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>JavaScript</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/akinyele-spelling-challenge/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/akinyele-spelling-challenge" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-timer"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#23</span><span class="badge badge--live">Live</span></div>
+              <h3>Timekeeper</h3>
+              <p class="project__account">Personal</p>
+              <p>Clock, countdown, stopwatch, focus timer and alarms in one quiet interface. Runs in the browser, stores nothing on a server, and works offline once installed.</p>
+              <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/timekeeper/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/timekeeper" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#24</span><span class="badge badge--live">Live</span></div>
+              <h3>Personal AI Career Engine</h3>
+              <p class="project__account">Personal</p>
+              <p>Free four-phase guide to building a personal AI career engine with NotebookLM and a Claude Project, then generating CVs, cover letters and bios from your real history.</p>
+              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>JavaScript</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/career-engine-guide/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/career-engine-guide" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-smartphone"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#25</span><span class="badge badge--live">Live</span></div>
+              <h3>AI Studio to Android Guide</h3>
+              <p class="project__account">Personal</p>
+              <p>Multi-page guide from Google AI Studio to GitHub to Vercel to an installable Android app, with troubleshooting, a glossary and a free-tier reference table.</p>
+              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>JavaScript</li><li>PWA</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/ai-studio-android-guide/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/ai-studio-android-guide" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="kbi">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-landmark"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#26</span><span class="badge badge--live">Live</span></div>
+              <h3>Knowledge Base International Schools</h3>
+              <p class="project__account">Knowledge Base Schools</p>
+              <p>Public website of Knowledge Base International Schools, Moniya, Ibadan: admissions, academics, facilities, ICT, alumni and news.</p>
               <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-              <div class="project__links"><a class="link-pill link-pill--primary" href="https://rccgkd.github.io/bible-trivia-game/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill " href="https://github.com/rccgkd/bible-trivia-game" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://kbischool.github.io/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/kbischool/kbischool.github.io" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#27</span><span class="badge badge--live">Live</span></div>
+              <h3>Personal Projects</h3>
+              <p class="project__account">Personal</p>
+              <p>A build log of small web and Python projects, with a searchable front page that links to each one.</p>
+              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>JavaScript</li><li>Python</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://babatundeawo.github.io/personal-projects/" target="_blank" rel="noopener noreferrer">Live site <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a><a class="link-pill" href="https://github.com/babatundeawo/personal-projects" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          </ul>
+        </section>
+        <section class="group" id="exercises" data-group="exercises" aria-labelledby="g-exercises">
+          <div class="group__head">
+            <h2 id="g-exercises">Class exercises</h2>
+            <p class="group__blurb">Small starter projects from teaching sessions. Code only, no live site.</p>
+          </div>
+          <ul class="cards" data-stagger>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-book-open"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#28</span><span class="badge">Code only</span></div>
+              <h3>QuizMaster (David's copy)</h3>
+              <p class="project__account">Personal</p>
+              <p>Three-screen starter quiz (home, question, result) from a Techbase class session.</p>
+              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://github.com/babatundeawo/quizmaster-David" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
+            </article>
+          </li>
+          <li class="reveal" data-account="personal">
+            <article class="card project">
+              <div class="project__top"><span class="project__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-book-open"/></svg></span><span class="project__rank"><span class="sr-only">Rank </span>#29</span><span class="badge">Code only</span></div>
+              <h3>QuizMaster (Ire's copy)</h3>
+              <p class="project__account">Personal</p>
+              <p>Three-screen starter quiz (home, question, result) from a Techbase class session.</p>
+              <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+              <div class="project__links"><a class="link-pill link-pill--primary" href="https://github.com/babatundeawo/quizmaster-Ire" target="_blank" rel="noopener noreferrer">GitHub repo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg><span class="sr-only">(opens in new tab)</span></a></div>
             </article>
           </li>
           </ul>

@@ -1067,6 +1067,9 @@ em { font-style: normal; }
 .group__src:hover { color: var(--primary); }
 .group__src .icon { width: 1em; height: 1em; }
 
+.group__blurb { margin: 0; color: var(--muted); max-width: 46ch; }
+.project__rank { margin-right: auto; margin-left: var(--space-2); font-weight: 700; font-variant-numeric: tabular-nums; color: var(--muted); }
+.project__account { margin: 0; font-size: 0.85rem; font-weight: 500; color: var(--muted); }
 .cards { display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fill, minmax(min(100%, 19.5rem), 1fr)); }
 .cards > li { display: flex; }
 .project { display: flex; flex-direction: column; width: 100%; padding: var(--space-5); gap: var(--space-4); }
@@ -1384,3 +1387,4 @@ em { font-style: normal; }
   .app-stack, .dialog, .footer__actions, .sunpath { display: none !important; }
 }
 
+.controls > span[id] { display: none; }

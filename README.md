@@ -21,13 +21,13 @@
 
 ## About
 
-The personal site of Babatunde Ayoola Awoyemi, a Nigerian atmospheric physicist, STEM educator and EdTech consultant. It sets out his research in solar irradiance and wind-energy statistics, his teaching and consulting work in schools, and his credentials and contact details. It also catalogues the tools, school systems, learning sites and games he has built across four GitHub accounts, each with a live site and its source code. It is written for collaborators, schools, students and anyone curious about the work.
+The personal site of Babatunde Ayoola Awoyemi, a Nigerian atmospheric physicist, STEM educator and EdTech consultant. It sets out his research in solar irradiance and wind-energy statistics, his teaching and consulting work in schools, and his credentials and contact details. It also catalogues the tools, school systems, learning sites and games he has built across six GitHub accounts, ranked by how substantial each one is, with a link to its source code and, where there is one, its live site. It is written for collaborators, schools, students and anyone curious about the work.
 
 ## Features
 
 - A single-page profile covering about, skills, education, research, experience, credentials and contact.
 - An explorable illustration in the About section: move a slider to carry the sun across an idealised clear day and see how irradiance builds and fades.
-- A searchable, filterable catalogue of projects across four GitHub accounts. Every project links to its live site and its GitHub repository.
+- A searchable catalogue of 29 projects across six GitHub accounts, ranked by scope and engineering depth and filterable by account. Every project links to its GitHub repository, and to its live site where it has one.
 - Light and dark themes that follow your system setting and remember your choice.
 - Installable as an app on Android, iPhone, iPad and desktop. Pages you have opened keep working offline, and a notice offers an update when a new version is published.
 - Keyboard-friendly navigation, a skip link, reduced-motion support and a printable layout.
