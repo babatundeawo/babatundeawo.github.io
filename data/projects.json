@@ -138,21 +138,6 @@
       "rank": 9,
       "tier": "products",
       "account": "personal",
-      "title": "Class Scoresheet",
-      "summary": "Scoresheet for teachers: create classes, load student lists, enter CA, open-day and exam marks, apply bonus marks, and get grades, positions and term-by-term report cards. Prints reports to PDF and exports to Excel in the paper-sheet layout. Each teacher sees only their own classes; works offline.",
-      "tags": [
-        "HTML",
-        "JavaScript",
-        "Firebase",
-        "Excel Export"
-      ],
-      "live": "https://babatundeawo.github.io/scoresheet/",
-      "repo": "https://github.com/babatundeawo/scoresheet"
-    },
-    {
-      "rank": 10,
-      "tier": "products",
-      "account": "personal",
       "title": "QuizMaster",
       "summary": "A quiz game with 400 questions, difficulty levels, a countdown timer and an online leaderboard. Players can also write their own questions.",
       "tags": [
@@ -164,7 +149,7 @@
       "repo": "https://github.com/babatundeawo/quizmaster"
     },
     {
-      "rank": 11,
+      "rank": 10,
       "tier": "products",
       "account": "personal",
       "title": "Global Warming Explorer",
@@ -178,7 +163,7 @@
       "repo": "https://github.com/babatundeawo/globalwarming"
     },
     {
-      "rank": 12,
+      "rank": 11,
       "tier": "products",
       "account": "rccg",
       "title": "Kingdom Quiz (Bible Trivia)",
@@ -191,7 +176,7 @@
       "repo": "https://github.com/rccgkd/bible-trivia-game"
     },
     {
-      "rank": 13,
+      "rank": 12,
       "tier": "products",
       "account": "personal",
       "title": "Attendance Register",
@@ -205,7 +190,7 @@
       "repo": "https://github.com/babatundeawo/attendance"
     },
     {
-      "rank": 14,
+      "rank": 13,
       "tier": "products",
       "account": "personal",
       "title": "Deploybase",
@@ -219,7 +204,7 @@
       "repo": "https://github.com/babatundeawo/deploybase"
     },
     {
-      "rank": 15,
+      "rank": 14,
       "tier": "products",
       "account": "rccg",
       "title": "Bible Family Feud",
@@ -232,7 +217,7 @@
       "repo": "https://github.com/rccgkd/bible-family-feud"
     },
     {
-      "rank": 16,
+      "rank": 15,
       "tier": "products",
       "account": "personal",
       "title": "Daily Greetings",
@@ -246,7 +231,7 @@
       "repo": "https://github.com/babatundeawo/wa-greetings"
     },
     {
-      "rank": 17,
+      "rank": 16,
       "tier": "products",
       "account": "personal",
       "title": "PromptOS",
@@ -259,7 +244,7 @@
       "repo": "https://github.com/babatundeawo/ai-prompt-library"
     },
     {
-      "rank": 18,
+      "rank": 17,
       "tier": "products",
       "account": "personal",
       "title": "Deep Calls",
@@ -272,7 +257,7 @@
       "repo": "https://github.com/babatundeawo/deep-calls"
     },
     {
-      "rank": 19,
+      "rank": 18,
       "tier": "products",
       "account": "personal",
       "title": "Family Roots",
@@ -286,7 +271,7 @@
       "repo": "https://github.com/babatundeawo/family-roots"
     },
     {
-      "rank": 20,
+      "rank": 19,
       "tier": "products",
       "account": "kbi",
       "title": "KBIS Records",
@@ -300,7 +285,7 @@
       "repo": "https://github.com/kbischool/kbis-records-app"
     },
     {
-      "rank": 21,
+      "rank": 20,
       "tier": "guides",
       "account": "personal",
       "title": "Educator AI Toolkit",
@@ -314,7 +299,7 @@
       "repo": "https://github.com/babatundeawo/educator-ai-toolkit"
     },
     {
-      "rank": 22,
+      "rank": 21,
       "tier": "guides",
       "account": "personal",
       "title": "Akinyele Spelling Challenge",
@@ -327,7 +312,7 @@
       "repo": "https://github.com/babatundeawo/akinyele-spelling-challenge"
     },
     {
-      "rank": 23,
+      "rank": 22,
       "tier": "guides",
       "account": "personal",
       "title": "Timekeeper",
@@ -340,7 +325,7 @@
       "repo": "https://github.com/babatundeawo/timekeeper"
     },
     {
-      "rank": 24,
+      "rank": 23,
       "tier": "guides",
       "account": "personal",
       "title": "Personal AI Career Engine",
@@ -354,7 +339,7 @@
       "repo": "https://github.com/babatundeawo/career-engine-guide"
     },
     {
-      "rank": 25,
+      "rank": 24,
       "tier": "guides",
       "account": "personal",
       "title": "AI Studio to Android Guide",
@@ -368,7 +353,7 @@
       "repo": "https://github.com/babatundeawo/ai-studio-android-guide"
     },
     {
-      "rank": 26,
+      "rank": 25,
       "tier": "guides",
       "account": "kbi",
       "title": "Knowledge Base International Schools",
@@ -382,7 +367,7 @@
       "repo": "https://github.com/kbischool/kbischool.github.io"
     },
     {
-      "rank": 27,
+      "rank": 26,
       "tier": "guides",
       "account": "personal",
       "title": "Personal Projects",
@@ -396,7 +381,7 @@
       "repo": "https://github.com/babatundeawo/personal-projects"
     },
     {
-      "rank": 28,
+      "rank": 27,
       "tier": "exercises",
       "account": "personal",
       "title": "QuizMaster (David's copy)",
@@ -410,7 +395,7 @@
       "repo": "https://github.com/babatundeawo/quizmaster-David"
     },
     {
-      "rank": 29,
+      "rank": 28,
       "tier": "exercises",
       "account": "personal",
       "title": "QuizMaster (Ire's copy)",

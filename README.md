@@ -27,7 +27,7 @@ The personal site of Babatunde Ayoola Awoyemi, a Nigerian atmospheric physicist,
 
 - A single-page profile covering about, skills, education, research, experience, credentials and contact.
 - An explorable illustration in the About section: move a slider to carry the sun across an idealised clear day and see how irradiance builds and fades.
-- A searchable catalogue of 29 projects across six GitHub accounts, ranked by scope and engineering depth and filterable by account. Every project links to its GitHub repository, and to its live site where it has one.
+- A searchable catalogue of 28 projects across six GitHub accounts, ranked by scope and engineering depth and filterable by account. Every project links to its GitHub repository, and to its live site where it has one.
 - Light and dark themes that follow your system setting and remember your choice.
 - Installable as an app on Android, iPhone, iPad and desktop. Pages you have opened keep working offline, and a notice offers an update when a new version is published.
 - Keyboard-friendly navigation, a skip link, reduced-motion support and a printable layout.

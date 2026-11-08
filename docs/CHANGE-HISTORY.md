@@ -2,8 +2,8 @@
 
 ## November 2026: ranked project list
 
-- `projects.html` now lists 29 projects in one ranked order (rank 1 is the most substantial), in four tiers, with a filter for each of six GitHub accounts: personal, Knowledge Base Schools, Techbase, RCCG Kingdom Diplomats, Termbook and Agrictool.
-- Added Termbook, Agrictool, QuizMaster, Family Roots, KBIS Records and the two class-exercise copies of QuizMaster, with descriptions taken from each repository's README.
+- `projects.html` now lists 28 projects in one ranked order (rank 1 is the most substantial), in four tiers, with a filter for each of six GitHub accounts: personal, Knowledge Base Schools, Techbase, RCCG Kingdom Diplomats, Termbook and Agrictool.
+- Removed Class Scoresheet, whose repository no longer exists. Added Termbook, Agrictool, QuizMaster, Family Roots, KBIS Records and the two class-exercise copies of QuizMaster, with descriptions taken from each repository's README.
 - Corrected the descriptions of Millionaire Mindset (a quiz game), Akinyele Spelling Challenge, Educator AI Toolkit and Bible Trivia, which had been out of date.
 - Ranking basis: scope and engineering depth first (accounts, databases, access rules, offline support, size of the codebase), then polish and real-world use. It is a judgement, not a measurement.
 
