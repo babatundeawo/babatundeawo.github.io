@@ -83,31 +83,18 @@
       "rank": 5,
       "tier": "flagship",
       "account": "personal",
-      "title": "Naija Monopoly",
-      "summary": "A Nigeria-themed Monopoly with the full official rules. Play it in the browser, or install the Windows desktop version built with Electron.",
+      "title": "Playbase",
+      "summary": "One home for five free browser games: Naija Monopoly, QuizMaster, Millionaire Mindset, Kingdom Quiz and Bible Family Feud. Pick from a carousel, play with no account, and use the Home button inside any game to switch. Light and dark themes, and new games are added with one small file.",
       "tags": [
         "JavaScript",
-        "Electron",
+        "Firebase",
         "PWA"
       ],
-      "live": "https://babatundeawo.github.io/naija-monopoly/",
-      "repo": "https://github.com/babatundeawo/naija-monopoly"
+      "live": "https://babatundeawo.github.io/playbase/",
+      "repo": "https://github.com/babatundeawo/playbase"
     },
     {
       "rank": 6,
-      "tier": "flagship",
-      "account": "personal",
-      "title": "Millionaire Mindset",
-      "summary": "A free quiz game in the browser: climb a 15-step prize ladder, use three lifelines, and choose between risking it and walking away.",
-      "tags": [
-        "TypeScript",
-        "PWA"
-      ],
-      "live": "https://babatundeawo.github.io/Millionaire-Mindset/",
-      "repo": "https://github.com/babatundeawo/Millionaire-Mindset"
-    },
-    {
-      "rank": 7,
       "tier": "flagship",
       "account": "personal",
       "title": "ISCGS Register",
@@ -121,7 +108,7 @@
       "repo": "https://github.com/babatundeawo/ilado-school-dashboard"
     },
     {
-      "rank": 8,
+      "rank": 7,
       "tier": "flagship",
       "account": "personal",
       "title": "RCCG Training Portal",
@@ -135,21 +122,7 @@
       "repo": "https://github.com/babatundeawo/rccg-training-portal"
     },
     {
-      "rank": 9,
-      "tier": "products",
-      "account": "personal",
-      "title": "QuizMaster",
-      "summary": "A quiz game with 400 questions, difficulty levels, a countdown timer and an online leaderboard. Players can also write their own questions.",
-      "tags": [
-        "JavaScript",
-        "Firebase",
-        "PWA"
-      ],
-      "live": "https://babatundeawo.github.io/quizmaster/",
-      "repo": "https://github.com/babatundeawo/quizmaster"
-    },
-    {
-      "rank": 10,
+      "rank": 8,
       "tier": "products",
       "account": "personal",
       "title": "Global Warming Explorer",
@@ -163,20 +136,7 @@
       "repo": "https://github.com/babatundeawo/globalwarming"
     },
     {
-      "rank": 11,
-      "tier": "products",
-      "account": "rccg",
-      "title": "Kingdom Quiz (Bible Trivia)",
-      "summary": "Host-led Bible trivia for church game nights. One person hosts on the big screen, up to four players take turns, and the audience joins from their phones with a four-letter code.",
-      "tags": [
-        "JavaScript",
-        "Firebase"
-      ],
-      "live": "https://rccgkd.github.io/bible-trivia-game/",
-      "repo": "https://github.com/rccgkd/bible-trivia-game"
-    },
-    {
-      "rank": 12,
+      "rank": 9,
       "tier": "products",
       "account": "personal",
       "title": "Attendance Register",
@@ -190,7 +150,7 @@
       "repo": "https://github.com/babatundeawo/attendance"
     },
     {
-      "rank": 13,
+      "rank": 10,
       "tier": "products",
       "account": "personal",
       "title": "Deploybase",
@@ -204,20 +164,7 @@
       "repo": "https://github.com/babatundeawo/deploybase"
     },
     {
-      "rank": 14,
-      "tier": "products",
-      "account": "rccg",
-      "title": "Bible Family Feud",
-      "summary": "Family Feud-style Bible quiz for church events. Two teams guess the most popular answers while a host flips tiles and calls strikes from one screen. No install, no account, no server.",
-      "tags": [
-        "JavaScript",
-        "PWA"
-      ],
-      "live": "https://rccgkd.github.io/bible-family-feud/",
-      "repo": "https://github.com/rccgkd/bible-family-feud"
-    },
-    {
-      "rank": 15,
+      "rank": 11,
       "tier": "products",
       "account": "personal",
       "title": "Daily Greetings",
@@ -231,7 +178,7 @@
       "repo": "https://github.com/babatundeawo/wa-greetings"
     },
     {
-      "rank": 16,
+      "rank": 12,
       "tier": "products",
       "account": "personal",
       "title": "PromptOS",
@@ -244,7 +191,7 @@
       "repo": "https://github.com/babatundeawo/ai-prompt-library"
     },
     {
-      "rank": 17,
+      "rank": 13,
       "tier": "products",
       "account": "personal",
       "title": "Deep Calls",
@@ -257,7 +204,7 @@
       "repo": "https://github.com/babatundeawo/deep-calls"
     },
     {
-      "rank": 18,
+      "rank": 14,
       "tier": "products",
       "account": "personal",
       "title": "Family Roots",
@@ -271,7 +218,7 @@
       "repo": "https://github.com/babatundeawo/family-roots"
     },
     {
-      "rank": 19,
+      "rank": 15,
       "tier": "products",
       "account": "kbi",
       "title": "KBIS Records",
@@ -285,7 +232,7 @@
       "repo": "https://github.com/kbischool/kbis-records-app"
     },
     {
-      "rank": 20,
+      "rank": 16,
       "tier": "guides",
       "account": "personal",
       "title": "Educator AI Toolkit",
@@ -299,7 +246,7 @@
       "repo": "https://github.com/babatundeawo/educator-ai-toolkit"
     },
     {
-      "rank": 21,
+      "rank": 17,
       "tier": "guides",
       "account": "personal",
       "title": "Akinyele Spelling Challenge",
@@ -312,7 +259,7 @@
       "repo": "https://github.com/babatundeawo/akinyele-spelling-challenge"
     },
     {
-      "rank": 22,
+      "rank": 18,
       "tier": "guides",
       "account": "personal",
       "title": "Timekeeper",
@@ -325,7 +272,7 @@
       "repo": "https://github.com/babatundeawo/timekeeper"
     },
     {
-      "rank": 23,
+      "rank": 19,
       "tier": "guides",
       "account": "personal",
       "title": "Personal AI Career Engine",
@@ -339,7 +286,7 @@
       "repo": "https://github.com/babatundeawo/career-engine-guide"
     },
     {
-      "rank": 24,
+      "rank": 20,
       "tier": "guides",
       "account": "personal",
       "title": "AI Studio to Android Guide",
@@ -353,7 +300,7 @@
       "repo": "https://github.com/babatundeawo/ai-studio-android-guide"
     },
     {
-      "rank": 25,
+      "rank": 21,
       "tier": "guides",
       "account": "kbi",
       "title": "Knowledge Base International Schools",
@@ -367,7 +314,7 @@
       "repo": "https://github.com/kbischool/kbischool.github.io"
     },
     {
-      "rank": 26,
+      "rank": 22,
       "tier": "guides",
       "account": "personal",
       "title": "Personal Projects",
@@ -381,7 +328,7 @@
       "repo": "https://github.com/babatundeawo/personal-projects"
     },
     {
-      "rank": 27,
+      "rank": 23,
       "tier": "exercises",
       "account": "personal",
       "title": "QuizMaster (David's copy)",
@@ -395,7 +342,7 @@
       "repo": "https://github.com/babatundeawo/quizmaster-David"
     },
     {
-      "rank": 28,
+      "rank": 24,
       "tier": "exercises",
       "account": "personal",
       "title": "QuizMaster (Ire's copy)",
