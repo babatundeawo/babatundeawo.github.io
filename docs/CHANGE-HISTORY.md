@@ -1,5 +1,11 @@
 # Change history
 
+## November 2026: games moved into Playbase
+
+- `projects.html` now lists 24 projects across five GitHub accounts. The five separate game cards (Naija Monopoly, QuizMaster, Millionaire Mindset, Kingdom Quiz and Bible Family Feud) are replaced by one **Playbase** card, which links to the live hub and to `babatundeawo/playbase`.
+- Removed the RCCG Kingdom Diplomats filter and home-page chip, because that account no longer has a project of its own. Ranks were renumbered, and `data/projects.json` matches.
+- The profile README (`babatundeawo/babatundeawo`) got the same list, and its stats card no longer counts `rccgkd`.
+
 ## November 2026: ranked project list
 
 - `projects.html` now lists 28 projects in one ranked order (rank 1 is the most substantial), in four tiers, with a filter for each of six GitHub accounts: personal, Knowledge Base Schools, Techbase, RCCG Kingdom Diplomats, Termbook and Agrictool.
